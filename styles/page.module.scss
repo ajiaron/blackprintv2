@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+.main {
+  width: 100vw;
+  height: 100vh;
+  margin:0;
+  flex:1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.canvasContainer {
+  width: 100%;
+  overflow-x: hidden;
+  height: fit-content;
+  display: flex;
+  opacity: 0;
+  z-index: 2;
+  flex-direction: column;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contentContainer {
+  width: 100%;
+  overflow-x: hidden;
+  height: fit-content;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 14rem;
+}
+.heroHeaderText {
+  font-family: var(--default-font);
+  font-size: var(--text-hero-header);
+  letter-spacing: var(--header-spacing);
+  line-height: auto;
+  font-weight: var(--text-weight-bold);
+  user-select: none;
+  color:#fff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  display: inline;
+}
+.heroHeaderTextAlt {
+  transform: rotate(-1.5deg) translateY(-1.5px);
+}
+.heroHighlight {
+  background-color: rgba(51,154,86,.7);
+  transform: rotate(1.5deg) translateY(1.5px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.5rem;
+  border-radius: 5px;
+  width: fit-content;
+  padding-left: .625rem;
+  padding-right: .625rem;
+  margin-left: .6rem;
+  margin-right: .5rem;
+}
+.heroTextContainer {
+  width: 56%;
+  
+  height: fit-content;
+  display: inline;
+//  background-color: red;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
