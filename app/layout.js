@@ -4,8 +4,10 @@ import "../styles/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Blackprint",
+  title: "BLACKPRINT",
   description: "Your design agency for branding, marketing, and more.",
+  icons: { icon: "/assets/logo.png", sizes: "any", type: "image/png" },
+
 };
 
 export default function RootLayout({ children }) {

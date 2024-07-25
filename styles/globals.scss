@@ -44,8 +44,8 @@
   --theme-color: #3CB371;
   --theme-color-alt: #339A56;
   --button-color:#389B5A;
-  --theme-gradient: -webkit-linear-gradient(306.95deg, #43C27B, #44C0C0)
-  --hero-gradient: -webkit-linear-gradient(180deg, #121316, #1e1e1e)
+  --theme-gradient: -webkit-linear-gradient(306.95deg, #43C27B, #44C0C0);
+  --hero-gradient: -webkit-linear-gradient(270deg, #121316, #1e1e1e);
   --background-color: #121316;
   --text-color:#fff;
   --subheader-color:#bbb; // subheaders, testimonial text
@@ -75,16 +75,16 @@
   // letter spacing
   --header-spacing: -.2px; // section headers, hero header, services text
   --subheader-spacing: -.15px; // pricing figure
-  --subtext-spacing: -.1px; // subheaders, faqs, navigation
-  --smallest-spacing: -.075px; // subheaders, faqs, navigation
+  --subtext-spacing: -.075px; // subheaders, faqs, navigation
+  --smallest-spacing: -.05px; // subheaders, faqs, navigation
   // line height
   --subheader-height: 164%;
   --subtext-height: 31.5px; // our process subtext
   --subtext-height-small: 18.1px; // testimonial subtext
   // font weight
   --text-weight-bold: 600;
-  --text-weight-medium: 450;
-  --text-weight-regular: 400;
+  --text-weight-medium: 400;
+  --text-weight-regular: 275;
   // border radius
   --hero-section-radius: 40px;
   --button-radius-small: 42.25px;
@@ -144,6 +144,7 @@ html {
   overflow-y: hidden;
   overflow-x: hidden;
   max-height: 100vh;
+  background-color: #121316;
 }
 body {
   overflow-y: auto;
@@ -151,6 +152,7 @@ body {
   width: 100vw;
   max-height: 100vh;
   height: 100%;
+  background-color: #121316;
 }
 *:focus {
   outline: none;
