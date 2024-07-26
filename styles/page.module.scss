@@ -377,7 +377,9 @@
   align-items: center;
   justify-content: center;
   align-self: center;
-  overflow: hidden;
+  margin-bottom: 2.625rem;
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0, .25);
   background-image: var(--hero-gradient);
 }
 .heroCanvasContainer {
@@ -465,7 +467,6 @@
   flex-direction: column;
   justify-content: center;
   gap:2.25rem;
-  margin-top: 2.625rem;
 }
 .carouselContentContainer {
   width: 80.83%;
@@ -519,4 +520,79 @@
   background-position: center;
   width: 4.89rem;
   height: 5.07rem;
+}
+
+// catalog styles
+.catalogSection {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8rem;
+}
+.sectionHeaderContainer {
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  width: 100%;
+  gap:1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.catalogContentContainer {
+  width: 100.5%;
+  overflow-x: hidden;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+ // gap:2.125rem;
+  height: fit-content;
+  margin-top: 5rem;
+}
+.catalogContent {
+  display: flex;
+  width: 100%;
+  gap:2rem;
+  height: fit-content;
+  align-self: center;
+  overflow-x: hidden;
+  //background-color: red;
+}
+.catalogColumn {
+  height: 100%;
+  width: 21.14rem;
+  gap:2rem;
+  display: flex;
+  flex-direction: column;
+}
+.catalogRow {
+  //gap:1.25rem;
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+  min-height: 10rem;
+  width: 21.14rem;
+}
+.catalogCover {
+  position: absolute;
+  min-width: 101vw;
+  height: calc(44.28rem);
+  //background-color: blue;
+  background: linear-gradient(180deg, #12131600 65%, #121316ff 90%);
+}
+.catalogImage {
+  width: 21.14rem;
+  height: 21.14rem;
+  border-radius: 10.5px;
+}
+.catalogImageLarge {
+  width: 21.14rem;
+  height: 40.75rem;
+  border-radius: 10.5px;
+}
+.catalogImageSmall {
+  width: 9.935rem;
+  height: 9.935rem;
+  border-radius: 7px;
 }
