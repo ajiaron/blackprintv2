@@ -14,7 +14,27 @@ import Truka from "../public/assets/truka.png"
 import Tradesmark from "../public/assets/tradesmark.png"
 import Blackprint from "../public/assets/blackprint.png"
 
+const ServiceItem = ({title, subtext, image}) => {
+  return (
+    <div className={styles.servicesItem}>
+        <div className={styles.servicesItemContent}>
+          <div className={styles.servicesIconWrapper}>
+            <div className={`${styles.servicesIcon} ${styles[image]}`}>
 
+            </div>
+          </div>
+          <div className={styles.servicesItemTextWrapper}>
+            <p className={styles.serviceTitleText}>
+              {title}
+            </p>
+            <p className={styles.serviceSubtext}>
+              {subtext}
+            </p>
+          </div>
+        </div>
+    </div>
+  )
+}
 export default function Home() {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
@@ -195,31 +215,58 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.processTextContainer}>
-              <div className={styles.processTextContent}>
-                <p className={styles.processHeaderText}>
+              <span className={styles.processTextContent}>
+                <p className={[styles.processHeaderText, styles.processTextGreen].join(' ')}>
                   Consultation
                 </p>
                 <p className={styles.processSubtext}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada facilisis arcu, non pharetra quam aliquet vel. Donec et urna velit.
                 </p>
-              </div>
-              <div className={styles.processTextContent}>
-                <p className={styles.processHeaderText}>
+              </span>
+              <span className={styles.processTextContent}>
+                <p className={[styles.processHeaderText, styles.processTextPink].join(' ')}>
                   Design {'&'} Revision
                 </p>
                 <p className={styles.processSubtext}>
                   Nam quam massa, consectetur sit amet elit ut, consectetur tristique nulla. Nunc fermentum lacinia tellus, nec dapibus est sollicitudin in.                </p>
-              </div>
-              <div className={styles.processTextContent}>
-                <p className={styles.processHeaderText}>
+              </span>
+              <span className={styles.processTextContent}>
+                <p className={[styles.processHeaderText, styles.processTextBlue].join(' ')}>
                   Development {'&'} Deployment
                 </p>
                 <p className={styles.processSubtext}>
                   Vestibulum sagittis mauris non sapien gravida, quis tincidunt diam vulputate. Integer augue ex, finibus nec leo condimentum, eleifend convallis massa.                </p>
-              </div>
+              </span>
             </div>
           </div>
          <Process/>
+        </div>
+      </section>
+      <section className={styles.servicesSection}>
+        <div className={styles.sectionHeaderContainer}>
+          <p className={styles.sectionHeaderText}>
+            Products &amp; Services
+          </p>
+          <p className={styles.subheaderText}>
+            From design to deployment, see how Blackprint handles each and every project.
+          </p>
+        </div>
+        <div className={styles.servicesContentContainer}>
+          <div className={styles.servicesRow}>
+            <ServiceItem title={'Websites'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'laptop'}/>
+            <ServiceItem title={'Mobile Applications'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'mobile'}/>
+            <ServiceItem title={'Pitch Decks'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'speaker'}/>
+          </div>
+          <div className={styles.servicesRow}>
+            <ServiceItem title={'Digital Flyers'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bang'}/>
+            <ServiceItem title={'Banners'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'flag'}/>
+            <ServiceItem title={'Infographics'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bulb'}/>
+          </div>
+          <div className={styles.servicesRow}>
+            <ServiceItem title={'Social Media Funnels'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'heart'}/>
+            <ServiceItem title={'Targeted Ads'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'money'}/>
+            <ServiceItem title={'And More!'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'stars'}/>
+          </div>
         </div>
       </section>
     </main>

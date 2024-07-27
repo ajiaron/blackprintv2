@@ -4,7 +4,7 @@ import styles from "../../styles/page.module.scss";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 
-export default function Process() {
+export default function Process({state}) {
   return (
     <div className={styles.processFigureContainer}>
         <div className={styles.processFigureWrapper}>
@@ -21,7 +21,7 @@ export default function Process() {
             </svg>
             }
             <div className={styles.processTabContainer}>
-                <div className={styles.processFigureTabAlt}>
+                <div className={styles.processFigureTabAlt} style={{backgroundColor:'var(--theme-color)', borderColor:"var(--theme-color)"}}>
                     <p className={styles.processFigureText} style={{fontWeight:"550"}}>
                         Assets {'&'} Branding
                     </p>
@@ -45,7 +45,7 @@ export default function Process() {
                 </svg>
             }
             <div className={styles.processTabContainer}>
-                <div className={styles.processFigureTabAltV2}>
+                <div className={styles.processFigureTabAltV2} style={{backgroundColor:'var(--theme-color)', borderColor:"var(--theme-color)"}}>
                     <p className={styles.processFigureText} style={{fontWeight:"550"}}>
                         Development
                     </p>
