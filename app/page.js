@@ -1,9 +1,11 @@
 'use client';
 import Image from "next/image";
 import React, {useState, useEffect, useRef} from 'react'
+import {motion, AnimatePresence, useAnimation} from 'framer-motion'
 import styles from "../styles/page.module.scss";
 import Logo from '../public/assets/logo.svg'
 import Navbar from "./components/Navbar";
+import Print from "./components/Print";
 import Process from "./components/Process";
 import Bvexterior from "../public/assets/bvexterior.png"
 import Mansion from "../public/assets/mansion.png"
@@ -13,6 +15,7 @@ import Peakingduck from "../public/assets/peakingduck.png"
 import Truka from "../public/assets/truka.png"
 import Tradesmark from "../public/assets/tradesmark.png"
 import Blackprint from "../public/assets/blackprint.png"
+
 
 const ServiceItem = ({title, subtext, image}) => {
   return (
@@ -41,6 +44,10 @@ export default function Home() {
     height: undefined,
   });
   const [animation, setAnimation] = useState(false);
+  const [process, setProcess] = useState("design");
+  function handleProcess(e) {
+    setProcess(e)
+  }
   useEffect(() => {
     setAnimation(true);
   }, []);
@@ -76,7 +83,17 @@ export default function Home() {
       <div className={styles.contentContainer}>
         <div className={styles.heroContentWrapper}>
           <div className={styles.heroCanvasContainer}>
-            <div className={styles.heroPrintContainer}/>
+            <div className={styles.heroPrintContainer}
+            initial={{width:"100%", opacity:1}}
+            animate={{width:"100%", opacity:1}}
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 50,
+              delay:.35
+            }}>
+              {/*<div className={styles.heroPrintContainer} style={{opacity:.25}}/>*/}
+            </div>
             <div className={styles.heroTextContainer}>
               <p className={styles.heroHeaderSubtext} style={{marginBottom:".925rem"}}>
                 Building designs that inspire:
@@ -84,6 +101,21 @@ export default function Home() {
               <h1 className={styles.heroHeaderText}>
                 If a blueprint is the&nbsp; foundation, the 
                 <span className={styles.heroHighlight}>
+                  <motion.span 
+                  initial={{width:0,                    
+                    paddingLeft:0,
+                    paddingRight:0}}
+                  animate={{
+                    width:"100%",
+                    paddingLeft:10,
+                    paddingRight:10
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 35,
+                  }}
+                  className={styles.highlight}/>
                   <p className={[styles.heroHeaderText, styles.heroHeaderTextAlt].join(' ')}>
                     Blackprint
                   </p>
@@ -215,7 +247,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.processTextContainer}>
-              <span className={styles.processTextContent}>
+              <span className={styles.processTextContent} onClick={()=>handleProcess("consultation")}>
                 <p className={[styles.processHeaderText, styles.processTextGreen].join(' ')}>
                   Consultation
                 </p>
@@ -223,14 +255,14 @@ export default function Home() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada facilisis arcu, non pharetra quam aliquet vel. Donec et urna velit.
                 </p>
               </span>
-              <span className={styles.processTextContent}>
+              <span className={styles.processTextContent} onClick={()=>handleProcess("design")}>
                 <p className={[styles.processHeaderText, styles.processTextPink].join(' ')}>
                   Design {'&'} Revision
                 </p>
                 <p className={styles.processSubtext}>
                   Nam quam massa, consectetur sit amet elit ut, consectetur tristique nulla. Nunc fermentum lacinia tellus, nec dapibus est sollicitudin in.                </p>
               </span>
-              <span className={styles.processTextContent}>
+              <span className={styles.processTextContent} onClick={()=>handleProcess("development")}>
                 <p className={[styles.processHeaderText, styles.processTextBlue].join(' ')}>
                   Development {'&'} Deployment
                 </p>
@@ -239,7 +271,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-         <Process/>
+         <Process state={process}/>
         </div>
       </section>
       <section className={styles.servicesSection}>
@@ -267,6 +299,277 @@ export default function Home() {
             <ServiceItem title={'Targeted Ads'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'money'}/>
             <ServiceItem title={'And More!'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'stars'}/>
           </div>
+        </div>
+      </section>
+      <section className={styles.pricingSection}>
+        <div className={[styles.sectionHeaderContainer, styles.pricingHeaderWrapper].join(' ')}>
+          <p className={styles.sectionHeaderText}>
+            Blackprint Pricing
+          </p>
+          <p className={styles.subheaderText}>
+            Start your Blackprint subscription today to kickstart your business.
+          </p>
+          <span className={styles.appointmentButton}>
+            <p className={styles.appointmentButtonText}>
+                Book an appointment
+            </p>
+            {
+            <svg width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.7466 5.44194C16.9907 5.19786 16.9907 4.80214 16.7466 4.55806L12.7692 0.580583C12.5251 0.336505 12.1293 0.336505 11.8853 0.580583C11.6412 0.82466 11.6412 1.22039 11.8853 1.46447L15.4208 5L11.8853 8.53553C11.6412 8.77961 11.6412 9.17534 11.8853 9.41942C12.1293 9.6635 12.5251 9.6635 12.7692 9.41942L16.7466 5.44194ZM0.5 5.625H16.3047V4.375H0.5V5.625Z" fill="url(#paint0_linear_731_7335)"/>
+              <defs>
+              <linearGradient id="paint0_linear_731_7335" x1="0.5" y1="5.5" x2="16.3047" y2="5.5" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#43C27B"/>
+              <stop offset="1" stop-color="#44C0C0"/>
+              </linearGradient>
+              </defs>
+            </svg>
+            }
+          </span>
+        </div>
+        <div className={styles.pricingContentContainer}>
+            <div className={styles.pricingPackageOuter}>
+              <div className={styles.pricingPackageInner}>
+                
+                <div className={styles.packageContents}>
+                  <div className={styles.packageHeaderContainer}>
+                    <p className={styles.pricingTitleText}>
+                      Standard
+                    </p>
+                    <p className={styles.pricingSubtitleText}>
+                      For individuals and teams that reach 
+                      a smaller target audience.
+                    </p>
+                  </div>
+              
+                  <div className={styles.packageFigureContainer}>
+                    <p className={styles.pricingFigureText}>
+                      $600
+                    </p>
+                    <p className={styles.pricingMonthText}>
+                      &nbsp;/mo
+                    </p>
+                  </div>
+                  <div className={styles.packageChecklist}>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        One request at a time
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Targeted niche research
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Website maintenance
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Cancel anytime
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Average 48 hour delivery
+                      </p>
+                    </span>
+                  </div>
+                  <span className={styles.packageButton}>
+                    <p className={styles.pricingButtonText}>
+                      Subscribe Now
+                    </p>
+                  </span>  
+                </div>              
+              </div>
+            </div>
+            <div className={styles.premiumPackageOuter}>
+              <div className={styles.premiumPackageInner}>
+                <div className={styles.packageContents}>
+                  <div className={styles.packageHeaderContainer}>
+                    <p className={styles.pricingTitleText}>
+                      Professional
+                    </p>
+                    <p className={styles.pricingSubtitleText}>
+                      For individuals and businesses that are
+                      servicing a larger target audience.
+                    </p>
+                  </div>
+              
+                  <div className={styles.packageFigureContainer}>
+                    <p className={styles.pricingFigureText}>
+                      $1,000
+                    </p>
+                    <p className={styles.pricingMonthText}>
+                      &nbsp;/mo
+                    </p>
+                  </div>
+                  <div className={styles.packageChecklist}>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Two request at a time
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Targeted niche research
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Website maintenance
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Cancel anytime
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Average 48 hour delivery
+                      </p>
+                    </span>
+                  </div>
+                  <span className={styles.packagePremiumButton}>
+                    <p className={styles.pricingButtonText} style={{fontWeight:"570"}}>
+                      Subscribe Now
+                    </p>
+                  </span>  
+                </div>            
+              </div>
+            </div>
+            <div className={styles.pricingPackageOuter}>
+              <div className={styles.pricingPackageInner}>
+                <div className={styles.packageContents}>
+                  <div className={styles.packageHeaderContainer}>
+                    <p className={styles.pricingTitleText}>
+                      Brand Start-Up
+                    </p>
+                    <p className={styles.pricingSubtitleText}>
+                      For individuals looking to build their
+                      brand quickly and efficiently. 
+                    </p>
+                  </div>
+              
+                  <div className={styles.packageFigureContainer}>
+                    <p className={styles.pricingFigureText}>
+                      Contact
+                    </p>
+                    <p className={styles.pricingMonthText}>
+                    </p>
+                  </div>
+                  <div className={styles.packageChecklist}>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        One time delivery
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Targeted niche research
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Guaranteed full brand developed
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        Average 1-2 week delivery
+                      </p>
+                    </span>
+                    <span className={styles.packageChecklistItem}>
+                      {
+                        <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                      
+                      }
+                      <p className={styles.pricingFeatureText}>
+                        1 Site + Branding Design Kit
+                      </p>
+                    </span>
+                  </div>
+                  <span className={styles.packageButton}>
+                    <p className={styles.pricingButtonText}>
+                      Learn More
+                    </p>
+                  </span>  
+                </div>       
+              </div>
+            </div>
         </div>
       </section>
     </main>
