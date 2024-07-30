@@ -692,6 +692,34 @@ export default function Home() {
 
           </div>
       </section>
+      <section className={styles.footerSection}>
+          <div className={styles.footerContentContainer}>
+            <div className={styles.footerTextContainer}>
+              <p className={styles.sectionHeaderText}>
+              See if Blackprint is for you today.
+              </p>
+              <p className={styles.faqsSubheader}>
+              It all starts with design. Book a consultation call with us today,<br/>
+              and we’ll get your business branded the way you want.
+              </p>
+            </div>
+            <div className={styles.footerButtonContainer}>
+              <span className={styles.footerStartButton}>
+                <p className={styles.footerButtonText}>
+                  Get Started
+                </p>
+              </span>
+              <span className={styles.footerLearnButton}>
+                <p className={styles.footerButtonText}>
+                  Learn More
+                </p>
+              </span>
+            </div>
+          </div>
+          <div className={styles.footerNavigationContainer}>
+
+          </div>
+      </section>
     </main>
   );
 }

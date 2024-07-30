@@ -304,7 +304,7 @@
   font-size: var(--text-button-large);
   letter-spacing: var(--subtext-spacing);
   line-height: auto;
-  font-weight: var(--text-weight-bold);
+  font-weight: 550;
   //color: var(--text-color);
   text-align: center;
   margin-left: auto;
@@ -600,6 +600,7 @@
  // gap:2.125rem;
   height: fit-content;
   margin-top: 5rem;
+  overflow-x: hidden;
 }
 .catalogContent {
   display: flex;
@@ -1007,7 +1008,6 @@
   background-position: center -8%;
   background-repeat: no-repeat;
   background-size: auto;
-  padding-bottom: 2rem;
 }
 .pricingHeaderWrapper {
  // background-color: red;
@@ -1290,4 +1290,55 @@
   padding-bottom: 2rem;
   padding-top: 2rem;
   //padding-top: 33px;
+}
+
+// footer styles
+.footerSection {
+  width: 100%;
+  height: fit-content;
+  margin-top: 11.6875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footerContentContainer {
+  padding-bottom: 3rem;
+}
+.footerTextContainer {
+  gap:10px;
+  display: flex;
+  flex-direction: column;
+}
+.footerButtonContainer {
+  margin-top: 1.625rem;
+  display: flex;
+  width: fit-content;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  gap:1.125rem;
+}
+.footerStartButton {
+  width: 9.145rem;
+  height: 2.69625rem;
+  display: flex;
+  align-items: center;
+  border-radius: 52.38px;
+  justify-content: center;
+
+  color:#fff;
+  background-color: #389B5A;
+}
+.footerLearnButton {
+  width: 8.788125rem;
+  height: 2.69625rem;
+  display: flex;
+  align-items: center;
+  border-radius: 52.38px;
+  justify-content: center;
+  color:#000;
+  background-color: #fff;
+}
+.footerNavigationContainer {
+
 }
