@@ -176,6 +176,7 @@ export default function Home() {
                     type: "spring",
                     stiffness: 200,
                     damping: 35,
+                    delay:.1
                   }}
                   className={styles.highlight}/>
                   <p className={[styles.heroHeaderText, styles.heroHeaderTextAlt].join(' ')}>
@@ -200,7 +201,7 @@ export default function Home() {
           </div>
         </div>
         
-      </div>
+
       <section className={styles.carouselSection}>
         <p className={styles.subheaderText}>
           Trusted by our partners {'&'} clients
@@ -745,6 +746,7 @@ export default function Home() {
             </span>
           </div>
       </section>
+      </div>
     </main>
   );
 }
