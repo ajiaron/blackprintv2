@@ -38,6 +38,68 @@ const ServiceItem = ({title, subtext, image}) => {
     </div>
   )
 }
+const TestimonialItem = ({name, title, subtext, image, side}) => {
+  return (
+    <div className={`${styles.testimonialItem} ${styles[side]}`}>
+      <div className={styles.testimonialHeaderContainer}>
+        <span className={styles.testimonialImage}>
+          {/* image here */}
+        </span>
+        <div className={styles.testimonialTitleContainer}>
+          <p className={styles.testimonialHeader}>
+            {name}
+          </p>
+          <p className={styles.testimonialSubheader}>
+            {title}
+          </p>
+        </div>
+      </div>
+      <div className={styles.testimonialSubtextContainer}>
+        <p className={styles.testimonialSubtext}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+      </div>
+    </div>
+  )
+}
+const FaqsItem = ({title, subtext}) => {
+  const [isActive, setIsActive] = useState(false)
+  return (
+    <span className={styles.faqsItem} onClick={()=>setIsActive(!isActive)}>
+      <span className={styles.faqsContent}>
+        <p className={styles.faqsHeader}>
+          {title}
+        </p>
+        <span className={styles.faqsDropdown}>
+          {
+            <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.05078 1.58398L8.97863 8.87565L16.9065 1.58398" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          }
+        </span>
+      </span>
+      {
+        <motion.div 
+            initial={{height:0}}
+            transition= {{
+                type: "spring",
+                stiffness:220,
+                damping:30,
+                duration:.05
+            }}
+            animate={{height:(isActive)?"auto":0}}
+            exit={{height:0}}>
+            <div style={{paddingBottom:"1.5rem"}}>
+                <p className={styles.faqsSubtext} style={{textAlign:"left"}}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+            
+        </motion.div>
+        }
+    </span>
+  )
+}
 export default function Home() {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
@@ -571,6 +633,64 @@ export default function Home() {
               </div>
             </div>
         </div>
+      </section>
+      <section className={styles.testimonialSection}>
+        <div className={styles.sectionHeaderContainer}>
+          <p className={styles.sectionHeaderText}>
+            Hear it from others.
+          </p>
+          <p className={styles.subheaderText}>
+            Don&apos;t take our word for it. See what our clients have to say about us.
+          </p>
+        </div>
+        <div className={styles.testimonialContentContainer}>
+          {
+            <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
+          }
+          <div className={styles.testimonialColumn}>
+            <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
+            <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
+          </div>
+          {
+            <div className={styles.testimonialEdge}/>
+          }
+          <div className={styles.testimonialColumn}>
+            <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemCenter"}/>
+            <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
+          </div>
+          {
+            <div className={styles.testimonialEdge}/>
+          }
+          <div className={styles.testimonialColumn}>
+            <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
+            <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemRightEdge"}/>
+          </div>
+          {
+            <div className={[styles.testimonialEdge, styles.rightEdge].join(' ')}/>
+          }
+        </div>
+      </section>
+      <section className={styles.faqsSection}>
+        <div className={styles.sectionHeaderContainer}>
+          <p className={styles.sectionHeaderText}>
+            Frequently Asked Questions
+          </p>
+          <p className={styles.faqsSubheader}>
+            These are the most commonly asked questions about Blackprint.<br/>
+            Can’t find what you’re looking for? <span style={{textDecoration:"var(--subheader-color) dotted underline"}}>Book a call.</span>       
+          </p>
+        </div>
+          <div className={styles.faqsContentContainer}>
+            <FaqsItem title={"Why choose Blackprint over other design agencies?"} subtext={""}/>
+            <FaqsItem title={"Why can’t I just hire a full-time designer?"} subtext={""}/>
+            <FaqsItem title={"Who are the designers?"} subtext={""}/>
+            <FaqsItem title={"Does Blackprint offer any refunds?"} subtext={""}/>
+            <FaqsItem title={"What if I don’t like the design?"} subtext={""}/>
+            <FaqsItem title={"Are there any financing options for the design work?"} subtext={""}/>
+            <FaqsItem title={"What programs would Blackprint use for my product or service?"} subtext={""}/>
+            <FaqsItem title={"How does the pause feature work?"} subtext={""}/>
+
+          </div>
       </section>
     </main>
   );
