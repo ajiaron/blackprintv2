@@ -236,7 +236,9 @@ export default function Home() {
               <Image src={Bvexterior} objectFit="cover" alt="bvexterior" className={styles.catalogImage}/>
               <Image src={Mansion} objectFit="cover" alt="truka mansion" className={styles.catalogImage}/>
             </div>
-            <Image src={Dwiw} objectFit="cover" alt="dwiw" className={styles.catalogImageLarge}/>
+            <div className={styles.catalogColumn} >
+              <Image src={Dwiw} objectFit="cover" alt="dwiw" className={styles.catalogImageLarge}/>
+            </div>
             <div className={styles.catalogColumn}>
               <Image src={Poker} objectFit="cover" alt="bvexterior" className={styles.catalogImage}/>
               <div className={styles.catalogRow}>
@@ -264,29 +266,29 @@ export default function Home() {
           <div className={styles.processContentLeft}>
             <div className={styles.processContentLineContainer}>
               <div className={styles.processGreenContainer}>
-                <div className={styles.processGreen}/>
+                <div className={styles.processBlue}/>
                 {
                   <svg width="2" height="148" viewBox="0 0 2 148" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1V147" stroke="url(#paint0_linear_731_7434)" stroke-linecap="round" stroke-dasharray="5 5"/>
-                  <path d="M1 1V147" stroke="#3CB371" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <path d="M1 1V147" stroke="#3399FF" stroke-linecap="round" stroke-dasharray="5 5"/>
                   <defs>
                   <linearGradient id="paint0_linear_731_7434" x1="1.5" y1="17.348" x2="1.5" y2="116.858" gradientUnits="userSpaceOnUse">
-                  <stop offset="0.75" stop-color="#3CB371"/>
-                  <stop offset="1" stop-color="#3CB371" stop-opacity="0"/>
+                  <stop offset="0.75" stop-color="#3399FF"/>
+                  <stop offset="1" stop-color="#3399FF" stop-opacity="0"/>
                   </linearGradient>
                   </defs>
                   </svg>
                 }
               </div>
               <div className={styles.processPinkContainer}>
-                <div className={styles.processPink}/>
+                <div className={styles.processGreen}/>
                 {
                   <svg width="2" height="148" viewBox="0 0 2 148" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1V147" stroke="url(#paint0_linear_731_7435)" stroke-linecap="round" stroke-dasharray="5 5"/>
-                  <path d="M1 1V147" stroke="#B970C5" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <path d="M1 1V147" stroke="#3CB371" stroke-linecap="round" stroke-dasharray="5 5"/>
                   <defs>
                   <linearGradient id="paint0_linear_731_7435" x1="1.5" y1="18.3742" x2="1.5" y2="118.758" gradientUnits="userSpaceOnUse">
-                  <stop offset="0.75" stop-color="#B970C5"/>
+                  <stop offset="0.75" stop-color="#3CB371"/>
                   <stop offset="1" stop-color="#59365F" stop-opacity="0"/>
                   </linearGradient>
                   </defs>
@@ -294,14 +296,14 @@ export default function Home() {
                 }
               </div>
               <div className={styles.processBlueContainer}>
-                <div className={styles.processBlue}/>
+                <div className={styles.processPink}/>
                 {
                   <svg width="2" height="104" viewBox="0 0 2 104" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1V103" stroke="url(#paint0_linear_731_7436)" stroke-linecap="round" stroke-dasharray="5 5"/>
-                  <path d="M1 1V103" stroke="#3399FF" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <path d="M1 1V103" stroke="#B970C5" stroke-linecap="round" stroke-dasharray="5 5"/>
                   <defs>
                   <linearGradient id="paint0_linear_731_7436" x1="1.5" y1="24.697" x2="1.5" y2="127.727" gradientUnits="userSpaceOnUse">
-                  <stop offset="0.75" stop-color="#3399FF"/>
+                  <stop offset="0.75" stop-color="#B970C5"/>
                   <stop offset="1" stop-color="#1F5C99" stop-opacity="0"/>
                   </linearGradient>
                   </defs>

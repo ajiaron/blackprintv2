@@ -27,7 +27,7 @@
 }
 .contentContainer {
   width: 100%;
-  background: linear-gradient(180deg, #121316, #121316 54%, #0d0d0d 62%,#121316 66%, #121316 80%, #0d0d0d 86%, #121316 94%);
+  background: linear-gradient(180deg, #121316, #121316 54%, #0d0d0d 62%,#121316 67%, #121316 80%, #0d0d0d 86%, #121316 94%);
   overflow-x: hidden;
   height: fit-content;
   display: flex;
@@ -596,7 +596,7 @@
 }
 .catalogContentContainer {
   width: 101%;
-  overflow-x: hidden;
+  overflow-y: hidden;
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -612,6 +612,7 @@
   height: fit-content;
   align-self: center;
   overflow-x: hidden;
+  overflow-y: visible;
   //background-color: red;
 }
 .catalogColumn {
@@ -619,6 +620,7 @@
   width: 21.14rem;
   gap:2rem;
   display: flex;
+  
   flex-direction: column;
 }
 .catalogRow {
@@ -632,6 +634,7 @@
 .catalogCover {
   position: absolute;
   min-width: 101vw;
+  z-index: 1;
   height: calc(44.28rem);
   //background-color: blue;
   background: linear-gradient(180deg, #12131600 65%, #121316ff 90%);
@@ -682,7 +685,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 1.125rem;
+  padding-top: 1.175rem;
   padding-bottom: .5rem;
 
  // background-color: red;
@@ -702,7 +705,7 @@
   height: 10px;
   background-color: var(--theme-color);
   border-radius: 10px;
-  box-shadow: 0px 0px 10px .25px var(--theme-color);
+  box-shadow: 0px 0px 8px .25px var(--theme-color);
  // filter: drop-shadow(0px 0px 16px var(--theme-color));
 }
 .processPinkContainer {
@@ -720,7 +723,7 @@
   height: 10px;
   background-color: #B970C5;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px .25px #B970C5;
+  box-shadow: 0px 0px 8px .25px #B970C5;
   //filter: drop-shadow(0px 0px 8px #B970C5);
 }
 .processBlueContainer {
@@ -737,7 +740,7 @@
   height: 10px;
   border-radius: 10px;
   background-color: #3399FF;
-  box-shadow: 0px 0px 10px .25px #3399ff;
+  box-shadow: 0px 0px 8px .25px #3399ff;
   //filter: drop-shadow(0px 0px 8px #3399FF);
 }
 .processTextContainer {
@@ -759,13 +762,13 @@
 }
 
 .processTextContent:hover .processTextGreen {
-  color: #43C27B;
+  color: #3399FF;
 }
 .processTextContent:hover .processTextPink {
-  color: #c375cf;
+  color: #43C27B;
 }
 .processTextContent:hover .processTextBlue {
-  color: #3399FF;
+  color: #c375cf;
 }
 .processTextWrapper {
   display: flex;
@@ -794,6 +797,7 @@
   display: flex;
   width: 100%;
   height: fit-content;
+
 }
 .processFigureTab {
   border: 1px solid #454545;
@@ -808,6 +812,7 @@
   width: fit-content;
   border-radius: 10px;
   margin-right: auto;
+  box-shadow: 0px 4px 2px 0px rgba(10,10,10, .25);
 }
 .processFigureTabAlt {
   color:#000;
@@ -823,6 +828,7 @@
   width: fit-content;
   margin-left: auto;
   gap:.25rem;
+  box-shadow: 0px 4px 2px 0px rgba(10,10,10, .25);
   transition: all .15s linear;
 }
 .processLineTop {
@@ -857,6 +863,7 @@
   margin-left: auto;
   transition: all .15s linear;
   gap:.25rem;
+  box-shadow: 0px 4px 2px 0px rgba(10,10,10, .25);
 }
 .path {
   stroke-dasharray: 8 8;
@@ -1323,7 +1330,7 @@
   width: fit-content;
   height: fit-content;
   //background-color: red;
-  padding-bottom: .825rem;
+  padding-bottom: .75rem;
 }
 .footerTextContainer {
   gap:10px;
