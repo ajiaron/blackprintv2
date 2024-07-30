@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, {useState, useEffect, useRef} from 'react'
 import {motion, AnimatePresence, useAnimation} from 'framer-motion'
 import styles from "../styles/page.module.scss";
-import Logo from '../public/assets/logo.svg'
+import LogoAlt from '../public/assets/logoalt.svg'
 import Navbar from "./components/Navbar";
 import Print from "./components/Print";
 import Process from "./components/Process";
@@ -694,30 +694,55 @@ export default function Home() {
       </section>
       <section className={styles.footerSection}>
           <div className={styles.footerContentContainer}>
-            <div className={styles.footerTextContainer}>
-              <p className={styles.sectionHeaderText}>
-              See if Blackprint is for you today.
-              </p>
-              <p className={styles.faqsSubheader}>
-              It all starts with design. Book a consultation call with us today,<br/>
-              and we’ll get your business branded the way you want.
-              </p>
-            </div>
-            <div className={styles.footerButtonContainer}>
-              <span className={styles.footerStartButton}>
-                <p className={styles.footerButtonText}>
-                  Get Started
+            <div className={styles.footerContent}>
+              <div className={styles.footerTextContainer}>
+                <p className={styles.sectionHeaderText}>
+                See if Blackprint is for you today.
                 </p>
-              </span>
-              <span className={styles.footerLearnButton}>
-                <p className={styles.footerButtonText}>
-                  Learn More
+                <p className={styles.faqsSubheader}>
+                It all starts with design. Book a consultation call with us today,<br/>
+                and we’ll get your business branded the way you want.
                 </p>
-              </span>
+              </div>
+              <div className={styles.footerButtonContainer}>
+                <span className={styles.footerStartButton}>
+                  <p className={styles.footerButtonText}>
+                    Get Started
+                  </p>
+                </span>
+                <span className={styles.footerLearnButton}>
+                  <p className={styles.footerButtonText}>
+                    Learn More
+                  </p>
+                </span>
+              </div>
             </div>
           </div>
           <div className={styles.footerNavigationContainer}>
-
+            <div className={styles.logoContainer}>
+              <LogoAlt className={styles.logoImage}/>
+              <p className={styles.footerLogoText}>
+                blackprint
+              </p>
+            </div>
+            <span className={styles.footerNavText}>
+              Recent Work
+            </span>
+            <span className={styles.footerNavText}>
+              Pricing
+            </span>
+            <span className={styles.footerNavText}>
+              Our Process
+            </span>
+            <span className={styles.footerNavText}>
+              FAQs
+            </span>
+            <span className={styles.footerNavText}>
+              Terms of Service
+            </span>
+            <span className={styles.footerNavText}>
+              Privacy Policy
+            </span>
           </div>
       </section>
     </main>
