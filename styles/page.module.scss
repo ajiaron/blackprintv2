@@ -59,7 +59,7 @@
   font-family: var(--default-font);
   font-size: var(--text-hero-header);
   letter-spacing: -.2px;
-  line-height: auto;
+  //line-height: 140%;
   font-weight: 590;
   user-select: none;
   color:var(--text-color);
@@ -604,13 +604,17 @@
   height: fit-content;
   margin-top: 5rem;
   overflow-x: hidden;
+  //margin-left: auto;
+  //margin-right: auto;
 }
 .catalogContent {
   display: flex;
-  width: 100%;
+  width: fit-content;
   gap:2.125rem;
   height: fit-content;
   align-self: center;
+  margin-right: auto;
+  margin-left: auto;
   overflow-x: hidden;
   overflow-y: visible;
   //background-color: red;
@@ -904,6 +908,7 @@
   display: flex;
   flex-direction: column;
   gap:1.5rem;
+  align-items: center;
 }
 .servicesRow {
   width: 100%;
@@ -1063,6 +1068,7 @@
   margin-top: 3.75rem;
   gap:31px;
   align-self: center;
+  justify-content: center;
   align-items: flex-end;
 }
 .pricingPackageOuter {
@@ -1177,11 +1183,12 @@
   margin-top: 13.25rem;
 }
 .testimonialContentContainer {
-  min-width: calc(75.27%);
+  //min-width: calc(75.27%);
   width: fit-content;
   align-self: center;
   margin-left: auto;
   margin-right: auto;
+
   //background-color: red;
   height: fit-content;
   display: flex;
@@ -1377,4 +1384,210 @@
   margin-top: 3.75rem;
   padding-right: 1rem;
   padding-bottom: 1.625rem;
+}
+
+@media (max-width: 390px) {
+  .navbarContainer {
+    //background-color: red;
+  }
+  .navbarContentContainer {
+    //background-color: blue;
+    width: 88%;
+    display: flex;
+    padding-right: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    height: fit-content;
+    justify-content: space-between;
+  }
+
+  .heroPrintContainer {
+    display: none;
+  }
+  .heroCanvasContainer {
+    width: 100%;
+    height:fit-content;
+    background-image: none;
+    //background-position: center;
+    background-repeat: no-repeat;
+   // background-size: auto;
+    //mix-blend-mode: overlay;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .heroContentWrapper {
+    width: 100%;
+    height:80vh;
+    border-bottom-left-radius: 0;
+    margin-top: 4rem;
+    border-bottom-right-radius: 0;
+    display: flex;
+    //background-color: red;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-bottom: 2.625rem;
+    padding-top: 0rem;
+    padding-bottom: 4rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0, .25);
+    background-image: var(--hero-gradient);
+  }
+  .heroHighlight {
+    // background-color: rgba(51,154,86,0.7);
+     transform: rotate(1.5deg) translateY(1.5px);
+     display: inline-flex;
+     justify-content: center;
+     align-items: center;
+    height: fit-content;
+     border-radius: 5px;
+     width: fit-content;
+    // background-color: red;
+     padding-left: .625rem;
+     padding-right: .625rem;
+     margin-left: .5rem;
+     margin-right: .5rem;
+     position: relative;
+   }
+   .highlight {
+    background-color: rgba(51,154,86,.7);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 92.5%;
+    border-radius: 5px;
+    width: 100%;
+    padding-left: .625rem;
+    padding-right: .625rem;
+    position: absolute;
+  
+    left: 0;
+  }
+
+.heroTextContainer {
+  width: 88%;
+  height: fit-content;
+  display: flex;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+  //background-color: red;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  //transform: scale(1.);
+}
+.heroHeaderText {
+  font-family: var(--default-font);
+  font-size: var(--text-hero-header);
+  letter-spacing: -.2px;
+  line-height: auto;
+  font-weight: 590;
+  user-select: none;
+  color:var(--text-color);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+  display: inline;
+ // margin-top: 1rem;
+}
+  
+}
+@media (min-width: 391px) and (max-width: 480px) {
+
+}
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+}
+@media (min-width: 1291) and (max-width: 1439px) {
+
+}
+@media (min-width:1480px) {
+  // hero section
+.heroContentWrapper {
+  width: 85.76%;
+  height:43rem;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  display: flex;
+  //background-color: red;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-bottom: 2.625rem;
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0, .25);
+  background-image: var(--hero-gradient);
+}
+.heroCanvasContainer {
+  width: 100%;
+  height:100%;
+  background-image: url('/assets/grid.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //mix-blend-mode: overlay;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.heroPrintContainer {
+  width: 100%;
+  height:43rem;
+  background-image: url('/assets/prints.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mix-blend-mode: overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+ //animation-name: draw-print;
+  //animation-duration: 1s;
+  //animation-timing-function: ease;
+  overflow: hidden;
+ // animation-fill-mode: forwards;
+}
+  .catalogContentContainer {
+    width: 101%;
+    overflow-y: hidden;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+   // gap:2.125rem;
+    height: fit-content;
+    margin-top: 5rem;
+    overflow-x: hidden;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .servicesRow {
+    width: fit-content;
+    gap:1.5rem;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+  }
+  .processContentContainer {
+    display: flex;
+    margin-top: 7rem;
+    width: 70%;
+    //background-color: red;
+    align-self: center;
+    height: fit-content;
+  }
 }

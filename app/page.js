@@ -140,7 +140,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div style={{position:"relative"}}>
-      <Navbar/>
+      <Navbar width={windowSize.width}/>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.heroContentWrapper}>
