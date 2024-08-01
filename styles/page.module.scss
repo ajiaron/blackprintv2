@@ -1402,7 +1402,7 @@
     display: flex;
     height: fit-content;
     flex-direction: column;
-    width: 90%;
+    width: 92.5%;
     align-self: center;
     gap:1.5rem;
     align-items: center;
@@ -1435,7 +1435,7 @@
     background-image: none;
     background-image: url('/assets/grid2.svg');
     background-size: auto;
-    background-position: 50% 95%;
+    background-position: 50% 92.5%;
     //background-color: red;
     background-repeat: no-repeat;
    // background-size: auto;
@@ -1449,9 +1449,9 @@
   .heroContentWrapper {
     width: 100%;
     height:80vh;
-    border-bottom-left-radius: 60px;
+    border-bottom-left-radius: 48px;
     margin-top: 4rem;
-    border-bottom-right-radius: 60px;
+    border-bottom-right-radius: 48px;
     display: flex;
     //background-color: red;
     align-items: center;
@@ -2066,7 +2066,7 @@
   padding-top: 2.0625rem;
   //height: 27rem;
   background-color: #0D0E11;
-  padding-left: 2.43rem;
+  padding-left: 2.25rem;
 }
 .premiumPackageOuter {
   border-radius: 1rem;
@@ -2085,7 +2085,7 @@
   padding-bottom: .25rem;
 }
 .premiumPackageInner {
-  padding-left: 2.43rem;
+  padding-left: 2.25rem;
   border-radius: 1rem;
   width: 20.75rem;
   height: 27rem;
@@ -2132,7 +2132,7 @@
   align-items: center;
   justify-content: center;
   color:#fff;
-  margin-top: 2.25rem;
+  margin-top: 1.875rem;
 }
 .packagePremiumButton {
   border-radius: 42.25px;
@@ -2145,6 +2145,8 @@
   justify-content: center;
   color:#000;
   font-weight: 570;
+  margin-top: 1.875rem;
+
   //margin-top: 2rem;
 } 
 .pricingTitleText {
@@ -2178,7 +2180,7 @@
 }
 .testimonialContentContainer {
   //min-width: calc(75.27%);
-  width:22.5rem;
+  width:fit-content;
   align-self: center;
   margin-left: auto;
   margin-right: auto;
