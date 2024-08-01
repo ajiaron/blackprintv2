@@ -5,6 +5,8 @@ import {motion, AnimatePresence, useAnimation} from 'framer-motion'
 import styles from "../styles/page.module.scss";
 import LogoAlt from '../public/assets/logoalt.svg'
 import Navbar from "./components/Navbar";
+import Carousel from './components/Carousel'
+import Catalog from "./components/Catalog";
 import Print from "./components/Print";
 import Process from "./components/Process";
 import Bvexterior from "../public/assets/bvexterior.png"
@@ -15,6 +17,7 @@ import Peakingduck from "../public/assets/peakingduck.png"
 import Truka from "../public/assets/truka.png"
 import Tradesmark from "../public/assets/tradesmark.png"
 import Blackprint from "../public/assets/blackprint.png"
+import { FaBars } from "react-icons/fa";
 
 
 const ServiceItem = ({title, subtext, image}) => {
@@ -160,6 +163,32 @@ export default function Home() {
               <p className={styles.heroHeaderSubtext} style={{marginBottom:".925rem"}}>
                 Building designs that inspire:
               </p>
+              {(windowSize.width<480)?
+                <h1 className={styles.heroHeaderText}>
+                If a blueprint is the foundation, the 
+                <span className={styles.heroHighlight}>
+                  <motion.span 
+                  initial={{width:0,                    
+                    paddingLeft:0,
+                    paddingRight:0}}
+                  animate={{
+                    width:"100%",
+                    paddingLeft:10,
+                    paddingRight:10
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 35,
+                    delay:.1
+                  }}
+                  className={styles.highlight}/>
+                  <p className={[styles.heroHeaderText, styles.heroHeaderTextAlt].join(' ')}>
+                    Blackprint
+                  </p>
+                </span> 
+                is everything else.&nbsp;
+              </h1>:
               <h1 className={styles.heroHeaderText}>
                 If a blueprint is the&nbsp; foundation, the 
                 <span className={styles.heroHighlight}>
@@ -185,6 +214,7 @@ export default function Home() {
                 </span> 
                 is everything else.&nbsp;
               </h1>
+              }
               <div className={styles.heroButtonContainer}>
                 <span className={styles.heroStartButton}>
                   <p className={styles.buttonTextSmall}>
@@ -206,15 +236,7 @@ export default function Home() {
         <p className={styles.subheaderText}>
           Trusted by our partners {'&'} clients
         </p>
-        <div className={styles.carouselContentContainer}>
-          <span className={styles.circleocIcon}/>
-          <span className={styles.nebulaIcon}/>
-          <span className={styles.dashbillIcon}/>
-          <span className={styles.ksigIcon}/>
-          <span className={styles.peakingduckIcon}/>
-          <span className={styles.legacyIcon}/>
-          <span className={styles.trukaIcon}/>
-        </div>
+        <Carousel width={windowSize.width}/>
       </section>
       <section className={styles.catalogSection}>
         <div className={styles.sectionHeaderContainer}>
@@ -226,32 +248,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className={styles.catalogContentContainer}>
-          <div style={{position:"relative"}}>
-            <div className={styles.catalogCover}/>
-          </div>
-          {
-          <div className={styles.catalogContent}>
-            <div className={styles.catalogColumn}>
-              <Image src={Bvexterior} objectFit="cover" alt="bvexterior" className={styles.catalogImage}/>
-              <Image src={Mansion} objectFit="cover" alt="truka mansion" className={styles.catalogImage}/>
-            </div>
-            <div className={styles.catalogColumn} >
-              <Image src={Dwiw} objectFit="cover" alt="dwiw" className={styles.catalogImageLarge}/>
-            </div>
-            <div className={styles.catalogColumn}>
-              <Image src={Poker} objectFit="cover" alt="bvexterior" className={styles.catalogImage}/>
-              <div className={styles.catalogRow}>
-                <Image src={Peakingduck} objectFit="cover" alt="peakingduck" className={styles.catalogImageSmall}/>
-                <Image src={Truka} objectFit="cover" alt="truka" className={styles.catalogImageSmall}/>
-              </div>
-            </div>
-            <div className={styles.catalogColumn}>
-              <Image src={Tradesmark} objectFit="cover" alt="tradesmark" className={styles.catalogImage}/>
-              <Image src={Blackprint} objectFit="cover" alt="blackprint" className={styles.catalogImage}/>
-            </div>
-          </div>}
-        </div>
+        <Catalog width={windowSize.width}/>
       </section>
       <section className={styles.processSection}>
         <div className={styles.sectionHeaderContainer}>
@@ -263,6 +260,54 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.processContentContainer}>
+          {(windowSize.width <= 480)?
+          <div className={styles.processContentLeft}>
+            
+            <div className={styles.processTextContainer}>
+              
+              <div className={styles.processTextContainerAlt}>
+                <div className={styles.processGreenContainer}>
+                  <div className={styles.processBlue}/>
+                
+                </div>
+                <span className={styles.processTextContent} onClick={()=>handleProcess("consultation")}>
+                  <p className={[styles.processHeaderText, styles.processTextGreen].join(' ')}>
+                    Consultation
+                  </p>
+                  <p className={styles.processSubtext}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada facilisis arcu, non pharetra quam aliquet vel. Donec et urna velit.
+                  </p>
+                </span>
+              </div>
+              <div className={styles.processTextContainerAlt}>
+                <div className={styles.processGreenContainer}>
+                  <div className={styles.processGreen}/>
+                
+                </div>
+                <span className={styles.processTextContent} onClick={()=>handleProcess("design")}>
+                  <p className={[styles.processHeaderText, styles.processTextPink].join(' ')}>
+                    Design {'&'} Revision
+                  </p>
+                  <p className={styles.processSubtext}>
+                    Nam quam massa, consectetur sit amet elit ut, consectetur tristique nulla. Nunc fermentum lacinia tellus, nec dapibus est sollicitudin in.                </p>
+                </span>
+              </div>
+              <div className={styles.processTextContainerAlt}>
+              <div className={styles.processPinkContainer}>
+                  <div className={styles.processPink}/>
+               
+                </div>
+                <span className={styles.processTextContent} onClick={()=>handleProcess("development")}>
+                  <p className={[styles.processHeaderText, styles.processTextBlue].join(' ')}>
+                    Development {'&'} Deployment
+                  </p>
+                  <p className={styles.processSubtext}>
+                    Vestibulum sagittis mauris non sapien gravida, quis tincidunt diam vulputate. Integer augue ex, finibus nec leo condimentum, eleifend convallis massa.                </p>
+                </span>
+              </div>
+            </div>
+          </div>
+          :   
           <div className={styles.processContentLeft}>
             <div className={styles.processContentLineContainer}>
               <div className={styles.processGreenContainer}>
@@ -300,7 +345,7 @@ export default function Home() {
                 {
                   <svg width="2" height="104" viewBox="0 0 2 104" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 1V103" stroke="url(#paint0_linear_731_7436)" stroke-linecap="round" stroke-dasharray="5 5"/>
-                  <path d="M1 1V103" stroke="#B970C5" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <path d="M1 1V103" stroke="#ç" stroke-linecap="round" stroke-dasharray="5 5"/>
                   <defs>
                   <linearGradient id="paint0_linear_731_7436" x1="1.5" y1="24.697" x2="1.5" y2="127.727" gradientUnits="userSpaceOnUse">
                   <stop offset="0.75" stop-color="#B970C5"/>
@@ -336,8 +381,10 @@ export default function Home() {
               </span>
             </div>
           </div>
+          }
          <Process state={process}/>
         </div>
+          
       </section>
       <section className={styles.servicesSection}>
         <div className={styles.sectionHeaderContainer}>
@@ -647,28 +694,28 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.testimonialContentContainer}>
-          {
+          {(windowSize.width>= 768)&&
             <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
           }
           <div className={styles.testimonialColumn}>
             <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
             <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
           </div>
-          {
+          {(windowSize.width>= 768)&&
             <div className={styles.testimonialEdge}/>
           }
           <div className={styles.testimonialColumn}>
             <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemCenter"}/>
             <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
           </div>
-          {
+          {(windowSize.width>= 768)&&
             <div className={styles.testimonialEdge}/>
           }
           <div className={styles.testimonialColumn}>
             <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
             <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemRightEdge"}/>
           </div>
-          {
+          {(windowSize.width>= 768)&&
             <div className={[styles.testimonialEdge, styles.rightEdge].join(' ')}/>
           }
         </div>
@@ -678,10 +725,16 @@ export default function Home() {
           <p className={styles.sectionHeaderText}>
             Frequently Asked Questions
           </p>
+          {(windowSize.width <= 480)?
+          <p className={styles.faqsSubheader}>
+            These are the most commonly asked questions about Blackprint.<br/>
+          </p>
+          :
           <p className={styles.faqsSubheader}>
             These are the most commonly asked questions about Blackprint.<br/>
             Can’t find what you’re looking for? <span style={{textDecoration:"var(--subheader-color) dotted underline"}}>Book a call.</span>       
           </p>
+          }
         </div>
           <div className={styles.faqsContentContainer}>
             <FaqsItem title={"Why choose Blackprint over other design agencies?"} subtext={""}/>
@@ -702,10 +755,12 @@ export default function Home() {
                 <p className={styles.sectionHeaderText}>
                 See if Blackprint is for you today.
                 </p>
+                {(windowSize.width>480)&&
                 <p className={styles.faqsSubheader}>
                 It all starts with design. Book a consultation call with us today,<br/>
                 and we’ll get your business branded the way you want.
                 </p>
+                }
               </div>
               <div className={styles.footerButtonContainer}>
                 <span className={styles.footerStartButton}>
@@ -728,6 +783,8 @@ export default function Home() {
                 blackprint
               </p>
             </div>
+            {(windowSize.width > 1024)?
+            <>
             <span className={styles.footerNavText}>
               Recent Work
             </span>
@@ -746,6 +803,12 @@ export default function Home() {
             <span className={styles.footerNavText}>
               Privacy Policy
             </span>
+            </>:
+            <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"flex-end", color:'#959595', fontSize:"13.5px"}}>
+              © 2024-2024
+            </span>
+  
+            }
           </div>
       </section>
       </div>
