@@ -31,8 +31,8 @@ export default function Navbar({width}) {
           Contact
         </p>
       </>:
-      <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"center"}}>
-        <FaBars size={20.5}/>
+      <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"center", transform:"translateY(1px)"}}>
+        <FaBars size={20}/>
       </span>
   
       }
