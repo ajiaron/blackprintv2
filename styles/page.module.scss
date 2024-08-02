@@ -2036,6 +2036,20 @@
   background-color: var(--theme-color);
 }
 // pricing
+.pricingSection {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  //background-color: red;
+  overflow-y: visible;
+  padding-top: 8.5rem;
+  //background-color: red;
+  background-image: none;
+  background-position: center -8%;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
 .pricingContentContainer {
   height: fit-content;
   width: fit-content;
