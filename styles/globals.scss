@@ -95,51 +95,9 @@
   --process-figure-radius: 10px; // radius of flow tabs
   --process-container-radius: 20px; // radius of flow container
 }
-@media (max-width: 390px) {
-  
-}
+
 @media (max-width: 390px) {
   :root {
-    --max-width: 1100px;
-    --border-radius: 12px;
-    --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-      "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-      "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-  
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-  
-    --primary-glow: conic-gradient(
-      from 180deg at 50% 50%,
-      #16abff33 0deg,
-      #0885ff33 55deg,
-      #54d6ff33 120deg,
-      #0071ff33 160deg,
-      transparent 360deg
-    );
-    --secondary-glow: radial-gradient(
-      rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0)
-    );
-  
-    --tile-start-rgb: 239, 245, 249;
-    --tile-end-rgb: 228, 232, 233;
-    --tile-border: conic-gradient(
-      #00000080,
-      #00000040,
-      #00000030,
-      #00000020,
-      #00000010,
-      #00000010,
-      #00000080
-    );
-  
-    --callout-rgb: 238, 240, 241;
-    --callout-border-rgb: 172, 175, 176;
-    --card-rgb: 180, 185, 188;
-    --card-border-rgb: 131, 134, 135;
-  
     // color tokens
     --default-font: DM Sans;
     --theme-color: #3CB371;
@@ -156,22 +114,22 @@
     --subtext-color-dark: #858585;  // services subtext
     --container-color: #1C1D20; // services container
     // font-sizes
-    --text-hero-header: clamp(2.8rem, 2vw, 3.5rem); // hero header
+    --text-hero-header: clamp(2.75rem, 2vw, 3.5rem); // hero header
     --text-section-header: clamp(2.175rem, 5vw, 3rem); // section header
     --text-larger: clamp(2.625rem, 4.5vw, 3rem); // pricing figure
     --text-large: clamp(1.25rem, 3vw, 1.625rem); // our process titles
     --text-medium: clamp(1.125rem, 2.75rem, 1.375rem); // pricing titles, faqs titles 
     --text-detail: clamp(16px, 2.5vw, 19px); // "most popular"
-    --text-regular: clamp(16px, 2.5vw, 18px); // section subtitles, service titles, all navigation
+    --text-regular: clamp(17px, 2.5vw, 20px); // section subtitles, service titles, all navigation
     --text-regular-alt: clamp(15.75px, 2.5vw, 17.75px); // our process subtext
-    --text-small: clamp(14px, 2.5vw, 16px); // footer nav, process figure text, services subtext, pricing "/mo"
+    --text-small: clamp(14.5px, 2.5vw, 16px); // footer nav, process figure text, services subtext, pricing "/mo"
     --text-smaller: clamp(15px, 2.5vw, 16.67px); // testimonial title
     --text-smaller-alt: clamp(14.25px, 2.5vw, 15.67px); // testimonial subtitle
     --text-smallest: clamp(13.75px, 2.5vw, 15.4px); // testimonial subtext
     --text-xs: clamp(14px, 2.5vw, 15px); // pricing subtitle
     --text-xxs: clamp(13.5px, 2vw, 14.5px); // pricing details
     --text-button-large: clamp(15px, 2.5vw, 16.43px);
-    --text-button-medium: clamp(12.75px, 2.25vw, 14.5px);
+    --text-button-medium: clamp(13px, 2.25vw, 14.5px);
     --text-button: clamp(12.5px, 2vw, 13.5px);
     --text-button-small: clamp(14px, 2vw, 14px);
     // letter spacing
@@ -197,6 +155,65 @@
     --process-container-radius: 20px; // radius of flow container
   }
   
+}
+@media (min-width: 391px) and (max-width: 480px) {
+  :root {
+    // color tokens
+    --default-font: DM Sans;
+    --theme-color: #3CB371;
+    --theme-color-alt: #339A56;
+    --button-color:#389B5A;
+    --theme-gradient-alt: -webkit-linear-gradient(-296deg, #26282C, #3B4048 25%, #444A58 40%, #2E333E 62%, #26282C);
+    --theme-gradient: -webkit-linear-gradient(306.95deg, #43C27B, #44C0C0);
+    --hero-gradient: -webkit-linear-gradient(270deg, #121316, #1e1e1e);
+    --background-color: #121316;
+    --text-color:#fff;
+    --subheader-color:#bbb; // subheaders, testimonial text
+    --subtext-color: #CBD5E1;
+    --subtext-color-darker: #959595; // pricing subtext, testimonial subtitle, footer nav
+    --subtext-color-dark: #858585;  // services subtext
+    --container-color: #1C1D20; // services container
+    // font-sizes
+    --text-hero-header: clamp(2.875rem, 2vw, 3.5rem); // hero header
+    --text-section-header: clamp(2.25rem, 5vw, 3rem); // section header
+    --text-larger: clamp(2.625rem, 4.5vw, 3rem); // pricing figure
+    --text-large: clamp(1.25rem, 3vw, 1.625rem); // our process titles
+    --text-medium: clamp(1.125rem, 2.75rem, 1.375rem); // pricing titles, faqs titles 
+    --text-detail: clamp(16px, 2.5vw, 19px); // "most popular"
+    --text-regular: clamp(17px, 2.5vw, 20px); // section subtitles, service titles, all navigation
+    --text-regular-alt: clamp(15.75px, 2.5vw, 17.75px); // our process subtext
+    --text-small: clamp(14.5px, 2.5vw, 16px); // footer nav, process figure text, services subtext, pricing "/mo"
+    --text-smaller: clamp(15px, 2.5vw, 16.67px); // testimonial title
+    --text-smaller-alt: clamp(14.25px, 2.5vw, 15.67px); // testimonial subtitle
+    --text-smallest: clamp(13.75px, 2.5vw, 15.4px); // testimonial subtext
+    --text-xs: clamp(14px, 2.5vw, 15px); // pricing subtitle
+    --text-xxs: clamp(13.5px, 2vw, 14.5px); // pricing details
+    --text-button-large: clamp(15px, 2.5vw, 16.43px);
+    --text-button-medium: clamp(13px, 2.25vw, 14.5px);
+    --text-button: clamp(12.5px, 2vw, 13.5px);
+    --text-button-small: clamp(14px, 2vw, 14px);
+    // letter spacing
+    --header-spacing: -.2px; // section headers, hero header, services text
+    --subheader-spacing: -.15px; // pricing figure
+    --subtext-spacing: -.075px; // subheaders, faqs, navigation
+    --smallest-spacing: -.05px; // subheaders, faqs, navigation
+    // line height
+    --subheader-height: 164%;
+    --subtext-height: 31.5px; // our process subtext
+    --subtext-height-small: 18.1px; // testimonial subtext
+    // font weight
+    --text-weight-bold: 600;
+    --text-weight-medium: 400;
+    --text-weight-regular: 275;
+    // border radius
+    --hero-section-radius: 40px;
+    --button-radius-small: 42.25px;
+    --image-radius: 10.57px;
+    --pricing-radius: 12px;
+    --services-radius: 12px; // both inner and outer
+    --process-figure-radius: 10px; // radius of flow tabs
+    --process-container-radius: 20px; // radius of flow container
+  }
 }
 @media (prefers-color-scheme: dark) {
   :root {

@@ -753,12 +753,12 @@ export default function Home() {
             <div className={styles.footerContent}>
               <div className={styles.footerTextContainer}>
                 <p className={styles.sectionHeaderText}>
-                See if Blackprint is for you today.
+                See if Blackprint is{windowSize.width<=413&&<br/>} for{windowSize.width<=480&&windowSize.width>413&&<br/>} you today.
                 </p>
-                {(windowSize.width>480)&&
-                <p className={styles.faqsSubheader}>
-                It all starts with design. Book a consultation call with us today,<br/>
-                and we’ll get your business branded the way you want.
+                {
+                <p className={[styles.faqsSubheader, styles.footerSubheader].join(' ')}>
+                {(windowSize.width <= 480)?"":"It all starts with design."} Book a consultation call with us{(windowSize.width<=728)?",":" today,"}<br/>
+                 and we’ll get your business branded the way you want.
                 </p>
                 }
               </div>
@@ -774,7 +774,40 @@ export default function Home() {
                   </p>
                 </span>
               </div>
+          
             </div>
+            {(windowSize.width <= 480)&&
+               <div className={styles.footerSmallContainer}>
+                <div className={styles.footerSmallRow}>
+                  <span className={styles.footerNavText}>
+                    Recent Work
+                  </span>
+                  <span className={styles.footerNavText}>
+                    Pricing
+                  </span>
+                  <span className={styles.footerNavText}>
+                    Our Process
+                  </span>
+                  <span className={styles.footerNavText}>
+                    FAQs
+                  </span>
+                </div>
+
+                <div className={styles.footerSmallRow}>
+                  <span className={styles.footerNavText}>
+                    Contact Us
+                  </span>
+                  <span className={styles.footerNavText}>
+                    Terms of Service
+                  </span>
+                  <span className={styles.footerNavText}>
+                    Privacy Policy
+                  </span>
+                </div>
+               </div>
+
+
+              }
           </div>
           <div className={styles.footerNavigationContainer}>
             <div className={styles.logoContainer}>
