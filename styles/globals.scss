@@ -215,6 +215,65 @@
     --process-container-radius: 20px; // radius of flow container
   }
 }
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    // color tokens
+    --default-font: DM Sans;
+    --theme-color: #3CB371;
+    --theme-color-alt: #339A56;
+    --button-color:#389B5A;
+    --theme-gradient-alt: -webkit-linear-gradient(-296deg, #26282C, #3B4048 25%, #444A58 40%, #2E333E 62%, #26282C);
+    --theme-gradient: -webkit-linear-gradient(306.95deg, #43C27B, #44C0C0);
+    --hero-gradient: -webkit-linear-gradient(270deg, #121316, #1e1e1e);
+    --background-color: #121316;
+    --text-color:#fff;
+    --subheader-color:#bbb; // subheaders, testimonial text
+    --subtext-color: #CBD5E1;
+    --subtext-color-darker: #959595; // pricing subtext, testimonial subtitle, footer nav
+    --subtext-color-dark: #858585;  // services subtext
+    --container-color: #1C1D20; // services container
+    // font-sizes
+    --text-hero-header: clamp(3.075rem, 6vw, 4rem); // hero header
+    --text-section-header: clamp(2.5rem, 5vw, 3rem); // section header
+    --text-larger: clamp(2.25rem, 4.5vw, 2.75rem); // pricing figure
+    --text-large: clamp(1.25rem, 3vw, 1.625rem); // our process titles
+    --text-medium: clamp(1.125rem, 2.75rem, 1.375rem); // pricing titles, faqs titles 
+    --text-detail: clamp(16px, 2.5vw, 19px); // "most popular"
+    --text-regular: clamp(16px, 2.5vw, 18px); // section subtitles, service titles, all navigation
+    --text-regular-alt: clamp(15.75px, 2.5vw, 17.75px); // our process subtext
+    --text-small: clamp(14px, 2.5vw, 16px); // footer nav, process figure text, services subtext, pricing "/mo"
+    --text-smaller: clamp(15px, 2.5vw, 16.67px); // testimonial title
+    --text-smaller-alt: clamp(14.25px, 2.5vw, 15.67px); // testimonial subtitle
+    --text-smallest: clamp(13.75px, 2.5vw, 15.4px); // testimonial subtext
+    --text-xs: clamp(13.5px, 2.5vw, 15px); // pricing subtitle
+    --text-xxs: clamp(12px, 2vw, 14px); // pricing details
+    --text-button-large: clamp(13px, 2.5vw, 16.43px);
+    --text-button-medium: clamp(12.75px, 2.25vw, 14.5px);
+    --text-button: clamp(12.5px, 2vw, 13.5px);
+    --text-button-small: clamp(12px, 2vw, 13.25px);
+    // letter spacing
+    --header-spacing: -.2px; // section headers, hero header, services text
+    --subheader-spacing: -.15px; // pricing figure
+    --subtext-spacing: -.075px; // subheaders, faqs, navigation
+    --smallest-spacing: -.05px; // subheaders, faqs, navigation
+    // line height
+    --subheader-height: 164%;
+    --subtext-height: 31.5px; // our process subtext
+    --subtext-height-small: 18.1px; // testimonial subtext
+    // font weight
+    --text-weight-bold: 600;
+    --text-weight-medium: 400;
+    --text-weight-regular: 275;
+    // border radius
+    --hero-section-radius: 40px;
+    --button-radius-small: 42.25px;
+    --image-radius: 10.57px;
+    --pricing-radius: 12px;
+    --services-radius: 12px; // both inner and outer
+    --process-figure-radius: 10px; // radius of flow tabs
+    --process-container-radius: 20px; // radius of flow container
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

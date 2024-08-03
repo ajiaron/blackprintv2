@@ -6,7 +6,7 @@ import Logo from '../../public/assets/logo.svg'
 export default function Carousel({width}) {
   return (
     <div className={styles.carouselContentContainer}>
-        {(width <= 480)?
+        {(width <= 768)?
         <>
         <div className={styles.carouselRow}>
             <span className={styles.circleocIcon}/>

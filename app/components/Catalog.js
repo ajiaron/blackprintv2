@@ -22,7 +22,7 @@ export default function Catalog({width}) {
             <div className={styles.catalogCover}/>
         </div>
         {
-        (width <=768)?
+        (width <=530)?
         <div className={styles.catalogContent}>
             <div className={styles.catalogColumn}>
                 <Image src={Bvexterior} objectFit="cover" alt="bvexterior" className={[styles.catalogImage, styles.catalogImageLeft].join(' ')}/>
@@ -46,27 +46,39 @@ export default function Catalog({width}) {
                 <Image src={Blackprint} objectFit="cover" alt="blackprint" className={styles.catalogImage}/>
 
             </div>
-
         </div>:
         <div className={styles.catalogContent}>
             <div className={styles.catalogColumn}>
                 <Image src={Bvexterior} objectFit="cover" alt="bvexterior" className={styles.catalogImage}/>
                 <Image src={Mansion} objectFit="cover" alt="truka mansion" className={styles.catalogImage}/>
+                {(width<=768)&&
+                    <Image src={Blackprint} objectFit="cover" alt="blackprint" className={styles.catalogImage}/>
+                }
             </div>
+            {(width >768)&&
             <div className={styles.catalogColumn} >
                 <Image src={Dwiw} objectFit="cover" alt="dwiw" className={styles.catalogImageLarge}/>
             </div>
+            }
             <div className={styles.catalogColumn}>
                 <Image src={Poker} objectFit="cover" alt="bvexterior" className={styles.catalogImage}/>
+                {(width>768)?
                 <div className={styles.catalogRow}>
                     <Image src={Peakingduck} objectFit="cover" alt="peakingduck" className={styles.catalogImageSmall}/>
                     <Image src={Truka} objectFit="cover" alt="truka" className={styles.catalogImageSmall}/>
+                </div>:
+                <div className={styles.catalogColumn} >
+                     <Image src={Dwiw} objectFit="cover" alt="dwiw" className={styles.catalogImageLarge}/>
                 </div>
+                
+                }
             </div>
+            {(width > 768) &&
             <div className={styles.catalogColumn}>
                 <Image src={Tradesmark} objectFit="cover" alt="tradesmark" className={styles.catalogImage}/>
                 <Image src={Blackprint} objectFit="cover" alt="blackprint" className={styles.catalogImage}/>
             </div>
+            }
         </div>
         }
     </div>

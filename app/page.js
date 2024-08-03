@@ -163,7 +163,7 @@ export default function Home() {
               <p className={styles.heroHeaderSubtext} style={{marginBottom:".925rem"}}>
                 Building designs that inspire:
               </p>
-              {(windowSize.width<480)?
+              {(windowSize.width<769)?
                 <h1 className={styles.heroHeaderText}>
                 If a blueprint is the foundation, the 
                 <span className={styles.heroHighlight}>
@@ -260,7 +260,7 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.processContentContainer}>
-          {(windowSize.width <= 480)?
+          {(windowSize.width <= 768)?
           <div className={styles.processContentLeft}>
             
             <div className={styles.processTextContainer}>
@@ -268,7 +268,7 @@ export default function Home() {
               <div className={styles.processTextContainerAlt}>
                 <div className={styles.processGreenContainer}>
                   <div className={styles.processBlue}/>
-                
+
                 </div>
                 <span className={styles.processTextContent} onClick={()=>handleProcess("consultation")}>
                   <p className={[styles.processHeaderText, styles.processTextGreen].join(' ')}>
@@ -282,7 +282,7 @@ export default function Home() {
               <div className={styles.processTextContainerAlt}>
                 <div className={styles.processGreenContainer}>
                   <div className={styles.processGreen}/>
-                
+
                 </div>
                 <span className={styles.processTextContent} onClick={()=>handleProcess("design")}>
                   <p className={[styles.processHeaderText, styles.processTextPink].join(' ')}>
@@ -295,7 +295,7 @@ export default function Home() {
               <div className={styles.processTextContainerAlt}>
               <div className={styles.processPinkContainer}>
                   <div className={styles.processPink}/>
-               
+
                 </div>
                 <span className={styles.processTextContent} onClick={()=>handleProcess("development")}>
                   <p className={[styles.processHeaderText, styles.processTextBlue].join(' ')}>
@@ -396,6 +396,8 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.servicesContentContainer}>
+          {(windowSize.width >= 1080 || windowSize.width < 744)?
+          <>
           <div className={styles.servicesRow}>
             <ServiceItem title={'Websites'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'laptop'}/>
             <ServiceItem title={'Mobile Applications'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'mobile'}/>
@@ -411,6 +413,26 @@ export default function Home() {
             <ServiceItem title={'Targeted Ads'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'money'}/>
             <ServiceItem title={'And More!'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'stars'}/>
           </div>
+          </>:
+          <>
+          <div className={styles.servicesRow}>
+            <ServiceItem title={'Websites'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'laptop'}/>
+            <ServiceItem title={'Mobile Applications'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'mobile'}/>
+          </div>
+          <div className={styles.servicesRow}>
+            <ServiceItem title={'Pitch Decks'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'speaker'}/>
+            <ServiceItem title={'Digital Flyers'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bang'}/>
+          </div>
+          <div className={styles.servicesRow}>
+            <ServiceItem title={'Banners'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'flag'}/>
+            <ServiceItem title={'Infographics'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bulb'}/>
+          </div>
+          <div className={styles.servicesRow}>
+            <ServiceItem title={'Social Media Funnels'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'heart'}/>
+            <ServiceItem title={'Targeted Ads'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'money'}/>
+          </div>
+          </>
+          }
         </div>
       </section>
       <section className={styles.pricingSection}>
@@ -694,28 +716,28 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.testimonialContentContainer}>
-          {(windowSize.width>= 768)&&
+          {(windowSize.width>= 1028)&&
             <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
           }
           <div className={styles.testimonialColumn}>
             <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
             <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
           </div>
-          {(windowSize.width>= 768)&&
+          {(windowSize.width>= 1024)&&
             <div className={styles.testimonialEdge}/>
           }
           <div className={styles.testimonialColumn}>
             <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemCenter"}/>
             <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
           </div>
-          {(windowSize.width>= 768)&&
+          {(windowSize.width>= 1024)&&
             <div className={styles.testimonialEdge}/>
           }
           <div className={styles.testimonialColumn}>
             <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
             <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemRightEdge"}/>
           </div>
-          {(windowSize.width>= 768)&&
+          {(windowSize.width>= 1024)&&
             <div className={[styles.testimonialEdge, styles.rightEdge].join(' ')}/>
           }
         </div>
@@ -776,7 +798,7 @@ export default function Home() {
               </div>
           
             </div>
-            {(windowSize.width <= 480)&&
+            {(windowSize.width <= 768)&&
                <div className={styles.footerSmallContainer}>
                 <div className={styles.footerSmallRow}>
                   <span className={styles.footerNavText}>
@@ -794,9 +816,11 @@ export default function Home() {
                 </div>
 
                 <div className={styles.footerSmallRow}>
+       
                   <span className={styles.footerNavText}>
                     Contact Us
                   </span>
+                  
                   <span className={styles.footerNavText}>
                     Terms of Service
                   </span>
