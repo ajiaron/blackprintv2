@@ -4236,7 +4236,10 @@
   //width: 20.75rem;
   width: 100%;
   height: 100%;
-  padding-top: 1.875rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   //height: 27rem;
   background-color: #0D0E11;
   padding-left: 2.25rem;
@@ -4263,7 +4266,11 @@
   width: 20.75rem;
   height: 27rem;
   background-color: #0D0E11;
-  padding-top: 1.875rem;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 
 }
 .packageContents {
@@ -4272,6 +4279,8 @@
   max-width: 88%;
   display: flex;
   flex-direction: column;
+  padding-bottom: .875rem;
+ // background-color: red;
 }
 .packageHeaderContainer {
   display: flex;
