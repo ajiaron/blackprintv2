@@ -14,7 +14,11 @@ export default function Navbar({width}) {
           blackprint
         </p>
       </div>
-      {(width>1024)?<>
+      {(width<=1024)?
+      <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"center", transform:"translateY(1px)"}}>
+        <FaBars size={20}/>
+      </span>:
+      <>
         <p className={styles.navbarSubtext}>
           Recent Work
         </p>
@@ -30,11 +34,7 @@ export default function Navbar({width}) {
         <p className={styles.navbarSubtext}>
           Contact
         </p>
-      </>:
-      <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"center", transform:"translateY(1px)"}}>
-        <FaBars size={20}/>
-      </span>
-  
+      </>
       }
     </div>
   </div>

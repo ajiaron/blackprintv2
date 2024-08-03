@@ -190,7 +190,7 @@ export default function Home() {
                 is everything else.&nbsp;
               </h1>:
               <h1 className={styles.heroHeaderText}>
-                If a blueprint is the&nbsp; foundation, the 
+                If a blueprint is the{windowSize.width>1082&&windowSize.width<=1280?<br/>:<>&nbsp;</>} foundation, the 
                 <span className={styles.heroHighlight}>
                   <motion.span 
                   initial={{width:0,                    
@@ -260,7 +260,7 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.processContentContainer}>
-          {(windowSize.width <= 1024)?
+          {(windowSize.width <= 1439)?
           <div className={styles.processContentLeft}>
             
             <div className={styles.processTextContainer}>
@@ -268,7 +268,18 @@ export default function Home() {
               <div className={styles.processTextContainerAlt}>
                 <div className={styles.processGreenContainer}>
                   <div className={styles.processBlue}/>
-
+                  {(windowSize.width>1024)&&  
+                    <svg width="2" height={`96`} viewBox={`0 0 2 96`} fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1V147" stroke="url(#paint0_linear_731_7434)" stroke-linecap="round" stroke-dasharray="5 5"/>
+                    <path d="M1 1V147" stroke="#3399FF" stroke-linecap="round" stroke-dasharray="5 5"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_731_7434" x1="1.5" y1="17.348" x2="1.5" y2="116.858" gradientUnits="userSpaceOnUse">
+                    <stop offset="0.75" stop-color="#3399FF"/>
+                    <stop offset="1" stop-color="#3399FF" stop-opacity="0"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                  }
                 </div>
                 <span className={styles.processTextContent} onClick={()=>handleProcess("consultation")}>
                   <p className={[styles.processHeaderText, styles.processTextGreen].join(' ')}>
@@ -282,7 +293,18 @@ export default function Home() {
               <div className={styles.processTextContainerAlt}>
                 <div className={styles.processGreenContainer}>
                   <div className={styles.processGreen}/>
-
+                  {(windowSize.width > 1024)&&
+                  <svg width="2" height={`96`} viewBox={`0 0 2 96`} fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1V147" stroke="url(#paint0_linear_731_7435)" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <path d="M1 1V147" stroke="#3CB371" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <defs>
+                  <linearGradient id="paint0_linear_731_7435" x1="1.5" y1="18.3742" x2="1.5" y2="118.758" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.75" stop-color="#3CB371"/>
+                  <stop offset="1" stop-color="#59365F" stop-opacity="0"/>
+                  </linearGradient>
+                  </defs>
+                  </svg>
+                  }
                 </div>
                 <span className={styles.processTextContent} onClick={()=>handleProcess("design")}>
                   <p className={[styles.processHeaderText, styles.processTextPink].join(' ')}>
@@ -293,9 +315,20 @@ export default function Home() {
                 </span>
               </div>
               <div className={styles.processTextContainerAlt}>
-              <div className={styles.processPinkContainer}>
+              <div className={styles.processBlueContainer}>
                   <div className={styles.processPink}/>
-
+                  {(windowSize.width > 1024)&&
+                  <svg width="2" height={`96`} viewBox={`0 0 2 96`} fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1V103" stroke="url(#paint0_linear_731_7436)" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <path d="M1 1V103" stroke="#B970C5" stroke-linecap="round" stroke-dasharray="5 5"/>
+                  <defs>
+                  <linearGradient id="paint0_linear_731_7436" x1="1.5" y1="24.697" x2="1.5" y2="127.727" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.75" stop-color="#B970C5"/>
+                  <stop offset="1" stop-color="#1F5C99" stop-opacity="0"/>
+                  </linearGradient>
+                  </defs>
+                  </svg>
+                  }
                 </div>
                 <span className={styles.processTextContent} onClick={()=>handleProcess("development")}>
                   <p className={[styles.processHeaderText, styles.processTextBlue].join(' ')}>
@@ -716,7 +749,7 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.testimonialContentContainer}>
-          {(windowSize.width>1024 || windowSize.width <= 768)?
+          {(windowSize.width>1083 || windowSize.width <= 768)?
             <>
             {(windowSize.width> 768)&&
               <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
