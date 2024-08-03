@@ -260,7 +260,7 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.processContentContainer}>
-          {(windowSize.width <= 768)?
+          {(windowSize.width <= 1024)?
           <div className={styles.processContentLeft}>
             
             <div className={styles.processTextContainer}>
@@ -716,29 +716,54 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.testimonialContentContainer}>
-          {(windowSize.width>= 1028)&&
-            <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
-          }
-          <div className={styles.testimonialColumn}>
-            <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
-            <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
-          </div>
-          {(windowSize.width>= 1024)&&
-            <div className={styles.testimonialEdge}/>
-          }
-          <div className={styles.testimonialColumn}>
-            <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemCenter"}/>
-            <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
-          </div>
-          {(windowSize.width>= 1024)&&
-            <div className={styles.testimonialEdge}/>
-          }
-          <div className={styles.testimonialColumn}>
-            <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
-            <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemRightEdge"}/>
-          </div>
-          {(windowSize.width>= 1024)&&
-            <div className={[styles.testimonialEdge, styles.rightEdge].join(' ')}/>
+          {(windowSize.width>1024 || windowSize.width <= 768)?
+            <>
+            {(windowSize.width> 768)&&
+              <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
+            }
+            <div className={styles.testimonialColumn}>
+              <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
+            </div>
+            {(windowSize.width> 768)&&
+              <div className={styles.testimonialEdge}/>
+            }
+            <div className={styles.testimonialColumn}>
+              <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemCenter"}/>
+              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
+            </div>
+            {(windowSize.width> 768)&&
+              <div className={styles.testimonialEdge}/>
+            }
+            <div className={styles.testimonialColumn}>
+              <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
+              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemRightEdge"}/>
+            </div>
+            {(windowSize.width> 768)&&
+              <div className={[styles.testimonialEdge, styles.rightEdge].join(' ')}/>
+            }
+            </>:
+            <>
+            {
+              <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
+            }
+            <div className={styles.testimonialColumn}>
+              <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
+            </div>
+            {
+              <div className={styles.testimonialEdge}/>
+            }
+            <div className={styles.testimonialColumn}>
+              <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
+              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
+              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
+            </div>
+            {
+              <div className={styles.testimonialEdge}/>
+            }
+            </>
           }
         </div>
       </section>

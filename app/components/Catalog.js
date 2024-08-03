@@ -63,17 +63,20 @@ export default function Catalog({width}) {
             <div className={styles.catalogColumn}>
                 <Image src={Poker} objectFit="cover" alt="bvexterior" className={styles.catalogImage}/>
                 {(width>768)?
+                (width > 1024)?
                 <div className={styles.catalogRow}>
                     <Image src={Peakingduck} objectFit="cover" alt="peakingduck" className={styles.catalogImageSmall}/>
                     <Image src={Truka} objectFit="cover" alt="truka" className={styles.catalogImageSmall}/>
                 </div>:
+                    <Image src={Blackprint} objectFit="cover" alt="blackprint" className={styles.catalogImage}/>
+                :
                 <div className={styles.catalogColumn} >
                      <Image src={Dwiw} objectFit="cover" alt="dwiw" className={styles.catalogImageLarge}/>
                 </div>
                 
                 }
             </div>
-            {(width > 768) &&
+            {(width > 1024) &&
             <div className={styles.catalogColumn}>
                 <Image src={Tradesmark} objectFit="cover" alt="tradesmark" className={styles.catalogImage}/>
                 <Image src={Blackprint} objectFit="cover" alt="blackprint" className={styles.catalogImage}/>
