@@ -400,6 +400,8 @@
 }
 .highlight {
   background-color: rgba(51,154,86,.7);
+  //background-image: linear-gradient(90deg, rgba(51,154,86,.7) 45%, rgba(51,154,86,0));
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -1539,7 +1541,7 @@
   }
   .heroCanvasContainer {
     width: 100%;
-    height:33.4rem;
+    height:33.5rem;
     background-image: none;
     background-image: url('/assets/grid2.svg');
     background-size: auto;
@@ -1556,10 +1558,10 @@
   }
   .heroContentWrapper {
     width: 100%;
-    height:33.4rem;
-    border-bottom-left-radius: 40px;
+    height:33.5rem;
+    border-bottom-left-radius: 2rem;
     margin-top: 4rem;
-    border-bottom-right-radius: 40px;
+    border-bottom-right-radius: 2rem;
     display: flex;
     //background-color: red;
     align-items: center;
@@ -2442,7 +2444,7 @@
 .footerContentContainer {
   height: fit-content;
   background-image: none;
-  border-top: 1px dashed #555;
+  border-top: 1px dashed #454545;
   //background-color: red;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2566,12 +2568,12 @@
   .heroPrintContainer {
     display: none;
    //display: flex;
-   height: 33.4rem;
+   height: 33.5rem;
    background-size: cover;
   }
   .heroCanvasContainer {
     width: 100%;
-    height:33.4rem;
+    height:33.5rem;
     background-image: none;
     background-image: url('/assets/grid2.svg');
     background-size: auto;
@@ -2588,7 +2590,7 @@
   }
   .heroContentWrapper {
     width: 100%;
-    height:33.4rem;
+    height:33.5rem;
     border-bottom-left-radius: 48px;
     margin-top: 4rem;
     border-bottom-right-radius: 48px;
@@ -3481,7 +3483,7 @@
 .footerContentContainer {
   height: fit-content;
   background-image: none;
-  border-top: 1px dashed #555;
+  border-top: 1px dashed #454545;
   //background-color: red;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3830,6 +3832,7 @@
    }
    .highlight {
     background-color: rgba(51,154,86,.7);
+    //background-image: linear-gradient(90deg, rgba(51,154,86,.7), rgba(51,154,86,0));
     display: inline-flex;
     justify-content: center;
     align-items: center;
