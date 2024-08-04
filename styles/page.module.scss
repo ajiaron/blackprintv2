@@ -55,6 +55,10 @@
   font-size: var(--text-regular); 
   font-weight: 350;
   transform: scaleY(.98);
+  transition: all .15s linear;
+}
+.navbarSubtext:hover {
+  color: var(--theme-color);
 }
 .heroHeaderText {
   font-family: var(--default-font);
@@ -97,6 +101,7 @@
   margin-left: auto;
   margin-right: auto;
   align-self: center;
+  user-select: none;
 }
 .sectionHeaderText {
   font-family: var(--default-font);
@@ -184,6 +189,8 @@
   margin-left: auto;
   margin-right: auto;
   align-self: center;
+  user-select: none;
+
 }
 .mostPopularText {
   font-family: var(--default-font);
@@ -249,6 +256,8 @@
   margin-left: auto;
   margin-right: auto;
   align-self: center;
+  user-select: none;
+
   //color:var(--text-color)
 }
 .testimonialHeader {
@@ -313,6 +322,8 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  user-select: none;
+
   align-self: center;
 }
 .footerLogoText {
@@ -332,6 +343,10 @@
   font-weight: var(--text-weight-medium);
   color:var(--subtext-color-darker);
   text-align: center;
+  transition: all .15s linear;
+}
+.footerNavText:hover {
+  color:#fff;
 }
 
 // navbar
@@ -445,6 +460,7 @@
   //animation-duration: 1s;
   //animation-timing-function: ease;
   overflow: hidden;
+  z-index: 0;
  // animation-fill-mode: forwards;
 }
 .printPath {
@@ -476,6 +492,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 3rem;
+  z-index: 1;
 }
 
 .heroButtonContainer {
@@ -499,6 +516,10 @@
   padding-top: 0px;
   height: 2.175rem;
   width: fit-content;
+  transition: all .15s linear;
+}
+.heroStartButton:hover {
+  background-color: var(--theme-color);
 }
 .heroLearnButton {
   border-radius: var(--button-radius-small);
@@ -512,8 +533,17 @@
   padding-right: 1.375rem;
   height: 2.175rem;
   width: fit-content;
+  transition: all .15s linear;
 }
-
+.heroLearnButton:hover {
+  background-color: #e0e0e0;
+}
+.footerLogoText {
+  transition: all .15s linear;
+}
+.footerLogoText:hover {
+  color:#fff;
+}
 // carousel section
 
 .carouselSection {
@@ -1072,6 +1102,10 @@
   background: linear-gradient(#121316, #121316) padding-box,
               var(--theme-gradient) border-box;
   margin-top: 1rem;
+  transition: all .15s linear;
+}
+.appointmentButton:hover {
+  filter: brightness(1.2);
 }
 .pricingContentContainer {
   height: fit-content;
@@ -1170,6 +1204,11 @@
   justify-content: center;
   color:#fff;
   margin-top: 1.6rem;
+  transition: all .15s linear;
+}
+.packageButton:hover {
+  color:#000;
+  background-color: #fff;
 }
 .packagePremiumButton {
   border-radius: 42.25px;
@@ -1183,6 +1222,10 @@
   color:#000;
   font-weight: 570;
   margin-top: 1.605rem;
+  transition: all .2s linear;
+}
+.packagePremiumButton:hover {
+  filter: brightness(1.1);
 }
 
 // testimonial styles
@@ -1374,6 +1417,10 @@
   justify-content: center;
   color:#fff;
   background-color: #389B5A;
+  transition: all .15s linear;
+}
+.footerStartButton:hover {
+  background-color: var(--theme-color);
 }
 .footerLearnButton {
   width: 8.788125rem;
@@ -1384,6 +1431,10 @@
   justify-content: center;
   color:#000;
   background-color: #fff;
+  transition: all .15s linear;
+}
+.footerLearnButton:hover {
+  background-color: #e0e0e0;
 }
 .footerNavigationContainer {
   width: 89.86%;
@@ -6493,7 +6544,7 @@
     margin-left:auto;
     align-self:center;
     padding-right: 7px;
-    transform: translateY(-.375px);
+    transform: translateY(-1px);
   }
   .mostPopularText {
 

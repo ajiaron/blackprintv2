@@ -6,12 +6,16 @@ import Logo from '../../public/assets/logo.svg'
 import {motion, AnimatePresence, useAnimation} from 'framer-motion'
 
 
-export default function Navbar({width, contentRef}) {
+export default function Navbar({width, contentRef, scrollToId}) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
+  const buttonRef = useRef(null)
   //const contentRef = useRef(null);
 
-
+  function handleScroll(id) {
+    setOpen(false)
+    scrollToId(id)
+  }
   const handleOpen = (event) => {
     event.stopPropagation(); // Prevent the event from bubbling up to handleClickOutside
     setOpen(!open);
@@ -39,12 +43,19 @@ export default function Navbar({width, contentRef}) {
     open: { x: 0, opacity: 1 },
     transition: { opacity: { duration: 0.2 } },
   };
+  function navigateBooking() {
+    window.location.href = `https://calendly.com/blackprint-unlimited/30min`
+  }
   const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target)
+    ) {
       setOpen(false);
     }
   };
-
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -78,38 +89,51 @@ export default function Navbar({width, contentRef}) {
       console.log("problem")
     }
   };
+
   return (
-    <div className={styles.navbarContainer}>
-    <div className={styles.navbarContentContainer}>
-      <div className={styles.logoContainer}>
-        <Logo className={styles.logoImage}/>
-        <p className={styles.navbarLogoText}>
-          blackprint
-        </p>
-      </div>
-      {(width<=1024)?
-      <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"center", transform:"translateY(1px)"}}
-      onClick={() => handleOpen()}>
-        <FaBars size={20}/>
-      </span>:
-      <>
-        <p className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}>
-          Recent Work
-        </p>
-        <p className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}>
-          Pricing
-        </p>
-        <p className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}>
-          Our Process
-        </p>
-        <p className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}>
-          FAQs
-        </p>
-        <p className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}>
-          Contact
-        </p>
-      </>
-      }
+    <motion.div className={styles.navbarContainer}
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    transition={{
+      type: "spring",
+      stiffness: 200,
+      damping: 35,
+    }}>
+      <div className={styles.navbarContentContainer}>
+        <div className={styles.logoContainer} onClick={()=>scrollToId("home")}>
+          <Logo className={styles.logoImage}/>
+          <p className={styles.navbarLogoText}>
+            blackprint
+          </p>
+        </div>
+        {(width<=1024)?
+        <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"center", transform:"translateY(1px)"}}
+        onClick={(e) => handleOpen(e)} ref={buttonRef}>
+          <FaBars size={20}/>
+        </span>:
+        <>
+          <span className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}
+          onClick={()=>handleScroll("catalog")}>
+            Recent Work
+          </span>
+          <span className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}
+          onClick={()=>handleScroll("pricing")}>
+            Pricing
+          </span>
+          <span className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}
+          onClick={()=>handleScroll("process")}>
+            Our Process
+          </span>
+          <span className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}
+          onClick={()=>handleScroll("faqs")}>
+            FAQs
+          </span>
+          <a className={[styles.navbarSubtext, styles.navbarSubtextLarge].join(' ')}
+          href={"mailto:info@blackprint.in"}>
+            Contact
+          </a>
+        </>
+        }
     </div>
       {/* Animated Menu */}
       <AnimatePresence>
@@ -123,29 +147,35 @@ export default function Navbar({width, contentRef}) {
           className={styles.menuContainer}
           style={{ originX: 1, originY: 0, borderRadius:"1rem" }}
         >
-          <motion.div variants={itemVariants} className={styles.menuItem}>
+          <motion.span variants={itemVariants} className={styles.menuItem}
+          onClick={()=>handleScroll("catalog")}>
             Recent Work
-          </motion.div>
-          <motion.div variants={itemVariants} className={styles.menuItem}>
+          </motion.span>
+          <motion.span variants={itemVariants} className={styles.menuItem}
+          onClick={()=>handleScroll("pricing")}>
             Pricing
-          </motion.div>
-          <motion.div variants={itemVariants} className={styles.menuItem}>
+          </motion.span>
+          <motion.span variants={itemVariants} className={styles.menuItem}
+          onClick={()=>handleScroll("process")}>
             Our Process
-          </motion.div>
-          <motion.div variants={itemVariants} className={styles.menuItem}>
+          </motion.span>
+          <motion.span variants={itemVariants} className={styles.menuItem}
+          onClick={()=>handleScroll("faqs")}>
             FAQs
-          </motion.div>
-          <motion.div variants={itemVariants} className={styles.menuItem}>
+          </motion.span>
+          <motion.a variants={itemVariants} className={styles.menuItem}
+          href={"mailto:info@blackprint.in"}>
             Contact
-          </motion.div>
-          <motion.span variants={itemVariants} className={styles.menuStartButton}>
-            <p className={styles.buttonTextSmall}>
+          </motion.a>
+          <motion.span variants={itemVariants} className={styles.menuStartButton}
+          onClick={()=>navigateBooking()}>
+            <p className={styles.buttonTextSmall} onClick={()=>handleScroll("footer")}>
               Get Started
             </p>
           </motion.span>
         </motion.div>
       )}
     </AnimatePresence>
-  </div>
+  </motion.div>
   )
 }

@@ -47,7 +47,7 @@
   --theme-gradient-alt: -webkit-linear-gradient(-296deg, #26282C, #3B4048 25%, #444A58 40%, #2E333E 62%, #26282C);
   --theme-gradient: -webkit-linear-gradient(306.95deg, #43C27B, #44C0C0);
   --hero-gradient: -webkit-linear-gradient(270deg, #121316, #1e1e1e);
-  --background-color: #121316;
+  --background-color: #121212;
   --text-color:#fff;
   --subheader-color:#bbb; // subheaders, testimonial text
   --subtext-color: #CBD5E1;
@@ -94,6 +94,14 @@
   --services-radius: 12px; // both inner and outer
   --process-figure-radius: 10px; // radius of flow tabs
   --process-container-radius: 20px; // radius of flow container
+}
+::selection {
+  color:#fff;
+  background-color: #389B5A99;
+}
+::-moz-selection {
+  color:#fff;
+  background-color: #389B5A99;
 }
 @media (max-width: 390px) {
   :root {
