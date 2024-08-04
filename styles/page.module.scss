@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 .main {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin:0;
   flex:1;
   overflow-x: hidden;
@@ -23,6 +23,7 @@
   flex-direction: column;
   position: relative;
   margin-left: auto;
+
   margin-right: auto;
 }
 .contentContainer {
@@ -343,6 +344,7 @@
   top: 3rem;
   left:0;
   right:0;
+  z-index: 999;
   position: absolute;
 }
 .navbarContentContainer {
@@ -1396,6 +1398,62 @@
   padding-bottom: 1.625rem;
 }
 
+
+// navigation pane
+
+.menuContainer {
+  position: absolute;
+  height: fit-content;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 19.75rem;
+  padding-top:1rem;
+  padding-bottom:1.25rem;
+  background-color: rgba(32,33,36,.75);
+  border-radius: 1rem;
+  scrollbar-width: none;
+  justify-content: center;
+  backdrop-filter: blur(24px);
+  list-style-type: none;
+  top:3.25rem;
+  right:calc(6% + .75rem);
+  transform-origin: top right;
+}
+.menuItem {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  width: 84%;
+  font-family: var(--default-font);
+  //transition: all .15s linear;
+  border-radius: 1rem;
+  color:#d0d0d0;
+
+}
+.menuStartButton {
+  margin-top: .65rem;
+  width: 84%;
+  border-radius: var(--button-radius-small);
+  background-color: var(--button-color);
+  background-color: #fff;
+  color:#000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.375rem;
+  padding-right: 1.375rem;
+  padding-top: 0px;
+  height: 2.175rem;
+}
+.menuItem:hover {
+  color:#fff;
+}
+@media (max-width: 1024px) {
+  .navbarSubtextLarge {
+    display: none;
+  }
+} 
 @media (max-width: 390px) {
   .sectionHeaderContainer {
     display: flex;
@@ -1425,12 +1483,13 @@
   .heroPrintContainer {
     display: none;
    //display: flex;
-   height: 80vh;
+   height:39rem;
+
    background-size: cover;
   }
   .heroCanvasContainer {
     width: 100%;
-    height:80vh;
+    height:33.4rem;
     background-image: none;
     background-image: url('/assets/grid2.svg');
     background-size: auto;
@@ -1447,10 +1506,10 @@
   }
   .heroContentWrapper {
     width: 100%;
-    height:80vh;
-    border-bottom-left-radius: 48px;
+    height:33.4rem;
+    border-bottom-left-radius: 40px;
     margin-top: 4rem;
-    border-bottom-right-radius: 48px;
+    border-bottom-right-radius: 40px;
     display: flex;
     //background-color: red;
     align-items: center;
@@ -1748,7 +1807,7 @@
   display: flex;
   flex-direction: column;
   //background-color: red;
-  margin-top: .625rem;
+  margin-top: .55rem;
 
   align-items: center;
   justify-content: space-between;
@@ -1768,7 +1827,7 @@
  // padding-top: 1.25rem;
   display: flex;
   flex-direction: column;
-  margin-top: .625rem;
+  margin-top: .55rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -1785,7 +1844,7 @@
   width: 10px;
   display: flex;
   flex-direction: column;
-  margin-top: .625rem;
+  margin-top: .55rem;
   align-items: center;
   align-self: flex-start;
   justify-content: space-between;
@@ -2319,6 +2378,7 @@
   margin-top: 3.75rem;
   padding-right: 1rem;
   padding-bottom: 1.625rem;
+  padding-bottom: 33%;
 }
 // footer styles
 .footerSection {
@@ -2455,12 +2515,12 @@
   .heroPrintContainer {
     display: none;
    //display: flex;
-   height: 80vh;
+   height: 33.4rem;
    background-size: cover;
   }
   .heroCanvasContainer {
     width: 100%;
-    height:80vh;
+    height:33.4rem;
     background-image: none;
     background-image: url('/assets/grid2.svg');
     background-size: auto;
@@ -2477,7 +2537,7 @@
   }
   .heroContentWrapper {
     width: 100%;
-    height:80vh;
+    height:33.4rem;
     border-bottom-left-radius: 48px;
     margin-top: 4rem;
     border-bottom-right-radius: 48px;
@@ -3537,6 +3597,7 @@
   }
   .heroCanvasContainer {
     width: 100%;
+    height: 37.4rem;
     //height:80vh;
     //background-image: none;
     background-image: url('/assets/grid2.svg');
@@ -3681,8 +3742,10 @@
 
   .heroContentWrapper {
     width: 100%;
-    height: 80vh;
-    height:calc(80vh + 4rem);
+    //height: 80vh;
+    //height:calc(80vh + 4rem);
+    height: 37.4rem;
+
     border-bottom-left-radius: 48px;
    // margin-top: 4rem;
     border-bottom-right-radius: 48px;
@@ -6430,7 +6493,7 @@
     margin-left:auto;
     align-self:center;
     padding-right: 7px;
-    transform: translateY(-.5px);
+    transform: translateY(-.375px);
   }
   .mostPopularText {
 

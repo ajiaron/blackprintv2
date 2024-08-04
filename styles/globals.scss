@@ -95,7 +95,6 @@
   --process-figure-radius: 10px; // radius of flow tabs
   --process-container-radius: 20px; // radius of flow container
 }
-
 @media (max-width: 390px) {
   :root {
     // color tokens
@@ -154,7 +153,9 @@
     --process-figure-radius: 10px; // radius of flow tabs
     --process-container-radius: 20px; // radius of flow container
   }
-  
+  body {
+    align-items: center;
+  }
 }
 @media (min-width: 391px) and (max-width: 480px) {
   :root {

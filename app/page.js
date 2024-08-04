@@ -110,6 +110,7 @@ export default function Home() {
   });
   const [animation, setAnimation] = useState(false);
   const [process, setProcess] = useState("design");
+  const contentRef = useRef(null);
   function handleProcess(e) {
     setProcess(e)
   }
@@ -141,9 +142,9 @@ export default function Home() {
     };
   }, []);
   return (
-    <main className={styles.main}>
+    <main className={styles.main} ref={contentRef}>
       <div style={{position:"relative"}}>
-      <Navbar width={windowSize.width}/>
+      <Navbar width={windowSize.width} contentRef={contentRef}/>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.heroContentWrapper}>
@@ -159,12 +160,63 @@ export default function Home() {
             }}>
               {/*<div className={styles.heroPrintContainer} style={{opacity:.25}}/>*/}
             </div>
-            <div className={styles.heroTextContainer}>
+            <motion.div className={styles.heroTextContainer}
+              initial={{opacity:0, y:24}}
+              animate={{opacity:1, y:0}}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 35,
+              }}
+            >
               <p className={styles.heroHeaderSubtext} style={{marginBottom:".925rem"}}>
+
                 Building designs that inspire:
               </p>
-              {(windowSize.width<769)?
-                <h1 className={styles.heroHeaderText}>
+              {(windowSize.width>=769)?
+                 <motion.h1 className={styles.heroHeaderText}
+                 initial={{opacity:0, y:24}}
+                 animate={{opacity:1, y:0}}
+                 transition={{
+                   type: "spring",
+                   stiffness: 200,
+                   damping: 35,
+                   delay: .1
+                 }}>
+                 If a blueprint is the{windowSize.width>1480||(windowSize.width>1082&&windowSize.width<=1280)?<br/>:<>&nbsp;</>} foundation, the 
+                 <span className={styles.heroHighlight}>
+                   <motion.span 
+                   initial={{width:0,                    
+                     paddingLeft:0,
+                     paddingRight:0}}
+                   animate={{
+                     width:"100%",
+                     paddingLeft:10,
+                     paddingRight:10
+                   }}
+                   transition={{
+                     type: "spring",
+                     stiffness: 200,
+                     damping: 35,
+                     delay:.35
+                   }}
+                   className={styles.highlight}/>
+                   <p className={[styles.heroHeaderText, styles.heroHeaderTextAlt].join(' ')}>
+                     Blackprint
+                   </p>
+                 </span> 
+                 is everything else.&nbsp;
+               </motion.h1>:
+                <motion.h1 className={styles.heroHeaderText}
+                initial={{opacity:0, y:24}}
+                animate={{opacity:1, y:0}}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 35,
+                  delay: .1
+                }}>
+           
                 If a blueprint is the foundation, the 
                 <span className={styles.heroHighlight}>
                   <motion.span 
@@ -180,7 +232,7 @@ export default function Home() {
                     type: "spring",
                     stiffness: 200,
                     damping: 35,
-                    delay:.1
+                    delay:.35
                   }}
                   className={styles.highlight}/>
                   <p className={[styles.heroHeaderText, styles.heroHeaderTextAlt].join(' ')}>
@@ -188,34 +240,17 @@ export default function Home() {
                   </p>
                 </span> 
                 is everything else.&nbsp;
-              </h1>:
-              <h1 className={styles.heroHeaderText}>
-                If a blueprint is the{windowSize.width>1480||(windowSize.width>1082&&windowSize.width<=1280)?<br/>:<>&nbsp;</>} foundation, the 
-                <span className={styles.heroHighlight}>
-                  <motion.span 
-                  initial={{width:0,                    
-                    paddingLeft:0,
-                    paddingRight:0}}
-                  animate={{
-                    width:"100%",
-                    paddingLeft:10,
-                    paddingRight:10
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 200,
-                    damping: 35,
-                    delay:.1
-                  }}
-                  className={styles.highlight}/>
-                  <p className={[styles.heroHeaderText, styles.heroHeaderTextAlt].join(' ')}>
-                    Blackprint
-                  </p>
-                </span> 
-                is everything else.&nbsp;
-              </h1>
+              </motion.h1>
               }
-              <div className={styles.heroButtonContainer}>
+              <motion.div className={styles.heroButtonContainer}
+              initial={{opacity:0, y:24}}
+              animate={{opacity:1, y:0}}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 35,
+                delay: .2
+              }}>
                 <span className={styles.heroStartButton}>
                   <p className={styles.buttonTextSmall}>
                     Get Started
@@ -226,8 +261,8 @@ export default function Home() {
                     Learn More
                   </p>
                 </span>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
         
@@ -933,9 +968,8 @@ export default function Home() {
             </span>
             </>:
             <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"flex-end", color:'#959595', fontSize:"13.5px"}}>
-              © 2024-2024
+              © 2024
             </span>
-  
             }
           </div>
       </section>
