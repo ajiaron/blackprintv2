@@ -11,7 +11,6 @@
   flex:1;
   overflow-x: hidden;
   overflow-y: auto;
-  //background: linear-gradient(180deg, #121316, #121316 58%, #0d0d0d 62%,#121316 66%, #121316 81%, #0d0d0d 86%, #121316 92%);
 }
 .canvasContainer {
   width: 100%;
@@ -28,7 +27,7 @@
 }
 .contentContainer {
   width: 100%;
-  background: linear-gradient(180deg, #121316, #121316 54%, #0d0d0d 62%,#121316 67%, #121316 80%, #0d0d0d 86%, #121316 94%);
+  background: var(--background-gradient);
   overflow-x: hidden;
   height: fit-content;
   display: flex;
@@ -683,7 +682,7 @@
   z-index: 1;
   height: calc(44.28rem);
   //background-color: blue;
-  background: linear-gradient(180deg, #12131600 65%, #121316ff 90%);
+  background: linear-gradient(180deg, var(--background-color-transparent) 65%, var(--background-color) 90%);
 }
 .catalogImage {
   width: 21.14rem;
@@ -710,7 +709,7 @@
   margin-top: 4rem;
   padding-top:3rem;
   padding-bottom: 4rem;
-  background-image: linear-gradient(180deg, #12131600 0%, #0d0d0d 45%, #0d0d0d 75%, #12131600 );
+  background-image: linear-gradient(180deg, var(--background-color-transparent) 0%, #0d0d0d 45%, #0d0d0d 75%, var(--background-color-transparent) );
 }
 .processContentContainer {
   display: flex;
@@ -1099,7 +1098,7 @@
   padding-left: 1.875rem;
   padding-right: 1.325rem;
   border: 1px solid transparent;
-  background: linear-gradient(#121316, #121316) padding-box,
+  background: linear-gradient(var(--background-color), var(--background-color)) padding-box,
               var(--theme-gradient) border-box;
   margin-top: 1rem;
   transition: all .15s linear;
@@ -1789,7 +1788,7 @@
   right:0;
   height: calc((16.14rem * 2) + 12.25rem + 2rem);
   //background-color: blue;
-  background: linear-gradient(180deg, #12131600 65%, #121316ff 90%);
+  background: linear-gradient(180deg, var(--background-color-transparent) 65%, var(--background-color) 90%);
 }
 .catalogImage {
   width: 16.14rem;
@@ -1817,7 +1816,7 @@
   margin-top: 4rem;
   padding-top: 3rem;
   padding-bottom: 4rem;
-  background-image: linear-gradient(180deg, #12131600 0%, #0d0d0d 45%, #0d0d0d 75%, #12131600 );
+  background-image: linear-gradient(180deg, var(--background-color-transparent) 0%, #0d0d0d 45%, #0d0d0d 75%, var(--background-color-transparent) );
 }
 .processContentContainer {
   display: flex;
@@ -2536,6 +2535,7 @@
   background-color: #fff;
 }
 }
+
 @media (min-width: 391px) and (max-width: 480px) {
   .sectionHeaderContainer {
     display: flex;
@@ -2818,7 +2818,7 @@
   right:0;
   height: calc((16.14rem * 2) + 12.25rem + 2rem);
   //background-color: blue;
-  background: linear-gradient(180deg, #12131600 65%, #121316ff 90%);
+  background: linear-gradient(180deg, var(--background-color-transparent) 65%, var(--background-color) 90%);
 }
 .catalogImage {
   width: 16.14rem;
@@ -2852,7 +2852,7 @@
   margin-top: 4rem;
   padding-top: 3rem;
   padding-bottom: 4rem;
-  background-image: linear-gradient(180deg, #12131600 0%, #0d0d0d 45%, #0d0d0d 75%, #12131600 );
+  background-image: linear-gradient(180deg, var(--background-color-transparent) 0%, #0d0d0d 45%, #0d0d0d 75%, var(--background-color-transparent) );
 }
 .processContentContainer {
   display: flex;
@@ -3541,6 +3541,7 @@
   justify-content: space-evenly;
 }
 }
+
 @media (min-width: 481px) and (max-width:530px) {
   // catalog styles
 .catalogSection {
@@ -3605,7 +3606,7 @@
   right:0;
   height: calc((16.14rem * 2) + 12.25rem + 2rem);
   //background-color: blue;
-  background: linear-gradient(180deg, #12131600 65%, #121316ff 90%);
+  background: linear-gradient(180deg, var(--background-color-transparent) 65%, var(--background-color) 90%);
 }
 .catalogImage {
   width: 16.14rem;
@@ -3975,7 +3976,7 @@
   margin-top: 4rem;
   padding-top: 3rem;
   padding-bottom: 4rem;
-  background-image: linear-gradient(180deg, #12131600 0%, #0d0d0d 45%, #0d0d0d 75%, #12131600 );
+  background-image: linear-gradient(180deg, var(--background-color-transparent) 0%, #0d0d0d 45%, #0d0d0d 75%, var(--background-color-transparent) );
 }
 .processContentContainer {
   display: flex;
@@ -4886,7 +4887,7 @@
   margin-top: 4rem;
   padding-top: 3rem;
   padding-bottom: 4rem;
-  background-image: linear-gradient(180deg, #12131600 0%, #0d0d0d 45%, #0d0d0d 75%, #12131600 );
+  background-image: linear-gradient(180deg, var(--background-color-transparent) 0%, #0d0d0d 45%, #0d0d0d 75%, var(--background-color-transparent) );
 }
 .processContentContainer {
   display: flex;
@@ -5773,7 +5774,7 @@
   margin-top: 4rem;
   padding-top: 3rem;
   padding-bottom: 4rem;
-  background-image: linear-gradient(180deg, #12131600 0%, #0d0d0d 45%, #0d0d0d 75%, #12131600 );
+  background-image: linear-gradient(180deg, var(--background-color-transparent) 0%, #0d0d0d 45%, #0d0d0d 75%, var(--background-color-transparent) );
 }
 .processContentContainer {
   display: flex;
@@ -6624,7 +6625,7 @@
     margin-top: 4rem;
     padding-top: 3rem;
     padding-bottom: 4rem;
-    background-image: linear-gradient(180deg, #12131600 0%, #0d0d0d 45%, #0d0d0d 75%, #12131600 );
+    background-image: linear-gradient(180deg, var(--background-color-transparent) 0%, #0d0d0d 45%, #0d0d0d 75%, var(--background-color-transparent) );
   }
   .processContentContainer {
     display: flex;
@@ -6832,5 +6833,45 @@
     //background-color: red;
     align-self: center;
     height: fit-content;
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(0px)) {
+  .circleocIcon {
+    background-image: url('/assets/circleoc.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .nebulaIcon {
+    background-image: url('/assets/nebula.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .dashbillIcon {
+    background-image: url('/assets/dashbill.png');
+    background-position: center;
+    background-size: cover;
+    filter: saturate(0);
+  }
+  .ksigIcon {
+    background-image: url('/assets/ksig.png');
+    background-position: center;
+    background-size: cover;
+  
+  }
+  .peakingduckIcon {
+    background-image: url('/assets/peakingducklogo.png');
+    background-size: cover;
+    //background-color: red;
+  }
+  .legacyIcon {
+    background-image: url('/assets/legacy.png');
+    background-position: center;
+    background-size: cover;
+  }
+  .trukaIcon {
+    background-image: url('/assets/truka.svg');
+    background-position: center;
+    background-size: cover;
   }
 }
