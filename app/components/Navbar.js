@@ -11,10 +11,11 @@ export default function Navbar({width, contentRef}) {
   const menuRef = useRef(null);
   //const contentRef = useRef(null);
 
-  function handleOpen() {
-    setOpen(!open)
-    console.log('ok')
-  }
+
+  const handleOpen = (event) => {
+    event.stopPropagation(); // Prevent the event from bubbling up to handleClickOutside
+    setOpen(!open);
+  };
   const menuVariants = {
     closed: {
       scale: 0,
