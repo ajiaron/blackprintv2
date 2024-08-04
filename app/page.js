@@ -190,7 +190,7 @@ export default function Home() {
                 is everything else.&nbsp;
               </h1>:
               <h1 className={styles.heroHeaderText}>
-                If a blueprint is the{windowSize.width>1082&&windowSize.width<=1280?<br/>:<>&nbsp;</>} foundation, the 
+                If a blueprint is the{windowSize.width>1480||(windowSize.width>1082&&windowSize.width<=1280)?<br/>:<>&nbsp;</>} foundation, the 
                 <span className={styles.heroHighlight}>
                   <motion.span 
                   initial={{width:0,                    
