@@ -580,9 +580,22 @@ export default function Home() {
               <div className={styles.premiumPackageInner}>
                 <div className={styles.packageContents}>
                   <div className={styles.packageHeaderContainer}>
-                    <p className={styles.pricingTitleText}>
-                      Professional
-                    </p>
+                    {(windowSize.width > 768 && windowSize.width <= 1120)?
+                    <div className={styles.premiumHeader}>
+                      <p className={styles.pricingTitleText}>
+                        Professional
+                      </p>
+                      <span className={styles.premiumHeaderContent}>
+                        <div className={styles.premiumStar}/>
+                        <p className={styles.mostPopularText}>
+                          Most Popular
+                        </p>
+                      </span>
+                    </div>:
+                     <p className={styles.pricingTitleText}>
+                       Professional
+                     </p>
+                    }
                     <p className={styles.pricingSubtitleText}>
                       For individuals and businesses that are
                       servicing a larger target audience.
