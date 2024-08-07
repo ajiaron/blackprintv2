@@ -93,7 +93,7 @@ const FaqsItem = ({title, subtext}) => {
             exit={{height:0}}>
             <div style={{paddingBottom:"1.5rem"}}>
                 <p className={styles.faqsSubtext} style={{textAlign:"left"}}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  {subtext}
                 </p>
             </div>
         </motion.div>
@@ -172,7 +172,9 @@ export default function Home() {
               damping: 50,
               delay:.35
             }}>
-              {/*<div className={styles.heroPrintContainer} style={{opacity:.25}}/>*/}
+              {/*<div className={styles.heroPrintContainer} style={{opacity:.2}}/>*/
+              (windowSize.width && windowSize.height)&&
+              <Print width={windowSize.width} height={windowSize.height}/>}
             </div>
             <motion.div className={styles.heroTextContainer}
               initial={{opacity:0, y:24}}
@@ -329,7 +331,7 @@ export default function Home() {
                     Consultation
                   </p>
                   <p className={styles.processSubtext}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada facilisis arcu, non pharetra quam aliquet vel. Donec et urna velit.
+                  Schedule a consultation call and we’ll screen through your project. Our team will draft a specifications outline before proceeding with design.
                   </p>
                 </span>
               </div>
@@ -354,7 +356,8 @@ export default function Home() {
                     Design {'&'} Revision
                   </p>
                   <p className={styles.processSubtext}>
-                    Nam quam massa, consectetur sit amet elit ut, consectetur tristique nulla. Nunc fermentum lacinia tellus, nec dapibus est sollicitudin in.                </p>
+                  Our design process begins with the site layout, followed by your assets and branding. Then, we’ll handle any revisions and copywriting necessary.
+                  </p>
                 </span>
               </div>
               <div className={styles.processTextContainerAlt}>
@@ -378,7 +381,8 @@ export default function Home() {
                     Development {'&'} Deployment
                   </p>
                   <p className={styles.processSubtext}>
-                    Vestibulum sagittis mauris non sapien gravida, quis tincidunt diam vulputate. Integer augue ex, finibus nec leo condimentum, eleifend convallis massa.                </p>
+                    Development starts with implementing the core wireframe, ensuring consistency on all devices. We’ll integrate any services you need before deployment.
+                  </p>
                 </span>
               </div>
             </div>
@@ -438,7 +442,7 @@ export default function Home() {
                   Consultation
                 </p>
                 <p className={styles.processSubtext}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada facilisis arcu, non pharetra quam aliquet vel. Donec et urna velit.
+                Schedule a consultation call and we’ll screen through your project. Our team will draft a specifications outline before proceeding with design.
                 </p>
               </span>
               <span className={styles.processTextContent} onClick={()=>handleProcess("design")}>
@@ -446,14 +450,16 @@ export default function Home() {
                   Design {'&'} Revision
                 </p>
                 <p className={styles.processSubtext}>
-                  Nam quam massa, consectetur sit amet elit ut, consectetur tristique nulla. Nunc fermentum lacinia tellus, nec dapibus est sollicitudin in.                </p>
+                  Our design process begins with the site layout, followed by your assets and branding. Then, we’ll handle any revisions and copywriting necessary.
+                </p>
               </span>
               <span className={styles.processTextContent} onClick={()=>handleProcess("development")}>
                 <p className={[styles.processHeaderText, styles.processTextBlue].join(' ')}>
                   Development {'&'} Deployment
                 </p>
                 <p className={styles.processSubtext}>
-                  Vestibulum sagittis mauris non sapien gravida, quis tincidunt diam vulputate. Integer augue ex, finibus nec leo condimentum, eleifend convallis massa.                </p>
+                  Development starts with implementing the core wireframe, ensuring consistency on all devices. We’ll integrate any services you need before deployment.
+                </p>
               </span>
             </div>
           </div>
@@ -474,37 +480,37 @@ export default function Home() {
           {(windowSize.width >= 1080 || windowSize.width < 744)?
           <>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Websites'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'laptop'}/>
-            <ServiceItem title={'Mobile Applications'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'mobile'}/>
-            <ServiceItem title={'Pitch Decks'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'speaker'}/>
+            <ServiceItem title={'Websites'} subtext={'Fully responsive web pages and full-stack applications.'} image={'laptop'}/>
+            <ServiceItem title={'Mobile Applications'} subtext={'Bundled applications for both iOS and Android.'} image={'mobile'}/>
+            <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Digital Flyers'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bang'}/>
-            <ServiceItem title={'Banners'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'flag'}/>
-            <ServiceItem title={'Infographics'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bulb'}/>
+            <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'}/>
+            <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'}/>
+            <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Social Media Funnels'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'heart'}/>
-            <ServiceItem title={'Targeted Ads'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'money'}/>
-            <ServiceItem title={'And More!'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'stars'}/>
+            <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'}/>
+            <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'}/>
+            <ServiceItem title={'And More!'} subtext={'Get in touch, and we’ll see what else we can do for you!'} image={'stars'}/>
           </div>
           </>:
           <>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Websites'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'laptop'}/>
-            <ServiceItem title={'Mobile Applications'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'mobile'}/>
+            <ServiceItem title={'Websites'} subtext={'Fully responsive web pages and full-stack applications.'} image={'laptop'}/>
+            <ServiceItem title={'Mobile Applications'} subtext={'We can bundle your applications for both iOS and Android.'} image={'mobile'}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Pitch Decks'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'speaker'}/>
-            <ServiceItem title={'Digital Flyers'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bang'}/>
+            <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'}/>
+            <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Banners'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'flag'}/>
-            <ServiceItem title={'Infographics'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'bulb'}/>
+            <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'}/>
+            <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Social Media Funnels'} subtext={'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} image={'heart'}/>
-            <ServiceItem title={'Targeted Ads'} subtext={'Morbi scelerisque id ante quis euismod. Vivamus ut arcu metus.'} image={'money'}/>
+            <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'}/>
+            <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'}/>
           </div>
           </>
           }
@@ -868,14 +874,14 @@ export default function Home() {
           }
         </div>
           <div className={styles.faqsContentContainer}>
-            <FaqsItem title={"Why choose Blackprint over other design agencies?"} subtext={""}/>
-            <FaqsItem title={"Why can’t I just hire a full-time designer?"} subtext={""}/>
-            <FaqsItem title={"Who are the designers?"} subtext={""}/>
-            <FaqsItem title={"Does Blackprint offer any refunds?"} subtext={""}/>
-            <FaqsItem title={"What if I don’t like the design?"} subtext={""}/>
-            <FaqsItem title={"Are there any financing options for the design work?"} subtext={""}/>
-            <FaqsItem title={"What programs would Blackprint use for my product or service?"} subtext={""}/>
-            <FaqsItem title={"How does the pause feature work?"} subtext={""}/>
+            <FaqsItem title={"Why choose Blackprint over other design agencies?"} subtext={"Less stress, work done faster, transform your ideas into reality. With a full team of designers and developers, we are well versed in all kinds of digital products and media."}/>
+            <FaqsItem title={"Why not hire a full-time designer?"} subtext={"The average designer is paid over six figures. You save over 90% of this cost when purchasing the standard plan. We undercharge and over-provide."}/>
+            <FaqsItem title={"Who are the designers?"} subtext={"We have a team of passionate people experienced in all kinds of design. From flyers to websites, video editing to mobile apps, we’ve worked on it all."}/>
+            <FaqsItem title={"Does Blackprint offer any refunds?"} subtext={"Due to the high cost and time investment of each project, we unfortunately cannot offer refunds."}/>
+            <FaqsItem title={"What if I don’t like the design?"} subtext={"We will continue to rework the design based on your revisions until you’re 100% satisfied."}/>
+            <FaqsItem title={"Are there any financing options for the design work?"} subtext={"Currently, we do not have any financing options. However, we may reconsider as custom inquiries increase."}/>
+            <FaqsItem title={"What programs would Blackprint use for my product or service?"} subtext={"We use a wide variety of tools depending on the project. Figma is used across all projects, but we may use a combination of Next.js and Vercel for websites, React Native for mobile applications, Illustrator for graphics, etc."}/>
+            <FaqsItem title={"How does the pause feature work?"} subtext={"If you’re satisfied with the work you’ve received and have no more revisions for the current billing cycle, feel free to pause your subscription until you need us!"}/>
           </div>
       </section>
       <section className={styles.footerSection} id={"footer"}>
