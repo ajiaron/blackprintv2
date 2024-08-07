@@ -18,6 +18,13 @@ import Truka from "../public/assets/truka.png"
 import Tradesmark from "../public/assets/tradesmark.png"
 import Blackprint from "../public/assets/blackprint.png"
 import { FaBars } from "react-icons/fa";
+import { FaWindowRestore } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
+import { FaCodepen } from "react-icons/fa6";
+import { FaLink } from "react-icons/fa6";
+import { FaPaintBrush } from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa6";
+import { TbWaveSine } from "react-icons/tb";
 
 const ServiceItem = ({title, subtext, image}) => {
   return (
@@ -45,7 +52,12 @@ const TestimonialItem = ({name, title, subtext, image, side}) => {
     <div className={`${styles.testimonialItem} ${styles[side]}`}>
       <div className={styles.testimonialHeaderContainer}>
         <span className={styles.testimonialImage}>
-          {/* image here */}
+          {image==="notion"?<FaWindowRestore size={22} className={styles.testimonialIcon}/>:
+          image==="code"?<FaCode size={26} className={styles.testimonialIcon}/>:
+          image==="assets"?<FaCodepen size={24} className={styles.testimonialIcon}/>:
+          image==="analytics"?<TbWaveSine size={27} className={styles.testimonialIcon}/>:
+          image==="revisions"?<FaPaintBrush size={24} className={styles.testimonialIcon}/>:
+          <FaChartLine size={24} className={styles.testimonialIcon}/>}
         </span>
         <div className={styles.testimonialTitleContainer}>
           <p className={styles.testimonialHeader}>
@@ -58,7 +70,7 @@ const TestimonialItem = ({name, title, subtext, image, side}) => {
       </div>
       <div className={styles.testimonialSubtextContainer}>
         <p className={styles.testimonialSubtext}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          {subtext}
         </p>
       </div>
     </div>
@@ -799,10 +811,11 @@ export default function Home() {
       <section className={styles.testimonialSection} id={"testimonials"}>
         <div className={styles.sectionHeaderContainer}>
           <p className={styles.sectionHeaderText}>
-            Hear it from others.
+            A bit more about us.
           </p>
           <p className={styles.subheaderText}>
-            Don&apos;t take our word for it. See what our clients have to say about us.
+            We&apos;re committed to offering value for all kinds of businesses, including yours.
+          
           </p>
         </div>
         <div className={styles.testimonialContentContainer}>
@@ -812,22 +825,22 @@ export default function Home() {
               <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
             }
             <div className={styles.testimonialColumn}>
-              <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
-              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"Notion Task Management"} title={"Project Timelines"} subtext={"We use Notion’s task management platform to handle your projects, providing status updates, action items, and delivery deadlines for each of your requests."} image={"notion"} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"CRM and Analytics"} title={"External Integrations"} subtext={"We do our best to work with any existing infrastructure you might have, including CRM services, Domain Registrars, Google Analytics and any backend systems you have in place."} image={"analytics"} side={"itemLeftEdge"}/>
             </div>
             {(windowSize.width> 768)&&
               <div className={styles.testimonialEdge}/>
             }
             <div className={styles.testimonialColumn}>
-              <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemCenter"}/>
-              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
+              <TestimonialItem name={"Code & No-Code"} title={"Application Support"} subtext={"Our team is capable of handling both application-based projects and single page websites. We’ll use common frameworks like React or Framer to get the job done."} image={"code"} side={"itemCenter"}/>
+              <TestimonialItem name={"Hands-On Revisions"} title={"Interactive Design"} subtext={"We’ll give you access to the same Figma that we use to build your project. You’ll be able to request all revisions directly on the wireframe, and see what we’ve changed."} image={"revisions"} side={"itemCenter"}/>
             </div>
             {(windowSize.width> 768)&&
               <div className={styles.testimonialEdge}/>
             }
             <div className={styles.testimonialColumn}>
-              <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
-              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemRightEdge"}/>
+              <TestimonialItem name={"Personalized Assets"} title={"Graphics & Branding"} subtext={"At Blackprint, our designers are committed to creating unique assets and graphics suited towards your brand. We take pride in our designs as you do with your business."} image={"assets"} side={"itemRightEdge"}/>
+              <TestimonialItem name={"Scalable Packages"} title={"Built for Flexibility"} subtext={"If your current plan with Blackprint can't fulfill what your business needs, feel free to upgrade at any time. If your company is looking to scale, what we offer will scale accordingly."} image={"packages"} side={"itemRightEdge"}/>
             </div>
             {(windowSize.width> 768)&&
               <div className={[styles.testimonialEdge, styles.rightEdge].join(' ')}/>
@@ -838,17 +851,17 @@ export default function Home() {
               <div className={[styles.testimonialEdge, styles.leftEdge].join(' ')}/>
             }
             <div className={styles.testimonialColumn}>
-              <TestimonialItem name={"Leo Valentino"} title={"Founder of Truka LLC"} subtext={""} image={""} side={"itemLeftEdge"}/>
-              <TestimonialItem name={"Eric Nguyen"} title={"Founder of BVExterior"} subtext={""} image={""} side={"itemLeftEdge"}/>
-              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"Notion Task Management"} title={"Project Timelines"} subtext={"We use Notion’s task management platform to handle your projects, providing status updates, action items, and delivery deadlines for each of your requests."} image={"notion"} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"CRM and Analytics"} title={"External Integrations"} subtext={"We do our best to work with any existing infrastructure you might have, including CRM services, Domain Registrars, Google Analytics and any backend systems you have in place."} image={"analytics"} side={"itemLeftEdge"}/>
+              <TestimonialItem name={"Code & No-Code"} title={"Application Support"} subtext={"Our team is capable of handling both application-based projects and single page websites. We’ll use common frameworks like React or Framer to get the job done."} image={"code"} side={"itemLeftEdge"}/>
             </div>
             {
               <div className={styles.testimonialEdge}/>
             }
             <div className={styles.testimonialColumn}>
-              <TestimonialItem name={"Gabriel Gudino Jr."} title={"Founder of TradesMark"} subtext={""} image={""} side={"itemRightEdge"}/>
-              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
-              <TestimonialItem name={"Founder Name"} title={"Founder Role & Title"} subtext={""} image={""} side={"itemCenter"}/>
+              <TestimonialItem name={"Hands-On Revisions"} title={"Interactive Design"} subtext={"We’ll give you access to the same Figma that we use to build your project. You’ll be able to request all revisions directly on the wireframe, and see what we’ve changed."} image={"revisions"} side={"itemRightEdge"}/>
+              <TestimonialItem name={"Personalized Assets"} title={"Graphics & Branding"} subtext={"At Blackprint, our designers are committed to creating unique assets and graphics suited towards your brand. We take pride in our designs as you do with your business."} image={"assets"} side={"itemCenter"}/>
+              <TestimonialItem name={"Scalable Packages"} title={"Built for Flexibility"} subtext={"If your current plan with Blackprint can't fulfill what your business needs, feel free to upgrade at any time. If your company is looking to scale, what we offer will scale accordingly."} image={"packages"} side={"itemCenter"}/>
             </div>
             {
               <div className={styles.testimonialEdge}/>
