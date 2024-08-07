@@ -1344,9 +1344,11 @@
 }
 .testimonialIcon {
   color:#959595;
- // transition: all .15s linear;
+  transition: all .15s linear;
 }
-
+.testimonialItem:hover .testimonialIcon {
+  color:#eee;
+}
 .testimonialTitleContainer {
   display: flex;
   flex-direction: column;
