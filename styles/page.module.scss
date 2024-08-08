@@ -44,7 +44,7 @@
   font-family: DM Sans;
   font-size: var(--text-logo-medium);
  // font-weight: 600;
- /// letter-spacing: 0.125px;
+ // letter-spacing: 0.125px;
   transform: scaleY(.98) translateY(-.5px);
   color:#fff;
   //transform: scaleY(.99);
@@ -398,7 +398,7 @@
 .logoContainer {
   display: flex;
   align-items: center;
-  gap: .875rem;
+  gap: .825rem;
 }
 .navbarSubtextContainer {
   display: flex;
@@ -1608,12 +1608,12 @@
   .logoContainer {
     display: flex;
     align-items: center;
-    gap: .875rem;
+    gap: .8rem;
   }
   .navbarLogoText {
     font-weight: 580;
     letter-spacing: 0;
-    transform: scaleY(.98) translateY(-.25px);
+    transform: scaleY(.98) translateY(-.125px);
 
   }
   .oneTimeContainer {
@@ -2714,12 +2714,12 @@
   .logoContainer {
     display: flex;
     align-items: center;
-    gap: .875rem;
+    gap: .8rem;
   }
   .navbarLogoText {
     font-weight: 580;
     letter-spacing: 0;
-    transform: scaleY(.98) translateY(-.25px);
+    transform: scaleY(.98) translateY(-.125px);
 
 
   }
