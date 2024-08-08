@@ -32,7 +32,7 @@
   height: fit-content;
   display: flex;
   z-index: 1;
-  flex-direction: column;
+  flex-direction: column; 
   overflow-x: hidden;
  // background-color: red;
   margin-left: auto;
@@ -42,10 +42,10 @@
 // text styles
 .navbarLogoText {
   font-family: DM Sans;
-  font-size: var(--text-medium);
+  font-size: var(--text-logo-medium);
  // font-weight: 600;
-  //letter-spacing: 0.1px;
-  transform: scaleY(.98) translateY(-.5px);
+ /// letter-spacing: 0.125px;
+  transform: scaleY(.98) translateY(-.75px);
   color:#fff;
   //transform: scaleY(.99);
   font-weight: 560;
@@ -398,7 +398,7 @@
 .logoContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .875rem;
 }
 .navbarSubtextContainer {
   display: flex;
@@ -1612,6 +1612,8 @@
   }
   .navbarLogoText {
     font-weight: 580;
+    letter-spacing: 0;
+
   }
   .oneTimeContainer {
     display: flex;
@@ -2715,6 +2717,8 @@
   }
   .navbarLogoText {
     font-weight: 580;
+    letter-spacing: 0;
+
   }
 .footerContainerAlt {
   display: flex;
@@ -5866,8 +5870,9 @@
     justify-content: space-between;
   }
   .navbarLogoText {
-    font-size: clamp(15px, 2.5vw, 17px);
-    transform: translateY(1px);
+    font-size: clamp(15px, 2.5vw, 20px);
+    //transform: translateY(1px);
+    letter-spacing: 0px;
   }
   .navbarSubtext {
     font-size: clamp(15px, 2.5vw, 17px);
