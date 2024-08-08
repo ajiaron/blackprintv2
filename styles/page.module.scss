@@ -477,9 +477,9 @@
   //object-fit: cover;
 }
 .printContainer {
-  //width: 100%;
+ // width: 100%;
   height:43rem;
-  //background-image: url('/assets/print3.svg');
+ // background-image: url('/assets/print3.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -492,7 +492,7 @@
   //animation-duration: 3.5s;
   //animation-timing-function: ease-in;
   overflow: hidden;
-  z-index: 0;
+  z-index: 1;
   //animation-fill-mode: forwards;
   //object-fit: cover;
 }
@@ -6865,6 +6865,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
+   
    //animation-name: draw-print;
     //animation-duration: 3.5s;
     //animation-timing-function: ease-in;

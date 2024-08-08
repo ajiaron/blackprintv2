@@ -7,7 +7,7 @@ export default function Print({width, height}) {
     // 1235 x 688
     <span className={styles.printContainer}>
 
-    <svg width={`${Math.max(width*0.857638, 1235)}`} height={`${Math.max(height*0.88318, 688)}`} viewBox="0 0 1235 688" fill="none" xmlns="http://www.w3.org/2000/svg" style={{objectFit:"cover"}}>
+    <svg width={`${Math.max((width>=1281 && width < 1440)?width*0.9:width*0.857638, 1235)}`} height={`${Math.max(height*0.88318, 688)}`} viewBox="0 0 1235 688" fill="none" xmlns="http://www.w3.org/2000/svg" style={{objectFit:"cover",}}>
     <g style={{mixBlendMode:"overlay"}}>
     <path className={styles.printPath} d="M418.7 107L418.756 106.771L418.798 106.54C429.154 50.088 420.288 -4.93677 393.071 -51.1015C369.843 -99.4876 327.93 -136.57 274 -157" stroke="url(#paint0_linear_2071_6576)" stroke-opacity="0.5" stroke-width="28" stroke-linecap="round"/>
     <path className={styles.printPath} d="M308.221 225L308.229 224.988C324.707 199.562 342.686 166.381 349.335 126.365C356.011 86.1911 351.184 39.6216 322.892 -12.3462C304.933 -47.9011 276.364 -77.3928 239.768 -98.3672C203.154 -119.351 159.639 -131.167 113.01 -133H113" stroke="url(#paint1_linear_2071_6576)" stroke-opacity="0.5" stroke-width="28" stroke-linecap="round"/>

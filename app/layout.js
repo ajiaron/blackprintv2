@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "BLACKPRINT",
   description: "Your design agency for branding, marketing, and more.",
-  icons: { icon: "/assets/logo.png", sizes: "any", type: "image/png" },
+  icons: { icon: "/assets/bp_logo2.png", sizes: "any", type: "image/png" },
   openGraph: {
     type: 'website',
     url: 'https://blackprintv2.vercel.app',
