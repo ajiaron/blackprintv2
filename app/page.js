@@ -924,7 +924,7 @@ export default function Home() {
                 </p>
                 {
                 <p className={styles.footerSubheader}>
-                {(windowSize.width <= 480)?"":"It all starts with design."} Book a consultation call with us{(windowSize.width<=728)?",":" today,"}<br/>
+                {(windowSize.width <= 480)?"":"It all starts with design."} Book a consultation {(windowSize.width>390)&&"call"} with us{(windowSize.width<=728)?",":" today,"}<br/>
                  and we’ll get your business branded the way you want.
                 </p>
                 }
@@ -944,7 +944,7 @@ export default function Home() {
             </div>
             {(windowSize.width <= 768)&&
                <div className={styles.footerSmallContainer}>
-                <div className={styles.footerSmallRow}>
+                  <div className={styles.footerSmallRow}>
                   <span className={styles.footerNavText} onClick={()=>scrollToId("catalog")}>
                     Recent Work
                   </span>
@@ -969,6 +969,7 @@ export default function Home() {
                     Privacy Policy
                   </span>
                 </div>
+
                </div>
               }
           </div>
@@ -981,11 +982,12 @@ export default function Home() {
               
               {(windowSize.width < 1025 && windowSize.width>768)&&
               <div style={{display:"flex"}} className={styles.footerStubContainer}>
-                <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.instagram.com/blackprint.unlimited/")}/>
-                <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.linkedin.com/company/blackprint-agency/")}/>
                 <span style={{padding:"0", display:"flex", alignItems:"flex-end", justifyContent:"flex-end", color:'#959595', fontSize:"14px"}}>
                  © 2024
                </span>
+                <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.instagram.com/blackprint.unlimited/")}/>
+                <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.linkedin.com/company/blackprint-agency/")}/>
+
               </div>
              }
             </span>
@@ -1047,9 +1049,16 @@ export default function Home() {
                 </span>
               </div>
             </div>:
-            <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"flex-end", color:'#959595', fontSize:"14px"}}>
-              © 2024
-            </span>
+            <div style={{display:"flex"}} className={styles.footerStubContainer}>
+              {(windowSize.width > 480)&&
+              <span style={{padding:"0", display:"flex", alignItems:"flex-end", justifyContent:"flex-end", color:'#959595', fontSize:"14px"}}>
+               © 2024
+             </span>
+              }
+              <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.instagram.com/blackprint.unlimited/")}/>
+              <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.linkedin.com/company/blackprint-agency/")}/>
+
+            </div>
             }
           </div>
       </section>
