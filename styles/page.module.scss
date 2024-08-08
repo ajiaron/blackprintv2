@@ -1605,6 +1605,14 @@
   }
 } 
 @media (max-width: 390px) {
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: .875rem;
+  }
+  .navbarLogoText {
+    font-weight: 580;
+  }
   .oneTimeContainer {
     display: flex;
     align-self: center;
@@ -2700,7 +2708,14 @@
 }
 
 @media (min-width: 391px) and (max-width: 480px) {
-
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: .875rem;
+  }
+  .navbarLogoText {
+    font-weight: 580;
+  }
 .footerContainerAlt {
   display: flex;
   //padding-left: 7.5%;
