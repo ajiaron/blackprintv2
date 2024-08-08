@@ -977,7 +977,7 @@ export default function Home() {
             <span className={[styles.logoContainer, styles.footerLogoContainer].join(' ')}>
               <LogoAlt className={[styles.logoImage, styles.footerLogo].join(' ')} onClick={()=>scrollToId("home")}/>
               <span className={styles.footerLogoText} onClick={()=>scrollToId("home")}>
-                blackprint
+                Blackprint
               </span>
               
               {(windowSize.width < 1025 && windowSize.width>768)&&

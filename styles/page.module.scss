@@ -41,12 +41,15 @@
 }
 // text styles
 .navbarLogoText {
-  font-family: Baunk;
-  font-size: var(--text-regular);
-  font-weight: 400;
-  transform: translateY(2px);
-  color:var(--text-color);
-  text-transform: uppercase;
+  font-family: DM Sans;
+  font-size: var(--text-medium);
+ // font-weight: 600;
+  letter-spacing: 0px;
+  transform: scaleY(.98);
+  color:#fff;
+  //transform: scaleY(.99);
+  font-weight: 580;
+  //text-transform: uppercase;
 }
 .navbarSubtext {
   font-family: var(--default-font);
@@ -334,13 +337,13 @@
   align-self: center;
 }
 .footerLogoText {
-  font-family: Baunk;
+  font-family: DM Sans;
   color: var(--subtext-color-darker);
   font-size: var(--text-regular);
-  font-weight: var(--text-weight-regular);
+  font-weight: var(--text-weight-bold);
   line-height: auto;
-  transform: translateY(2px);
-  text-transform: uppercase;
+ // transform: translateY(2px);
+
 }
 .footerNavText {
   font-family: var(--default-font);
@@ -395,7 +398,7 @@
 .logoContainer {
   display: flex;
   align-items: center;
-  gap: 1.125rem;
+  gap: 1rem;
 }
 .navbarSubtextContainer {
   display: flex;
@@ -2548,7 +2551,7 @@
   margin-top: 3.25rem;
   padding-right: 1rem;
   padding-bottom: 1.625rem;
-  padding-bottom: 33%;
+  //padding-bottom: 33%;
 }
 // footer styles
 .footerSection {
@@ -3651,6 +3654,8 @@
   margin-top: 3.25rem;
   padding-right: 1rem;
   padding-bottom: 1.625rem;
+  padding-bottom: 10%;
+
 }
 // footer styles
 .footerSection {

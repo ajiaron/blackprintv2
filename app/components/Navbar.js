@@ -103,7 +103,7 @@ export default function Navbar({width, contentRef, scrollToId}) {
         <div className={styles.logoContainer} onClick={()=>scrollToId("home")}>
           <Logo className={styles.logoImage}/>
           <p className={styles.navbarLogoText}>
-            blackprint
+            Blackprint
           </p>
         </div>
         {(width<=1024)?

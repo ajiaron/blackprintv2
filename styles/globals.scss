@@ -166,6 +166,20 @@
   body {
     align-items: center;
   }
+  html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #121316;
+  }
+  body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100vw;
+    max-height: 100vh;
+    height: 100%;
+    background-color: #121316;
+  }
 }
 @media (min-width: 391px) and (max-width: 480px) {
   :root {
