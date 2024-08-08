@@ -25,6 +25,7 @@ import { FaLink } from "react-icons/fa6";
 import { FaPaintBrush } from "react-icons/fa";
 import { FaChartLine } from "react-icons/fa6";
 import { TbWaveSine } from "react-icons/tb";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const ServiceItem = ({title, subtext, image}) => {
   return (
@@ -136,6 +137,9 @@ export default function Home() {
     } else {
       window.location.href = `https://www.termsfeed.com/live/68f663b0-f207-4758-8a8a-e46da2cd3e60`
     }
+  }
+  function handleStripe(link) {
+    window.location.href = link
   }
   function navigateBooking() {
     window.location.href = `https://calendly.com/blackprint-unlimited/30min`
@@ -536,7 +540,7 @@ export default function Home() {
           <p className={styles.subheaderText}>
             Start your Blackprint subscription today to kickstart your business.
           </p>
-          <span className={styles.appointmentButton}>
+          <span className={styles.appointmentButton} onClick={()=>navigateBooking()}>
             <p className={styles.appointmentButtonText}>
                 Book an appointment
             </p>
@@ -626,7 +630,7 @@ export default function Home() {
                     </p>
                   </span>
                 </div>
-                <span className={styles.packageButton}>
+                <span className={styles.packageButton} onClick={()=>handleStripe("https://buy.stripe.com/7sI3cJ5S11fY27S28k")}>
                   <p className={styles.pricingButtonText}>
                     Subscribe Now
                   </p>
@@ -719,7 +723,7 @@ export default function Home() {
                     </p>
                   </span>
                 </div>
-                <span className={styles.packagePremiumButton}>
+                <span className={styles.packagePremiumButton} onClick={()=>handleStripe("https://buy.stripe.com/7sI6oV8098IqcMwbIV")}>
                   <p className={styles.pricingButtonText} style={{fontWeight:"570"}}>
                     Subscribe Now
                   </p>
@@ -732,7 +736,7 @@ export default function Home() {
               <div className={styles.packageContents}>
                 <div className={styles.packageHeaderContainer}>
                   <p className={styles.pricingTitleText}>
-                    Brand Start-Up
+                    3-Day Brand Startup
                   </p>
                   <p className={styles.pricingSubtitleText}>
                     For individuals looking to build their
@@ -783,8 +787,8 @@ export default function Home() {
                       <path d="M1 5.96527L5 9.9375L14 1" stroke="#959595" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>                      
                     }
-                    <p className={styles.pricingFeatureText}>
-                      Average 1-2 week delivery
+                    <p className={styles.pricingFeatureText} style={{fontWeight:"800", color:"#9f9f9f"}}>
+                      72 hour delivery
                     </p>
                   </span>
                   <span className={styles.packageChecklistItem}>
@@ -798,7 +802,7 @@ export default function Home() {
                     </p>
                   </span>
                 </div>
-                <span className={styles.packageButton}>
+                <span className={styles.packageButton} onClick={()=>navigateBooking()}>
                   <p className={styles.pricingButtonText}>
                     Learn More
                   </p>
@@ -806,6 +810,12 @@ export default function Home() {
               </div>       
             </div>
           </div>
+        </div>
+        <div className={styles.oneTimeContainer}>
+            <a className={[styles.heroHeaderSubtext, styles.oneTimeText].join(' ')}
+            href={"mailto:info@blackprint.in"}>
+                For other inquiries, contact us here.
+            </a>
         </div>
       </section>
       <section className={styles.testimonialSection} id={"testimonials"}>
