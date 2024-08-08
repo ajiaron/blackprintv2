@@ -1028,7 +1028,7 @@ export default function Home() {
                   Our Process
                 </span>
                 <span className={styles.footerNavText} onClick={()=>scrollToId("faqs")}>
-                  FAQ's
+                  FAQ&apos;s
                 </span>
               </div>
               <div className={styles.footerColumn}>
