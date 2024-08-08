@@ -355,7 +355,18 @@
 .footerNavText:hover {
   color:#fff;
 }
-
+.footerSubheader {
+  font-family: var(--default-font);
+  font-size: var(--text-regular);
+  letter-spacing: var(--subtext-spacing);
+  line-height: 164%;
+  font-weight: var(--text-weight-medium);
+  color:var(--subheader-color);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+}
 // navbar
 .navbarContainer {
   display: flex;
@@ -2596,6 +2607,7 @@
 .footerSubheader {
   padding-top: .75rem;
   padding-bottom: .5rem;
+  width: 85%;
 }
 .footerButtonContainer {
   margin-top: 1.5rem;
@@ -3569,6 +3581,7 @@
 .footerSubheader {
   padding-top: .75rem;
   padding-bottom: .5rem;
+  width: 80%;
 }
 .footerContentContainer {
   height: fit-content;
@@ -4486,7 +4499,7 @@
   max-width: 88%;
   display: flex;
   flex-direction: column;
-  padding-bottom: .875rem;
+  padding-bottom: .75rem;
  // background-color: red;
 }
 .packageHeaderContainer {
@@ -4751,6 +4764,9 @@
   flex-direction: column;
   align-items: center;
   height: 5.5rem;
+}
+ .footerSubheader {
+  width: 95%;
 }
 
 }
@@ -5530,7 +5546,7 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  //width: 80%;
   align-self: center;
 }
 //faqsSection
@@ -5576,16 +5592,18 @@
   //padding-top: 33px;
 }
 .footerNavigationContainer {
-  width: 90%;
+  width: 88%;
   height: fit-content;
   display: flex;
   align-self: center;
-  align-items: center;
+  flex-direction: column-reverse;
+  align-items: flex-start;
   justify-content: space-between;
  // background-color: red;
-  margin-top: 3.75rem;
+  margin-top: 2.75rem;
   padding-right: 1rem;
   padding-bottom: 1.625rem;
+  gap: 2rem;
 }
 // footer styles
 .footerSection {
@@ -5595,6 +5613,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.footerStubContainer {
+  display: flex;
+  gap:1.375rem;
+  align-items: center;
+}
+.footerIcon {
+  transition: all .15s linear;
+  transform: translateY(-1px);
+}
+.footerIcon:hover {
+  color:#fff;
+}
+.footerLogoContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.footerLogo {
+  display: none;
 }
 .footerSubheader {
   padding-top: .75rem;
@@ -5644,8 +5682,25 @@
   align-items: center;
   height: 5.5rem;
 }
+.footerContainerAlt {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
-
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap:1rem;
+  width: 50%;
+}
+}
+@media (min-width: 560px) and (max-width: 768px) {
+  .faqsSubheader {
+    width: auto;
+  }
+}
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   .sectionHeaderContainer {

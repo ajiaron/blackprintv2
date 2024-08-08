@@ -26,6 +26,8 @@ import { FaPaintBrush } from "react-icons/fa";
 import { FaChartLine } from "react-icons/fa6";
 import { TbWaveSine } from "react-icons/tb";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
 
 const ServiceItem = ({title, subtext, image}) => {
   return (
@@ -131,12 +133,18 @@ export default function Home() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  function handleStripeLogin() {
+    window.location.href = `https://billing.stripe.com/p/login/4gw5mD0xQ6ZFczm7ss`
+  }
   function handleNavigate(val) {
     if (val === "terms") {
       window.location.href = `https://www.termsfeed.com/live/208e984c-90de-4a80-aef5-bca1c2f10e30`
     } else {
       window.location.href = `https://www.termsfeed.com/live/68f663b0-f207-4758-8a8a-e46da2cd3e60`
     }
+  }
+  function handleSocial(val) {
+    window.location.href = val
   }
   function handleStripe(link) {
     window.location.href = link
@@ -915,7 +923,7 @@ export default function Home() {
                 See if Blackprint is{windowSize.width<=413&&<br/>} for{windowSize.width<=480&&windowSize.width>413&&<br/>} you today.
                 </p>
                 {
-                <p className={[styles.faqsSubheader, styles.footerSubheader].join(' ')}>
+                <p className={styles.footerSubheader}>
                 {(windowSize.width <= 480)?"":"It all starts with design."} Book a consultation call with us{(windowSize.width<=728)?",":" today,"}<br/>
                  and we’ll get your business branded the way you want.
                 </p>
@@ -946,8 +954,8 @@ export default function Home() {
                   <span className={styles.footerNavText} onClick={()=>scrollToId("process")}>
                     Our Process
                   </span>
-                  <span className={styles.footerNavText} onClick={()=>scrollToId("faqs")}>
-                    FAQs
+                  <span className={styles.footerNavText} onClick={()=>handleStripeLogin()}>
+                    Login
                   </span>
                 </div>
                 <div className={styles.footerSmallRow}>
@@ -965,11 +973,21 @@ export default function Home() {
               }
           </div>
           <div className={styles.footerNavigationContainer}>
-            <span className={styles.logoContainer} onClick={()=>scrollToId("home")}>
-              <LogoAlt className={styles.logoImage}/>
-              <p className={styles.footerLogoText}>
+            <span className={[styles.logoContainer, styles.footerLogoContainer].join(' ')}>
+              <LogoAlt className={[styles.logoImage, styles.footerLogo].join(' ')} onClick={()=>scrollToId("home")}/>
+              <span className={styles.footerLogoText} onClick={()=>scrollToId("home")}>
                 blackprint
-              </p>
+              </span>
+              
+              {(windowSize.width < 1025 && windowSize.width>768)&&
+              <div style={{display:"flex"}} className={styles.footerStubContainer}>
+                <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.instagram.com/blackprint.unlimited/")}/>
+                <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.linkedin.com/company/blackprint-agency/")}/>
+                <span style={{padding:"0", display:"flex", alignItems:"flex-end", justifyContent:"flex-end", color:'#959595', fontSize:"14px"}}>
+                 © 2024
+               </span>
+              </div>
+             }
             </span>
             {(windowSize.width > 1024)?
             <>
@@ -982,8 +1000,8 @@ export default function Home() {
             <span className={styles.footerNavText} onClick={()=>scrollToId("process")}>
               Our Process
             </span>
-            <span className={styles.footerNavText} onClick={()=>scrollToId("faqs")}>
-              FAQs
+            <span className={styles.footerNavText} onClick={()=>handleStripeLogin()}>
+              Login
             </span>
             <span className={styles.footerNavText} onClick={()=>handleNavigate("terms")}>
               Terms of Service
@@ -992,7 +1010,44 @@ export default function Home() {
               Privacy Policy
             </span>
             </>:
-            <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"flex-end", color:'#959595', fontSize:"13.5px"}}>
+            (windowSize.width > 768)?
+            <div className={styles.footerContainerAlt}>
+              <div className={styles.footerColumn}>
+                <p className={styles.footerNavText} style={{color:"#fff"}}onClick={()=>handleNavigate("terms")}>
+                  Services
+                </p>
+                <span className={styles.footerNavText} onClick={()=>scrollToId("catalog")}>
+                  Recent Work
+                </span>
+                <span className={styles.footerNavText} onClick={()=>scrollToId("pricing")}>
+                  Pricing
+                </span>
+                <span className={styles.footerNavText} onClick={()=>scrollToId("process")}>
+                  Our Process
+                </span>
+                <span className={styles.footerNavText} onClick={()=>scrollToId("faqs")}>
+                  FAQ's
+                </span>
+              </div>
+              <div className={styles.footerColumn}>
+                <p className={styles.footerNavText} style={{color:"#fff"}}onClick={()=>handleNavigate("terms")}>
+                  Company
+                </p>
+                <span className={styles.footerNavText} onClick={()=>handleStripeLogin()}>
+                  Client Login
+                </span>
+                <a className={styles.footerNavText} href="mailto:info@blackprint.in">
+                  Contact Us
+                </a>
+                <span className={styles.footerNavText} onClick={()=>handleNavigate("terms")}>
+                  Terms of Service
+                </span>
+                <span className={styles.footerNavText} onClick={()=>handleNavigate("privacy")}>
+                  Privacy Policy
+                </span>
+              </div>
+            </div>:
+            <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"flex-end", color:'#959595', fontSize:"14px"}}>
               © 2024
             </span>
             }
