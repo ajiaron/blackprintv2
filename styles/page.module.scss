@@ -45,7 +45,7 @@
   font-size: var(--text-logo-medium);
  // font-weight: 600;
  /// letter-spacing: 0.125px;
-  transform: scaleY(.98) translateY(-.75px);
+  transform: scaleY(.98) translateY(-.625px);
   color:#fff;
   //transform: scaleY(.99);
   font-weight: 560;
@@ -1613,6 +1613,7 @@
   .navbarLogoText {
     font-weight: 580;
     letter-spacing: 0;
+    transform: scaleY(.98) translateY(-.25px);
 
   }
   .oneTimeContainer {
@@ -2718,6 +2719,8 @@
   .navbarLogoText {
     font-weight: 580;
     letter-spacing: 0;
+    transform: scaleY(.98) translateY(-.25px);
+
 
   }
 .footerContainerAlt {
