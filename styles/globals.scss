@@ -369,9 +369,9 @@ section {
   height: fit-content;
 }
 html {
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
-  max-height: 100vh;
+  min-height: 100vh;
   background-color: #121316;
 }
 body {
