@@ -28,6 +28,7 @@ import { TbWaveSine } from "react-icons/tb";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import Head from 'next/head';
 
 const ServiceItem = ({title, subtext, image}) => {
   return (
