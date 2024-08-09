@@ -117,6 +117,7 @@ const FaqsItem = ({title, subtext}) => {
   )
 }
 export default function Home() {
+  const googletag = process.env.NEXT_PUBLIC_GOOGLE_TAG
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
@@ -180,6 +181,24 @@ export default function Home() {
     };
   }, []);
   return (
+    <>        
+    <Head>
+    <script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${googletag}`}
+    />
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+          console.log('Google Analytics script loaded');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date()); 
+          gtag('config', ${googletag});
+        `
+      }}
+    />
+  </Head>
     <main className={styles.main} ref={contentRef}>
       <div style={{position:"relative"}}>
       <Navbar width={windowSize.width} contentRef={contentRef} scrollToId={(id)=>scrollToId(id)}/>
@@ -1064,5 +1083,6 @@ export default function Home() {
       </section>
       </div>
     </main>
+    </>
   );
 }
