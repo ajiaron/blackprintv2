@@ -118,16 +118,16 @@ const FaqsItem = ({title, subtext}) => {
   )
 }
 export default function Home() {
-  const googletag = process.env.NEXT_PUBLIC_GOOGLE_TAG
+  const googletag = process.env.NEXT_PUBLIC_GOOGLE_TAG;
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
   });
   const [animation, setAnimation] = useState(false);
-  const [process, setProcess] = useState("design");
+  const [processType, setProcessType] = useState("design");
   const contentRef = useRef(null);
   function handleProcess(e) {
-    setProcess(e)
+    setProcessType(e)
   }
   const scrollToId = (id) => {
     const element = document.getElementById(id);
@@ -508,7 +508,7 @@ export default function Home() {
             </div>
           </div>
           }
-         <Process state={process}/>
+         <Process state={processType}/>
         </div>
       </section>
       <section className={styles.servicesSection} id={"services"}>
