@@ -16,7 +16,7 @@ export const metadata = {
     description: 'Your design agency for branding, marketing, and more.',
     images: [
       {
-        url: 'https://blackprintbucket.s3.us-west-1.amazonaws.com/thumbnail2.png',
+        url: 'https://blackprintbucket.s3.us-west-1.amazonaws.com/thumbnail3.png',
         width: 1200,
         height: 630,
         alt: 'BLACKPRINT'
