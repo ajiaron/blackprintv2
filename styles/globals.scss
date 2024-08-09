@@ -378,7 +378,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   width: 100vw;
-  max-height: 100vh;
+  min-height: 100vh;
   height: 100%;
   background-color: #121316;
 }
