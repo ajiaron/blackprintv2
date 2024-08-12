@@ -996,6 +996,7 @@ export default function Home() {
           <div className={styles.footerNavigationContainer}>
             <span className={[styles.logoContainer, styles.footerLogoContainer].join(' ')}>
               <LogoAlt className={[styles.logoImage, styles.footerLogo].join(' ')} onClick={()=>scrollToId("home")}/>
+
               <span className={styles.footerLogoText} onClick={()=>scrollToId("home")}>
                 Blackprint
               </span>
@@ -1019,9 +1020,6 @@ export default function Home() {
             <span className={styles.footerNavText} onClick={()=>scrollToId("pricing")}>
               Pricing
             </span>
-            <span className={styles.footerNavText} onClick={()=>scrollToId("process")}>
-              Our Process
-            </span>
             <span className={styles.footerNavText} onClick={()=>handleStripeLogin()}>
               Login
             </span>
@@ -1031,6 +1029,14 @@ export default function Home() {
             <span className={styles.footerNavText} onClick={()=>handleNavigate("privacy")}>
               Privacy Policy
             </span>
+            <span className={styles.footerTrademarkText}>
+               © 2024
+            </span>
+            <div className={styles.footerIconContainer}>
+            <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.instagram.com/blackprint.design/")}/>
+            <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.linkedin.com/company/blackprint-agency/")}/>
+            </div>
+          
             </>:
             (windowSize.width > 768)?
             <div className={styles.footerContainerAlt}>

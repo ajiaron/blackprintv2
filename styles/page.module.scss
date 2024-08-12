@@ -358,6 +358,15 @@
 .footerNavText:hover {
   color:#fff;
 }
+.footerTrademarkText {
+  font-family: var(--default-font);
+  font-size: var(--text-small);
+  letter-spacing: var(--subtext-spacing);
+  line-height: auto;
+  font-weight: var(--text-weight-medium);
+  color:var(--subtext-color-darker);
+  text-align: center;
+}
 .footerSubheader {
   font-family: var(--default-font);
   font-size: var(--text-regular);
@@ -1598,6 +1607,11 @@
   display: flex;
  // width: 100%;
   justify-content: space-between;
+}
+.footerIconContainer {
+  display: flex;
+  gap:1.25rem;
+  align-items: center;
 }
 @media (max-width: 1024px) {
   .navbarSubtextLarge {
