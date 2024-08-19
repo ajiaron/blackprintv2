@@ -30,15 +30,24 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import Head from 'next/head';
 
-const ServiceItem = ({title, subtext, image}) => {
+const ServiceItem = ({title, subtext, image, isOpen, width, handleOpen}) => {
+  function handlePress() {
+    if (isOpen.length > 0 && isOpen === title) {
+      handleOpen('', '')
+    } else {
+      handleOpen('', '')
+      handleOpen(title, subtext)
+    }
+  }
   return (
-    <div className={styles.servicesItem}>
+    <motion.span className={[styles.servicesItem, (isOpen===title)&&styles.servicesItemActive].join(' ')} onClick={()=>width<=480&&handlePress()}>
         <div className={styles.servicesItemContent}>
           <div className={styles.servicesIconWrapper}>
             <div className={`${styles.servicesIcon} ${styles[image]}`}>
 
             </div>
           </div>
+          {isOpen&&width>480&&
           <div className={styles.servicesItemTextWrapper}>
             <p className={styles.serviceTitleText}>
               {title}
@@ -47,8 +56,42 @@ const ServiceItem = ({title, subtext, image}) => {
               {subtext}
             </p>
           </div>
+          }
         </div>
-    </div>
+    </motion.span>
+  )
+}
+const ServicesPopout = ({title, subtext, isOpen}) => {
+  return (
+    <motion.div
+    initial={{height:0, opacity:0, marginTop: 0}}
+    animate={{height:120, opacity:1, marginTop:24,
+      transition: {
+        type: "spring",
+        stiffness: 160,
+        damping: 20,
+       // duration:.2
+      }
+    }}
+    exit={{height:0, opacity:0, marginTop:0,
+      transition: {
+        type: "spring",
+        stiffness: 160,
+        damping: 20,
+       // duration:.2
+      }
+    }}
+    className={styles.servicesPopout}
+    >
+      <div className={styles.servicesItemTextWrapper}>
+        <p className={styles.serviceTitleText}>
+          {title}
+        </p>
+        <p className={styles.serviceSubtext}>
+          {subtext}
+        </p>
+      </div>
+    </motion.div>
   )
 }
 const TestimonialItem = ({name, title, subtext, image, side}) => {
@@ -125,6 +168,9 @@ export default function Home() {
   });
   const [animation, setAnimation] = useState(false);
   const [processType, setProcessType] = useState("design");
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentTitle, setCurrentTitle] = useState('');
+  const [currentSubtext, setCurrentSubtext] = useState('');
   const contentRef = useRef(null);
   function handleProcess(e) {
     setProcessType(e)
@@ -153,6 +199,11 @@ export default function Home() {
   }
   function navigateBooking() {
     window.location.href = `https://calendly.com/blackprint-unlimited/30min`
+  }
+  function handleService(title, subtext) {
+    setIsOpen(title)
+    setCurrentTitle(title)
+    setCurrentSubtext(subtext)
   }
   useEffect(() => {
     setAnimation(true);
@@ -521,40 +572,73 @@ export default function Home() {
           </p>
         </div>
         <div className={styles.servicesContentContainer}>
-          {(windowSize.width >= 1080 || windowSize.width < 744)?
+          {(windowSize.width >= 1080 || (windowSize.width < 744 && windowSize.width > 480))?
           <>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Websites'} subtext={'Fully responsive web pages and full-stack applications.'} image={'laptop'}/>
-            <ServiceItem title={'Mobile Applications'} subtext={'Bundled applications for both iOS and Android.'} image={'mobile'}/>
-            <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'}/>
+            <ServiceItem title={'Websites'} subtext={'Fully responsive web pages and full-stack applications.'} image={'laptop'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Mobile Applications'} subtext={'Bundled applications for both iOS and Android.'} image={'mobile'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'} isOpen={true} width={windowSize.width}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'}/>
-            <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'}/>
-            <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'}/>
+            <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'} isOpen={true} width={windowSize.width}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'}/>
-            <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'}/>
-            <ServiceItem title={'And More!'} subtext={'Get in touch, and we’ll see what else we can do for you!'} image={'stars'}/>
+            <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'And More!'} subtext={'Get in touch, and we’ll see what else we can do for you!'} image={'stars'} isOpen={true} width={windowSize.width}/>
           </div>
+          </>:
+          (windowSize.width <= 480)?
+          <>
+          <motion.div className={styles.servicesRow}>
+            <ServiceItem title={'Websites'} subtext={'Fully responsive web pages and full-stack applications.'} image={'laptop'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+            <ServiceItem title={'Mobile Applications'} subtext={'Bundled applications for both iOS and Android.'} image={'mobile'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+            <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+          </motion.div>
+          <AnimatePresence>
+            {(isOpen ==="Websites" || isOpen==="Mobile Applications" || isOpen==="Pitch Decks")&&
+            <ServicesPopout title={currentTitle} subtext={currentSubtext}/>
+            }
+          </AnimatePresence>
+          <motion.div className={styles.servicesRow}>
+            <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+            <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+            <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+          </motion.div>
+          <AnimatePresence>
+            {(isOpen ==="Digital Flyers" || isOpen==="Banners" || isOpen==="Infographics")&&
+            <ServicesPopout title={currentTitle} subtext={currentSubtext}/>
+            }
+          </AnimatePresence>
+          <motion.div className={styles.servicesRow}>
+            <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+            <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+            <ServiceItem title={'And More!'} subtext={'Get in touch, and we’ll see what else we can do for you!'} image={'stars'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
+          </motion.div>
+          <AnimatePresence>
+            {(isOpen ==="Social Media Funnels" || isOpen==="Targeted Ads" || isOpen==="And More!")&&
+            <ServicesPopout title={currentTitle} subtext={currentSubtext}/>
+            }
+          </AnimatePresence>
           </>:
           <>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Websites'} subtext={'Fully responsive web pages and full-stack applications.'} image={'laptop'}/>
-            <ServiceItem title={'Mobile Applications'} subtext={'We can bundle your applications for both iOS and Android.'} image={'mobile'}/>
+            <ServiceItem title={'Websites'} subtext={'Fully responsive web pages and full-stack applications.'} image={'laptop'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Mobile Applications'} subtext={'We can bundle your applications for both iOS and Android.'} image={'mobile'} isOpen={true} width={windowSize.width}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'}/>
-            <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'}/>
+            <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'} isOpen={true} width={windowSize.width}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'}/>
-            <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'}/>
+            <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'} isOpen={true} width={windowSize.width}/>
           </div>
           <div className={styles.servicesRow}>
-            <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'}/>
-            <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'}/>
+            <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'} isOpen={true} width={windowSize.width}/>
+            <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'} isOpen={true} width={windowSize.width}/>
           </div>
           </>
           }
