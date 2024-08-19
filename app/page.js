@@ -61,19 +61,18 @@ const ServiceItem = ({title, subtext, image, isOpen, width, handleOpen}) => {
     </motion.span>
   )
 }
-const ServicesPopout = ({title, subtext, isOpen}) => {
+const ServicesPopout = ({title, subtext, isOpen, width}) => {
   return (
     <motion.div
-    initial={{height:0, opacity:0, marginTop: 0}}
-    animate={{height:120, opacity:1, marginTop:24,
+    initial={{height:0, opacity:0, marginBottom: 0}}
+    animate={{height:isOpen?120:0, opacity:1, marginBottom:isOpen?width>390?32:24:0,
       transition: {
         type: "spring",
         stiffness: 160,
         damping: 20,
-       // duration:.2
       }
     }}
-    exit={{height:0, opacity:0, marginTop:0,
+    exit={{height:0, opacity:0, marginBottom:0,
       transition: {
         type: "spring",
         stiffness: 160,
@@ -83,14 +82,26 @@ const ServicesPopout = ({title, subtext, isOpen}) => {
     }}
     className={styles.servicesPopout}
     >
-      <div className={styles.servicesItemTextWrapper}>
+      {isOpen&&
+      <motion.div className={styles.servicesItemTextWrapper}
+      initial={{opacity:0}}
+      animate={{opacity:(isOpen)?1:0,
+        transition: {
+          type: "spring",
+          stiffness: 160,
+          damping: 20,
+          delay:.2
+        }
+      }}
+      >
         <p className={styles.serviceTitleText}>
           {title}
         </p>
         <p className={styles.serviceSubtext}>
           {subtext}
         </p>
-      </div>
+      </motion.div>
+      }
     </motion.div>
   )
 }
@@ -597,31 +608,26 @@ export default function Home() {
             <ServiceItem title={'Mobile Applications'} subtext={'Bundled applications for both iOS and Android.'} image={'mobile'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
             <ServiceItem title={'Pitch Decks'} subtext={'Tailored and concise presentations showcasing your business.'} image={'speaker'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
           </motion.div>
-          <AnimatePresence>
-            {(isOpen ==="Websites" || isOpen==="Mobile Applications" || isOpen==="Pitch Decks")&&
-            <ServicesPopout title={currentTitle} subtext={currentSubtext}/>
+            {
+            <ServicesPopout title={currentTitle} subtext={currentSubtext} isOpen={isOpen==="Websites"||isOpen==="Mobile Applications"||isOpen==="Pitch Decks"} width={windowSize.width}/>
             }
-          </AnimatePresence>
           <motion.div className={styles.servicesRow}>
             <ServiceItem title={'Digital Flyers'} subtext={'Promotional graphics with your branding, for your audience.'} image={'bang'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
             <ServiceItem title={'Banners'} subtext={"Themed images for your business's social profiles."} image={'flag'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
             <ServiceItem title={'Infographics'} subtext={'Intuitive graphics to describe your processes.'} image={'bulb'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
           </motion.div>
-          <AnimatePresence>
-            {(isOpen ==="Digital Flyers" || isOpen==="Banners" || isOpen==="Infographics")&&
-            <ServicesPopout title={currentTitle} subtext={currentSubtext}/>
+            {
+            <ServicesPopout title={currentTitle} subtext={currentSubtext}  isOpen={isOpen==="Digital Flyers"||isOpen==="Banners"||isOpen==="Infographics"} width={windowSize.width}/>
             }
-          </AnimatePresence>
           <motion.div className={styles.servicesRow}>
             <ServiceItem title={'Social Media Funnels'} subtext={'Tailored posts to convert followers into loyal customers.'} image={'heart'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
             <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
             <ServiceItem title={'And More!'} subtext={'Get in touch, and we’ll see what else we can do for you!'} image={'stars'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
           </motion.div>
-          <AnimatePresence>
-            {(isOpen ==="Social Media Funnels" || isOpen==="Targeted Ads" || isOpen==="And More!")&&
-            <ServicesPopout title={currentTitle} subtext={currentSubtext}/>
+        
+            {
+            <ServicesPopout title={currentTitle} subtext={currentSubtext} isOpen={isOpen==="Social Media Funnels"||isOpen==="Targeted Ads"||isOpen==="And More!"} width={windowSize.width}/>
             }
-          </AnimatePresence>
           </>:
           <>
           <div className={styles.servicesRow}>
