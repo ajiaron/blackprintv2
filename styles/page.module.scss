@@ -2245,7 +2245,7 @@
 .servicesItemActive {
   background-color: var(--theme-color);
   background-image: var(--theme-gradient);
-  filter: drop-shadow(0px 0px 5px var(--theme-color));
+ // filter: drop-shadow(0px 0px 5px var(--theme-color));
 }
 .servicesItem:hover {
  // background-color: var(--theme-color);
@@ -3485,7 +3485,7 @@
 .servicesItemActive {
   background-color: var(--theme-color);
   background-image: var(--theme-gradient);
-  filter: drop-shadow(0px 0px 5px var(--theme-color));
+  //filter: drop-shadow(0px 0px 5px var(--theme-color));
 }
 .servicesItemActive .servicesIcon {
   background-color: var(--theme-color);
