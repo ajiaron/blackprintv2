@@ -392,6 +392,22 @@
   z-index: 999;
   position: absolute;
 }
+.navButtonContainer {
+  bottom: 1.75rem;
+  box-shadow: 0px 0px 2px 0px rgba(10,10,10,.2);
+  right:1.5rem;
+  position: absolute;
+  width: 2.625rem;
+  height: 2.625rem;
+  transform: scale(0);
+  border-radius: 2.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: var(--button-color);
+  background-color: #fff;
+}
 .navbarContentContainer {
   width: 75%;
   display: flex;
@@ -1265,6 +1281,18 @@
   margin-top: 1.6rem;
   transition: all .15s linear;
 }
+.packageReferralButton {
+  border-radius: 42.25px;
+  //width: 100%;
+  width: 15.625rem;
+  height: 2.25rem;
+  background-color: #2d3138;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  margin-top: 1.875rem;
+}
 .packageButton:hover {
   color:#000;
   background-color: #fff;
@@ -1306,9 +1334,51 @@
 .oneTimeContainer:hover .oneTimeText {
   color:#fff;
 }
-.oneTimeContainer:hover {
 
+.pricingReferralContainer {
+  width: 75.07%;
+  align-self: center;
+  margin-top: 3rem;
 }
+.pricingReferralOuter {
+  border-top: 1px dashed #454545;
+  //background-image: var(--theme-gradient-alt);
+  //background-color: #1C1D20;
+  //border-radius: 1rem;
+  height: fit-content;
+  min-height: 10rem;
+
+  padding: .25rem;
+  width: 100%;
+}
+.pricingReferralInner {
+ // background-color: #0D0E11;
+  //background-color: #1C1D20;
+  border-radius: 1rem;
+  width: 100%;
+  min-height: 10rem;
+  height: 100%;
+  padding-top: 1.875rem;
+  padding-bottom: 2rem;
+  //padding-left: 2.43rem;
+  //padding-right: 2.5rem;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.pricingReferralLeft {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap:.75rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.pricingReferralRight {
+  display: flex;
+  align-items: center;
+}
+
 // testimonial styles
 .testimonialSection {
   width: 100%;
@@ -1559,6 +1629,25 @@
   backdrop-filter: blur(24px);
   list-style-type: none;
   top:3.25rem;
+  right:calc(6% + .75rem);
+  transform-origin: top right;
+}
+.menuContainerAlt {
+  position: absolute;
+  height: fit-content;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 19.75rem;
+  padding-top:1rem;
+  padding-bottom:1.25rem;
+  background-color: rgba(32,33,36,.75);
+  border-radius: 1rem;
+  scrollbar-width: none;
+  justify-content: center;
+  backdrop-filter: blur(24px);
+  list-style-type: none;
+  bottom:3.25rem;
   right:calc(6% + .75rem);
   transform-origin: top right;
 }
@@ -2350,6 +2439,11 @@
   justify-content: center;
   align-items: flex-end;
 }
+.pricingReferralContainer {
+  width: 20.75rem;
+  align-self: center;
+  margin-top: 2.5rem;
+}
 .pricingPackageOuter {
   border-radius: 1rem;
   height: 27.5rem;
@@ -2427,6 +2521,18 @@
   border-radius: 42.25px;
   //width: 100%;
   width: 15.625rem;
+  height: 2.25rem;
+  background-color: #2d3138;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  margin-top: 1.875rem;
+}
+.packageReferralButton {
+  border-radius: 42.25px;
+  //width: 100%;
+  width: 100%;
   height: 2.25rem;
   background-color: #2d3138;
   display: flex;
@@ -3517,6 +3623,11 @@
   justify-content: center;
   align-items: flex-end;
 }
+.pricingReferralContainer {
+  width: 21.25rem;
+  align-self: center;
+  margin-top: 2.5rem;
+}
 .pricingPackageOuter {
   border-radius: 1rem;
   height: 27.5rem;
@@ -3594,6 +3705,19 @@
   border-radius: 42.25px;
   //width: 100%;
   width: 15.625rem;
+  height: 2.25rem;
+  background-color: #2d3138;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  margin-top: 1.875rem;
+}
+.packageReferralButton {
+  border-radius: 42.25px;
+  //width: 100%;
+  //width: 15.625rem;
+  width: 100%;
   height: 2.25rem;
   background-color: #2d3138;
   display: flex;
@@ -4076,6 +4200,11 @@
 
 }
 @media (min-width: 481px) and (max-width: 768px) {
+  .pricingReferralContainer {
+    width: 21.25rem;
+    align-self: center;
+    margin-top: 2.5rem;
+  }
   .footerContainerAlt {
     display: flex;
     width: 90%;
@@ -4765,6 +4894,19 @@
   border-radius: 42.25px;
   //width: 100%;
   width: 15.625rem;
+  height: 2.25rem;
+  background-color: #2d3138;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  margin-top: 1.875rem;
+}
+.packageReferralButton {
+  border-radius: 42.25px;
+  //width: 100%;
+  //width: 15.625rem;
+  width: 100%;
   height: 2.25rem;
   background-color: #2d3138;
   display: flex;
@@ -5672,6 +5814,18 @@
   border-radius: 42.25px;
   //width: 100%;
   width: 15.625rem;
+  height: 2.25rem;
+  background-color: #2d3138;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  margin-top: 1.875rem;
+}
+.packageReferralButton {
+  border-radius: 42.25px;
+  //width: 100%;
+  //width: 15.625rem;
   height: 2.25rem;
   background-color: #2d3138;
   display: flex;
@@ -6611,6 +6765,18 @@
   color:#fff;
   margin-top: 1.875rem;
 }
+.packageReferralButton {
+  border-radius: 42.25px;
+  //width: 100%;
+  //width: 15.625rem;
+  height: 2.25rem;
+  background-color: #2d3138;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  margin-top: 1.875rem;
+}
 .packagePremiumButton {
   border-radius: 42.25px;
   //width: 95.41%;e
@@ -6797,6 +6963,11 @@
     justify-content: center;
     align-items: flex-end;
   }
+  .pricingReferralContainer {
+    width: 75%;
+    align-self: center;
+    margin-top: 2.5rem;
+  }
   .pricingPackageOuter {
     border-radius: 1rem;
     //height: 27.5rem;
@@ -6880,6 +7051,18 @@
     border-radius: 42.25px;
     width: 100%;
     //width: 15.625rem;
+    height: 2.25rem;
+    background-color: #2d3138;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+    margin-top: 1.875rem;
+  }
+  .packageReferralButton {
+    border-radius: 42.25px;
+    //width: 100%;
+    width: 15.625rem;
     height: 2.25rem;
     background-color: #2d3138;
     display: flex;

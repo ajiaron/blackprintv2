@@ -5,6 +5,7 @@ import {motion, AnimatePresence, useAnimation} from 'framer-motion'
 import styles from "../styles/page.module.scss";
 import LogoAlt from '../public/assets/logoalt.svg'
 import Navbar from "./components/Navbar";
+import NavButton from "./components/NavButton";
 import Carousel from './components/Carousel'
 import Catalog from "./components/Catalog";
 import Print from "./components/Print";
@@ -28,6 +29,7 @@ import { TbWaveSine } from "react-icons/tb";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { useInView } from 'react-intersection-observer';
 import Head from 'next/head';
 
 const ServiceItem = ({title, subtext, image, isOpen, width, handleOpen}) => {
@@ -177,6 +179,7 @@ export default function Home() {
     width: undefined,
     height: undefined,
   });
+  const [showNavigation, setShowNavigation] = useState(false);
   const [animation, setAnimation] = useState(false);
   const [processType, setProcessType] = useState("design");
   const [isOpen, setIsOpen] = useState(false);
@@ -216,6 +219,25 @@ export default function Home() {
     setCurrentTitle(title)
     setCurrentSubtext(subtext)
   }
+    
+  const { ref:topRef, inView: topInView} = useInView({
+    threshold:1,
+    triggerOnce:false
+  });
+      
+  const { ref:bottomRef, inView: bottomInView} = useInView({
+    threshold:.1,
+    triggerOnce:false
+  });
+  useEffect(()=>{
+    if (topInView || bottomInView) {
+
+      setShowNavigation(false)
+    } else {
+      setShowNavigation(true)
+    }
+  }, [topInView, bottomInView])
+
   useEffect(() => {
     setAnimation(true);
   }, []);
@@ -263,11 +285,12 @@ export default function Home() {
     />
   </Head>
     <main className={styles.main} ref={contentRef}>
-      <div style={{position:"relative"}}>
-      <Navbar width={windowSize.width} contentRef={contentRef} scrollToId={(id)=>scrollToId(id)}/>
+      <div style={{position:"relative"}} >
+      <Navbar width={windowSize.width} contentRef={contentRef} scrollToId={(id)=>scrollToId(id)} />
       </div>
-      <div className={styles.contentContainer}>
-        <div className={styles.heroContentWrapper} id={"home"}>
+
+      <div className={styles.contentContainer} >
+        <div className={styles.heroContentWrapper} id={"home"} ref={topRef}>
           <div className={styles.heroCanvasContainer}>
             <div className={styles.heroPrintContainer}
             initial={{width:"100%", opacity:1}}
@@ -624,7 +647,6 @@ export default function Home() {
             <ServiceItem title={'Targeted Ads'} subtext={'Marketing towards your audience to increase conversion rates.'} image={'money'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
             <ServiceItem title={'And More!'} subtext={'Get in touch, and we’ll see what else we can do for you!'} image={'stars'} isOpen={isOpen} width={windowSize.width} handleOpen={(isOpen, title, subtext)=>handleService(isOpen, title, subtext)}/>
           </motion.div>
-        
             {
             <ServicesPopout title={currentTitle} subtext={currentSubtext} isOpen={isOpen==="Social Media Funnels"||isOpen==="Targeted Ads"||isOpen==="And More!"} width={windowSize.width}/>
             }
@@ -929,12 +951,46 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+       
         <div className={styles.oneTimeContainer}>
             <a className={[styles.heroHeaderSubtext, styles.oneTimeText].join(' ')}
             href={"mailto:info@blackprint.in"}>
                 For other inquiries, contact us here.
             </a>
         </div>
+        <div className={styles.pricingReferralContainer}>
+          <div className={styles.pricingReferralOuter}>
+            <div className={styles.pricingReferralInner}>
+              <div className={styles.pricingReferralLeft}>
+                <p className={styles.pricingTitleText}>
+                  Refer a friend {'&'} earn a monthly commission {(windowSize.width>807)&&<span style={{display:"inline"}}><FaArrowRightLong size={18} color={"#fff"} style={{marginLeft:".625rem",alignItems:"flex-end", height:"fit-content", transform:"translateY(2px)"}}/>
+                  </span>}
+                </p>  
+                <p className={styles.pricingSubtitleText} style={{lineHeight:"22px"}}>
+                    <span style={{fontWeight:600}}>Apply here</span> for your own personalized referral code that you can share with your followers. 
+                </p>
+                {(windowSize.width<=1119)&&
+                <a className={styles.packageReferralButton} style={{transform:"translateX(-1px)",marginTop:".375rem",maxWidth:(windowSize.width>768)?"15.625rem":"auto", width:(windowSize.width>768?"":"100%")}} onClick={()=>navigateBooking()} href="mailto:info@blackprint.in">
+                  <p className={styles.pricingButtonText}>
+                    Apply Today
+                  </p>
+                </a>
+                }  
+              </div>
+              <div className={styles.pricingReferralRight}>
+              {(windowSize.width>1120)&&
+                <a className={styles.packageButton} style={{transform:"translateX(-1px)",marginTop:".375rem"}} onClick={()=>navigateBooking()} href="mailto:info@blackprint.in">
+                  <p className={styles.pricingButtonText}>
+                    Apply Today
+                  </p>
+                </a>
+                }  
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
       <section className={styles.testimonialSection} id={"testimonials"}>
         <div className={styles.sectionHeaderContainer}>
@@ -1083,7 +1139,7 @@ export default function Home() {
                </div>
               }
           </div>
-          <div className={styles.footerNavigationContainer}>
+          <div className={styles.footerNavigationContainer}  ref={bottomRef}>
             <span className={[styles.logoContainer, styles.footerLogoContainer].join(' ')}>
               <LogoAlt className={[styles.logoImage, styles.footerLogo].join(' ')} onClick={()=>scrollToId("home")}/>
 
