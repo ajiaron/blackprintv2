@@ -1327,6 +1327,8 @@
 .oneTimeText {
   transition: all .15s linear;
   letter-spacing: .25px;
+  color:#fff;
+  font-weight: 450;
 }
 .oneTimeContainer:hover {
   border-bottom:1px solid #fff;
@@ -1334,11 +1336,26 @@
 .oneTimeContainer:hover .oneTimeText {
   color:#fff;
 }
-
+.pricingSliderContainer {
+  width: 75%;
+  margin: 0;
+  align-self: center;
+  padding: 0;
+  height: fit-content;
+}
 .pricingReferralContainer {
   width: 75.07%;
   align-self: center;
   margin-top: 3rem;
+}
+.pricingSliderHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  &:nth-of-type(2) {
+    margin-top: 1.75rem;
+  }
 }
 .pricingReferralOuter {
   border-top: 1px dashed #454545;
@@ -2438,6 +2455,10 @@
   align-self: center;
   justify-content: center;
   align-items: flex-end;
+}
+.pricingSliderContainer {
+  width: 20.75rem;
+  align-self: center;
 }
 .pricingReferralContainer {
   width: 20.75rem;
@@ -3623,6 +3644,10 @@
   justify-content: center;
   align-items: flex-end;
 }
+.pricingSliderContainer {
+  width: 21.25rem;
+  align-self: center;
+}
 .pricingReferralContainer {
   width: 21.25rem;
   align-self: center;
@@ -4200,6 +4225,10 @@
 
 }
 @media (min-width: 481px) and (max-width: 768px) {
+  .pricingSliderContainer {
+    width: 21.25rem;
+    align-self: center;
+  }
   .pricingReferralContainer {
     width: 21.25rem;
     align-self: center;
@@ -6962,6 +6991,10 @@
     align-self: center;
     justify-content: center;
     align-items: flex-end;
+  }
+  .pricingSliderContainer {
+    width: 75%;
+    align-self: center;
   }
   .pricingReferralContainer {
     width: 75%;

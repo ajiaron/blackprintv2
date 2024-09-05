@@ -30,6 +30,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { useInView } from 'react-intersection-observer';
+import Slider from '@mui/material/Slider';
 import Head from 'next/head';
 
 const ServiceItem = ({title, subtext, image, isOpen, width, handleOpen}) => {
@@ -712,7 +713,7 @@ export default function Home() {
                 </div>
                 <div className={styles.packageFigureContainer}>
                   <p className={styles.pricingFigureText}>
-                    $600
+                    $1,500
                   </p>
                   <p className={styles.pricingMonthText}>
                     &nbsp;/mo
@@ -770,7 +771,7 @@ export default function Home() {
                     </p>
                   </span>
                 </div>
-                <span className={styles.packageButton} onClick={()=>handleStripe("https://buy.stripe.com/7sI3cJ5S11fY27S28k")}>
+                <span className={styles.packageButton} onClick={()=>handleStripe("https://buy.stripe.com/aEUeVr6W5gaS8wg00e")}>
                   <p className={styles.pricingButtonText}>
                     Subscribe Now
                   </p>
@@ -805,7 +806,7 @@ export default function Home() {
                 </div>
                 <div className={styles.packageFigureContainer}>
                   <p className={styles.pricingFigureText}>
-                    $1,000
+                    $2,500
                   </p>
                   <p className={styles.pricingMonthText}>
                     &nbsp;/mo
@@ -863,7 +864,7 @@ export default function Home() {
                     </p>
                   </span>
                 </div>
-                <span className={styles.packagePremiumButton} onClick={()=>handleStripe("https://buy.stripe.com/7sI6oV8098IqcMwbIV")}>
+                <span className={styles.packagePremiumButton} onClick={()=>handleStripe("https://buy.stripe.com/4gw00x0xH3o68wg00f")}>
                   <p className={styles.pricingButtonText} style={{fontWeight:"570"}}>
                     Subscribe Now
                   </p>
@@ -954,9 +955,9 @@ export default function Home() {
 
        
         <div className={styles.oneTimeContainer}>
-            <a className={[styles.heroHeaderSubtext, styles.oneTimeText].join(' ')}
-            href={"mailto:info@blackprint.in"}>
-                For other inquiries, contact us here.
+            <a className={[styles.oneTimeText, styles.heroHeaderSubtext].join(' ')}
+            color={"#fff" }href={"mailto:info@blackprint.in"}>
+                For custom inquiries, contact us here.
             </a>
         </div>
         <div className={styles.pricingReferralContainer}>
@@ -990,6 +991,29 @@ export default function Home() {
             </div>
           </div>
         </div>
+        {/*
+        <div className={styles.pricingSliderContainer}>
+          <div className={styles.pricingReferralOuter} style={{paddingTop:"3rem"}}>
+            <div className={styles.pricingSliderHeader}>
+              <p className={styles.pricingTitleText}>
+                  For one-time requests, enter your budget here.{(windowSize.width>807)&&<span style={{display:"inline"}}><FaArrowRightLong size={18} color={"#fff"} style={{marginLeft:".875rem",alignItems:"flex-end", height:"fit-content", transform:"translateY(2px)"}}/>
+                  </span>}
+              </p>  
+            </div>
+            <div className={styles.pricingSliderHeader}>
+            <Slider defaultValue={30} aria-label="slider" marks valueLabelDisplay="auto"
+              step={100} min={0} max={2500} sx={{ color: '#d9d9d9', marginTop:"0rem", width:"calc(100% - 20.625rem)" , alignSelf:"center"}}
+            />
+                <a className={styles.packageButton} style={{transform:"translateX(-1px) translateY(-1px)",marginTop:"0rem",backgroundColor:"#fff", color:"#000", alignSelf:"center"}} onClick={()=>navigateBooking()} href="mailto:info@blackprint.in">
+                  <p className={styles.pricingButtonText}>
+                    Submit Information
+                  </p>
+                </a>
+            </div>
+
+          </div>
+        </div>
+        */}
 
       </section>
       <section className={styles.testimonialSection} id={"testimonials"}>
