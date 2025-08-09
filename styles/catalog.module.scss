@@ -1,0 +1,320 @@
+.catalogFigureContainer {
+    min-width: 75%;
+    width: 75%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap:2.5rem;
+    margin-top: 2rem;
+}
+.catalogFigureRow {
+    width: 100%;
+    max-width: 68.25rem;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
+.catalogButton {
+    width: 9.75rem;
+    padding-left: .5rem;
+    height: 2.25rem;
+    border-radius: 42px;
+    border: 1px solid #efefef;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color:#fff;
+    font-family: DM Sans;
+    font-weight: 400;
+}
+.catalogFigureFooter {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 3.25rem;
+    justify-content: center;
+}
+.catalogItemContainer {
+    width: 30rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.catalogItemContainerAlt {
+    width: 23.125rem;
+    min-width: 23.125rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.catalogItemHeaderWrapper {
+    margin-bottom: 24px;
+    width: 100%;
+}
+.catalogItemHeader {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: DM Sans;
+    letter-spacing: var(--subheader-spacing);
+    color:#fff;
+}
+.catalogFigureWrapper {
+    width: 100%;
+    height: 35.5rem;
+    border-radius: 4px;
+    display: flex;
+}
+.catalogFigureWrapperAlt {
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    height: 31.625rem;
+}
+.catalogFigure {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 4px;
+}
+.catalogItemDescription {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap:19px;
+    margin-top: 26px;
+    width: 100%;
+}
+.catalogItemCategories {
+    width: 100%;
+}
+.catalogSubtextWrapper {
+    width: 100%;
+}
+.catalogItemSubtext {
+    font-size: 18px;
+    font-weight: 400px;
+    font-family: DM Sans;
+    color: #909090;
+    letter-spacing: var(--subtext-spacing);
+}
+.catalogPageHeader {
+
+}
+.catalogPageCanvas {
+    background-size: cover;
+    background-position: center;
+}
+
+
+.catalogPageHeaderWrapper {
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+}
+.catalogPageHeaderContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 76.25rem;
+
+    align-self: center;
+    margin-top: 6rem;
+
+    gap:1rem;
+    z-index: 1;
+}
+.catalogHeaderText {
+    color: #fff;
+    font-weight: 800;
+    font-size: 5rem;
+    letter-spacing: -3px;
+    font-family: DM Sans;
+}
+.catalogHeaderSubtext {
+    color: #aaa;
+    font-weight: 500;
+    font-size: var(--text-regular);
+    letter-spacing: var(--subheader-spacing);
+    font-family: DM Sans;
+    padding-left: 1px;
+}
+.catalogPageContent {
+    //width: 76.25%;
+    min-width: 76.25%;
+    width: 84.5%;
+    margin-top: 2rem;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:4rem;
+    padding-bottom: 4rem;
+}
+.catalogPageContentRow {
+    display: flex;
+    width: 100%;
+    max-width: 76.25rem;
+    gap:3.5rem;
+    justify-content: space-between;
+}
+.catalogCurve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+.catalogCurve::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white; /* Or transparent if overlaying */
+  filter: url(#grain);
+  pointer-events: none;
+  mix-blend-mode: multiply; /* or overlay, soft-light */
+  opacity: 0.15; /* adjust intensity */
+}
+
+.catalogBlob {
+  height: 0vh;
+  width: 100vw;
+  position: absolute;
+  //width: 84.15%;
+  left: 0; 
+  transform: translateY(-75%);
+  right: 0; 
+  opacity: 0.5;
+  margin-left: auto; 
+  margin-right: auto; 
+  filter: blur(100px);
+  z-index: 0;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  overflow-y: hidden;
+  //background-color: red;
+  background: radial-gradient(#37e98766,#3cff9433, #68ff8e00);
+}
+.animate {
+  animation-name: animate-glow;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+.navbarContentContainer {
+  width: 75%;
+  
+  display: flex;
+  padding-right: 1rem;
+  margin-right: 2.5rem;
+  align-items: center;
+  background-color: #121316;
+  height: fit-content;
+  justify-content: space-between;
+}
+.navbarContentLinks {
+    display: flex;
+    gap:2.75rem;
+    align-self: center;
+}
+.navbarContentSmall {
+    font-size: var(--text-small);
+    color:"#aaa";
+    font-family: DM Sans;
+    letter-spacing: var(--subtext-spacing);
+    font-weight: 400;
+    transition: all .15s linear;
+}
+.navbarContentSmall:hover {
+    color:#fff !important;
+}
+@keyframes animate-glow {
+  from{
+    height: 0vh;
+    opacity: 0.5;
+  } to {
+    height: 100vh;
+    opacity: 1;
+  }
+}
+@media  (max-width: 1200px) {
+    .navbarContentLinks {
+        display: none;
+    }
+}
+@media  (max-width: 1290px) {
+    .catalogFigureRow {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        gap:2.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media  (max-width: 620px) {
+
+    .catalogItemContainer {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .catalogItemContainmerAlt {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .catalogFigureWrapper {
+        width: 100%;
+        height: 24rem;
+        max-height: 50%;
+        min-height: 50%;
+        border-radius: 4px;
+        display: flex;
+    }
+    .catalogFigureWrapperAlt {
+        width: 100%;
+        border-radius: 4px;
+        display: flex;
+        height: 24rem;
+        max-height: 50%;
+        min-height: 50%;
+    }
+    .catalogFigureRow {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        gap:3.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .catalogItemDescription {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap:19px;
+        text-align: center;
+        margin-top: 26px;
+        width: 100%;
+   
+    }
+}
