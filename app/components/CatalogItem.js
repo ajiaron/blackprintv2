@@ -5,7 +5,7 @@ import catalogStyles from "../../styles/catalog.module.scss";
 
 export default function CatalogItem({title, category, description, perRow}) {
     return (
-        <div className={(perRow === 2)?catalogStyles.catalogItemContainer:catalogStyles.catalogItemContainerAlt}>
+        <li className={(perRow === 2)?catalogStyles.catalogItemContainer:catalogStyles.catalogItemContainerAlt}>
             <div className={catalogStyles.catalogItemHeaderWrapper}>
                 <p className={catalogStyles.catalogItemHeader}>
                     {title}
@@ -24,11 +24,11 @@ export default function CatalogItem({title, category, description, perRow}) {
                 </div>
                 <div className={catalogStyles.catalogSubtextWrapper}>
                     <p className={catalogStyles.catalogItemSubtext}>
-                        {(perRow===2)?"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est justo, cursus nec efficitur fermentum, lacinia ut enim. Morbi diam tellus. ":
+                        {(perRow===2)?"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est justo, cursus nec efficitur fermentum, lacinia ut enim.. ":
                         description}
                     </p>
                 </div>
             </div>
-        </div>
+        </li>
     )
 }

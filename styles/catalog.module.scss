@@ -12,7 +12,7 @@
 }
 .catalogFigureRow {
     width: 100%;
-    max-width: 68.25rem;
+   // max-width: 68.25rem;
     display: flex;
     justify-content: space-between;
     height: fit-content;
@@ -40,15 +40,16 @@
     justify-content: center;
 }
 .catalogItemContainer {
-    width: 30rem;
+
+    //width: 30rem;
+    width: 47.75%;
     height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 .catalogItemContainerAlt {
-    width: 23.125rem;
-    min-width: 23.125rem;
+    width: 30.14%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -67,7 +68,7 @@
 }
 .catalogFigureWrapper {
     width: 100%;
-    height: 35.5rem;
+    aspect-ratio: 850 / 1050;
     border-radius: 4px;
     display: flex;
 }
@@ -75,19 +76,21 @@
     width: 100%;
     border-radius: 4px;
     display: flex;
-    height: 31.625rem;
+    aspect-ratio: 850 / 1050;
+    object-fit: cover;
 }
 .catalogFigure {
     width: 100%;
     height: 100%;
     background-color: #ddd;
     border-radius: 4px;
+    object-fit: cover;
 }
 .catalogItemDescription {
     display: flex;
     flex-direction: column;
     height: fit-content;
-    gap:19px;
+    gap:18px;
     margin-top: 26px;
     width: 100%;
 }
@@ -116,18 +119,18 @@
 .catalogPageHeaderWrapper {
     width: 100%;
     height: 25rem;
+
     display: flex;
     flex-direction: column;
 }
 .catalogPageHeaderContainer {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 76.25rem;
-
+    width: 87%;
+   // max-width: 76.25rem;
+    margin-top: auto;
     align-self: center;
-    margin-top: 6rem;
-
+   margin-top: 6.625rem;
     gap:1rem;
     z-index: 1;
 }
@@ -135,7 +138,7 @@
     color: #fff;
     font-weight: 800;
     font-size: 5rem;
-    letter-spacing: -3px;
+    letter-spacing: -2.5px;
     font-family: DM Sans;
 }
 .catalogHeaderSubtext {
@@ -147,10 +150,9 @@
     padding-left: 1px;
 }
 .catalogPageContent {
-    //width: 76.25%;
     min-width: 76.25%;
-    width: 84.5%;
-    margin-top: 2rem;
+    width: 87%;
+    margin-top: 2.625rem;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -164,8 +166,8 @@
 .catalogPageContentRow {
     display: flex;
     width: 100%;
-    max-width: 76.25rem;
-    gap:3.5rem;
+    gap:4.78%;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .catalogCurve {
@@ -179,18 +181,17 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: white; /* Or transparent if overlaying */
+  background: white;
   filter: url(#grain);
   pointer-events: none;
-  mix-blend-mode: multiply; /* or overlay, soft-light */
-  opacity: 0.15; /* adjust intensity */
+  mix-blend-mode: multiply; 
+  opacity: 0.15; 
 }
 
 .catalogBlob {
   height: 0vh;
   width: 100vw;
   position: absolute;
-  //width: 84.15%;
   left: 0; 
   transform: translateY(-75%);
   right: 0; 
@@ -202,7 +203,6 @@
   border-bottom-left-radius: 100%;
   border-bottom-right-radius: 100%;
   overflow-y: hidden;
-  //background-color: red;
   background: radial-gradient(#37e98766,#3cff9433, #68ff8e00);
 }
 .animate {
@@ -215,14 +215,15 @@
   animation-timing-function: ease;
 }
 .navbarContentContainer {
-  width: 75%;
-  
+  width:87%;
   display: flex;
-  padding-right: 1rem;
-  margin-right: 2.5rem;
+
+
   align-items: center;
-  background-color: #121316;
+//  background-color: red;
   height: fit-content;
+
+  align-self: center;
   justify-content: space-between;
 }
 .navbarContentLinks {
@@ -255,19 +256,78 @@
         display: none;
     }
 }
-@media  (max-width: 1290px) {
+@media  (max-width: 960px) {
+    .catalogHeaderText {
+        font-size: clamp(
+        4rem, 9vw, 5rem
+        );
+        letter-spacing: -2px;
+    }
+    .catalogItemContainerAlt {
+        width: 100%;
+        margin-bottom: 5.3rem;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .catalogPageContent {
+       // width: 100%;
+        margin-top: 2.625rem;
+        display: flex;
+        flex-direction: row;
+        gap:4.78%;
+        padding-bottom: 4rem;
+    }
+    .catalogPageContentRow {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .catalogPageContentRow {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap:4.78%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .catalogItemDescription {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap:14px;
+        margin-top: 26px;
+        width: 100%;
+    }
+    
+}
+@media  (max-width: 768px) {
     .catalogFigureRow {
         width: 100%;
         display: flex;
         justify-content: space-between;
         height: fit-content;
-        gap:2.5rem;
+        gap:3rem;
         flex-direction: column;
         align-items: center;
     }
+    .catalogItemContainer {
+        width: 100%;
+    }
+    .catalogPageContent {
+        flex-direction: column;
+        width: 81.33%;
+        margin-top: 3.625rem;
+
+    }
+    .catalogPageHeaderContainer {
+        width: 81.33%;
+        margin-top: auto;
+    }
 }
 @media  (max-width: 620px) {
-
     .catalogItemContainer {
         width: 100%;
         height: fit-content;
@@ -276,7 +336,6 @@
         align-items: flex-start;
     }
     .catalogItemContainmerAlt {
-        width: 100%;
         height: fit-content;
         display: flex;
         flex-direction: column;
@@ -284,9 +343,6 @@
     }
     .catalogFigureWrapper {
         width: 100%;
-        height: 24rem;
-        max-height: 50%;
-        min-height: 50%;
         border-radius: 4px;
         display: flex;
     }
@@ -294,9 +350,6 @@
         width: 100%;
         border-radius: 4px;
         display: flex;
-        height: 24rem;
-        max-height: 50%;
-        min-height: 50%;
     }
     .catalogFigureRow {
         width: 100%;
@@ -311,10 +364,10 @@
         display: flex;
         flex-direction: column;
         height: fit-content;
-        gap:19px;
-        text-align: center;
+        gap:16px;
+        text-align: left;
         margin-top: 26px;
         width: 100%;
-   
+        padding-left: 1px;
     }
 }

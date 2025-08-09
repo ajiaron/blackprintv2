@@ -23,14 +23,14 @@ export default function Catalog({width}) {
   return (
     <div className={styles.catalogContentContainer}>
         <div className={catalogStyles.catalogFigureContainer}>
-            <div className={catalogStyles.catalogFigureRow}>
+            <ul className={catalogStyles.catalogFigureRow}>
                 <CatalogItem title={"Product Work 1"} category={"WEBSITE / FUNNEL PAGE"} description={""} perRow={2}/>
                 <CatalogItem title={"Product Work 2"} category={"MARKETING / STRATEGY"} description={""} perRow={2}/>
-            </div>
-            <div className={catalogStyles.catalogFigureRow}>
+            </ul>
+            <ul className={catalogStyles.catalogFigureRow}>
                 <CatalogItem title={"Product Work 3"} category={"WEBSITE / E-COMMERCE PLATFORM"} description={""} perRow={2}/>
                 <CatalogItem title={"Product Work 4"} category={"PRODUCT DESIGN / PACKEGING"} description={""} perRow={2}/>
-            </div>
+            </ul>
         </div>
         <Link className={catalogStyles.catalogFigureFooter} href={"/work"}>
             <span className={catalogStyles.catalogButton}>

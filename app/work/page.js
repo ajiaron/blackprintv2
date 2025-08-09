@@ -94,8 +94,7 @@ export default function Home() {
                 </svg>
             </div>
             }
-            <div className={catalogStyles.navbarContentContainer} style={{height:"4.25rem", paddingTop:".25rem",marginTop:"0", width:"100%", paddingLeft:"6.75rem",
-                paddingRight:"5.75rem",
+            <div className={catalogStyles.navbarContentContainer} style={{height:"4.25rem", paddingTop:".25rem",marginTop:"0",
                  zIndex:1}}>
                 <Link className={styles.logoContainer} href={"/"}>
                     <Logo className={styles.logoImage}/>
@@ -136,8 +135,6 @@ export default function Home() {
                         Blackprint
                     </p>
                 </div>
-
-                
             </div>
             <div className={catalogStyles.catalogPageHeaderContainer}>
                 <p className={catalogStyles.catalogHeaderText}>
@@ -149,16 +146,16 @@ export default function Home() {
             </div>
         </div>
         <div className={catalogStyles.catalogPageContent}>
-            <div className={catalogStyles.catalogPageContentRow}>
+            <ul className={catalogStyles.catalogPageContentRow}>
                 <CatalogItem title={"Product Work 1"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3}/>
                 <CatalogItem title={"Product Work 2"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3}/>
                 <CatalogItem title={"Product Work 3"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3}/>
-            </div>
-            <div className={catalogStyles.catalogPageContentRow}>
+            </ul>
+            <ul className={catalogStyles.catalogPageContentRow}>
                 <CatalogItem title={"Product Work 4"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3}/>
                 <CatalogItem title={"Product Work 5"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3}/>
                 <CatalogItem title={"Product Work 6"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3}/>
-            </div>
+            </ul>
         </div>
          <section className={styles.footerSection} id={"footer"}>
 
