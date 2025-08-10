@@ -16,7 +16,7 @@ export default function CatalogItem({title, category, description, perRow}) {
 
                 </span>
             </div>
-            <div className={catalogStyles.catalogItemDescription}>
+            <div className={catalogStyles.catalogItemDescription} style={{marginTop:(perRow===2)?"26px":"24px", gap: (perRow===2)?"":"12px"}}>
                 <div className={catalogStyles.catalogItemCategories}>
                     <p className={catalogStyles.catalogItemHeader} style={{color:"#bbb", fontWeight:"500"}}>
                         {category}

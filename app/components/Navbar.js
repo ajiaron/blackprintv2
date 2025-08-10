@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, {useState, useEffect, useRef} from 'react'
 import styles from "../../styles/page.module.scss";
 import { FaBars } from "react-icons/fa";
@@ -64,11 +65,8 @@ export default function Navbar({width, contentRef, scrollToId}) {
   }, []);
   useEffect(() => {
     if (open) {
-      console.log("disabling scroll")
-
       disableScroll();
     } else {
-      console.log("enabling scroll")
       enableScroll();
     }
     return () => enableScroll(); // Clean up function to re-enable scroll on unmount
@@ -77,16 +75,12 @@ export default function Navbar({width, contentRef, scrollToId}) {
   const disableScroll = () => {
     if (contentRef.current) {
       document.body.style.overflowY = 'hidden';
-    } else {
-      console.log("problem")
     }
   };
 
   const enableScroll = () => {
     if (contentRef.current) {
       document.body.style.overflowY = 'auto';
-    }else {
-      console.log("problem")
     }
   };
 

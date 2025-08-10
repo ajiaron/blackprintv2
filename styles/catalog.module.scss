@@ -90,7 +90,7 @@
     display: flex;
     flex-direction: column;
     height: fit-content;
-    gap:18px;
+    gap:16px;
     margin-top: 26px;
     width: 100%;
 }
@@ -106,6 +106,7 @@
     font-family: DM Sans;
     color: #909090;
     letter-spacing: var(--subtext-spacing);
+    z-index: 1;
 }
 .catalogPageHeader {
 
@@ -128,11 +129,11 @@
     flex-direction: column;
     width: 87%;
    // max-width: 76.25rem;
-    margin-top: auto;
+    //margin-top: auto;
     align-self: center;
-   margin-top: 6.625rem;
+    margin-top: 6.625rem;
     gap:1rem;
-    z-index: 1;
+    z-index: 0;
 }
 .catalogHeaderText {
     color: #fff;
@@ -140,6 +141,7 @@
     font-size: 5rem;
     letter-spacing: -2.5px;
     font-family: DM Sans;
+    z-index: 1;
 }
 .catalogHeaderSubtext {
     color: #aaa;
@@ -148,6 +150,7 @@
     letter-spacing: var(--subheader-spacing);
     font-family: DM Sans;
     padding-left: 1px;
+    z-index: 1;
 }
 .catalogPageContent {
     min-width: 76.25%;
@@ -217,12 +220,9 @@
 .navbarContentContainer {
   width:87%;
   display: flex;
-
-
+  z-index: 2;
   align-items: center;
-//  background-color: red;
   height: fit-content;
-
   align-self: center;
   justify-content: space-between;
 }
@@ -242,6 +242,7 @@
 .navbarContentSmall:hover {
     color:#fff !important;
 }
+
 @keyframes animate-glow {
   from{
     height: 0vh;
@@ -250,6 +251,14 @@
     height: 100vh;
     opacity: 1;
   }
+}
+
+@media (min-width: 1800px) {
+    .catalogFigureContainer {
+        min-width: 60%;
+        width: 60%;
+        margin-top: 4.5rem;
+    }
 }
 @media  (max-width: 1200px) {
     .navbarContentLinks {
@@ -369,5 +378,10 @@
         margin-top: 26px;
         width: 100%;
         padding-left: 1px;
+    }
+}
+@media  (max-width: 368px) {
+    .catalogHeaderText {
+        font-size: 3.75rem;
     }
 }
