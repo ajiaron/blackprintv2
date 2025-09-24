@@ -7,11 +7,9 @@ import CatalogItem from "../components/CatalogItem";
 import styles from "../../styles/page.module.scss";
 import catalogStyles from "../../styles/catalog.module.scss";
 import LogoAlt from '../../public/assets/logoalt.svg'
-import CatalogHeader from "../../public/assets/catalogheader.svg"
-import CanvasFigure from "../../public/assets/resized.svg"
-import Navbar from "../components/Navbar";
 import Logo from '../../public/assets/logo.svg'
 import Head from 'next/head';
+import NavbarV2 from "../components/NavbarV2";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
@@ -151,97 +149,7 @@ export default function Home() {
                 </svg>
             </div>
             }
-            <div className={catalogStyles.navbarContentContainer} style={{height:"4.25rem", paddingTop:".25rem",marginTop:"0",
-                 zIndex:1}}>
-                <Link className={styles.logoContainer} href={"/"}>
-                    <Logo className={styles.logoImage}/>
-                    <p className={styles.navbarLogoText} style={{color:"#fff", paddingTop:".125rem"}}>
-                        Blackprint 
-                    </p>
-                </Link>
-                <div className={catalogStyles.navbarContentLinks}>
-                    <Link href={"/#catalog"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:"#909090"}}>
-                            Recent Work
-                        </p>
-                    </Link>
-                     <Link href={"/#pricing"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:"#909090"}}>
-                            Pricing
-                        </p>
-                    </Link>
-                    <Link href={"/#process"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:"#909090"}}>
-                            Our Process
-                        </p>
-                    </Link>
-                    <Link href={"/#faqs"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:"#909090"}}>
-                            FAQs
-                        </p>
-                    </Link>
-                    <Link href={"mailto:info@blackprint.in"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:"#909090"}}>
-                            Contact
-                        </p>
-                    </Link>
-                </div>
-                
-                {(windowSize.width<=1200)?
-                <div style={{position:"relative"}}>
-                    <span style={{padding:"0", display:"flex", alignItems:"center", justifyContent:"center", transform:"translateY(1px)"}}
-                    onClick={(e) => handleOpen(e)} ref={buttonRef}>
-                        <FaBars size={20}/>
-                    </span>
-                    <AnimatePresence>
-                    {open && (
-                        <motion.div
-                        ref={menuRef}
-                        initial="closed"
-                        animate="open"
-                        exit="closed"
-                        variants={menuVariants}
-                        className={styles.menuContainer}
-                        style={{ right:"0%", top:"2.75rem", zIndex:1, originX: 1, originY: 0, borderRadius:"1rem" }}
-                        >
-                            <motion.span variants={itemVariants} className={styles.menuItem}
-                            onClick={()=>handleScroll("/#catalog")}>
-                                Recent Work
-                            </motion.span>
-                            <motion.span variants={itemVariants} className={styles.menuItem}
-                            onClick={()=>handleScroll("/#pricing")}>
-                                Pricing
-                            </motion.span>
-                            <motion.span variants={itemVariants} className={styles.menuItem}
-                            onClick={()=>handleScroll("/#process")}>
-                                Our Process
-                            </motion.span>
-                            <motion.span variants={itemVariants} className={styles.menuItem}
-                            onClick={()=>handleScroll("/#faqs")}>
-                                FAQs
-                            </motion.span>
-                            <motion.a variants={itemVariants} className={styles.menuItem}
-                            href={"mailto:info@blackprint.in"}>
-                                Contact
-                            </motion.a>
-                            <motion.span variants={itemVariants} className={styles.menuStartButton}
-                            onClick={()=>navigateBooking()}>
-                                <p className={styles.buttonTextSmall} onClick={()=>handleScroll("footer")}>
-                                Get Started
-                                </p>
-                            </motion.span>
-                        </motion.div>
-                    )}
-                    </AnimatePresence>
-                </div>
-                :
-                <div className={styles.logoContainer} style={{opacity:"0"}}>
-                    <Logo className={styles.logoImage}/>
-                    <p className={styles.navbarLogoText} style={{color:"#fff", paddingTop:".125rem"}}>
-                        Blackprint
-                    </p>
-                </div>}
-            </div>
+            <NavbarV2 windowSize={windowSize} stick={false} bright={false}/>
             <div className={catalogStyles.catalogPageHeaderContainer}>
                 <p className={catalogStyles.catalogHeaderText}>
                     Designs By Blackprint

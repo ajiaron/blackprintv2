@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, {useState, useEffect, useRef} from 'react'
 import styles from "../../styles/page.module.scss";
 import catalogStyles from "../../styles/catalog.module.scss";
+import Link from "next/link";
 
 export default function CatalogItem({title, category, description, perRow}) {
     return (
@@ -12,9 +13,11 @@ export default function CatalogItem({title, category, description, perRow}) {
                 </p>
             </div>
             <div className={(perRow === 2)?catalogStyles.catalogFigureWrapper:catalogStyles.catalogFigureWrapperAlt}>
-                <span className={catalogStyles.catalogFigure}>
+                <Link style={{width:"100%", height:"100%",display:"flex"}} href={`/work/${title.toLowerCase().trim().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}>
+                    <span className={catalogStyles.catalogFigure}>
 
-                </span>
+                    </span>
+                </Link>
             </div>
             <div className={catalogStyles.catalogItemDescription} style={{marginTop:(perRow===2)?"26px":"24px", gap: (perRow===2)?"":"12px"}}>
                 <div className={catalogStyles.catalogItemCategories}>

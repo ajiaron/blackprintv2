@@ -1,0 +1,149 @@
+.workPageHeaderWrapper {
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: flex-end;
+    background-color: #d4d4d4;
+    z-index: 0;
+    overflow: hidden;
+    isolation: isolate; // keeps stacking context tidy
+}
+.workPageHeaderContainer {
+    padding-right: 4rem;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    left: 6.39%;
+    bottom:8rem;
+    gap:1rem;
+    z-index: 10;
+    flex-direction: column;
+    display: flex;
+}
+.workTagHeader {
+    padding-top: .5rem;
+    padding-bottom:.5rem;
+    height: fit-content;
+    width: 87.25%;
+    justify-content: flex-start;
+    //padding-left: 6.39%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    gap:1.75rem;
+    display: flex;
+}
+.workTagButton {
+    width: fit-content;
+    height: 2.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 42px;
+    border: 1px solid #efefef;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color:#fff;
+    font-family: DM Sans;
+    font-weight: 500;
+}
+.workHeaderText {
+    color: #fff;
+    font-weight: 800;
+    font-size: 5.75rem;
+    letter-spacing: -2.5px;
+    font-family: DM Sans;
+    line-height: 1.1;
+    z-index: 1;
+}
+.workHeaderSubtext {
+    color: #aaa;
+    font-weight: 500;
+    font-size: var(--text-medium);
+    letter-spacing: var(--subheader-spacing);
+    font-family: DM Sans;
+    padding-left: 2px;
+    z-index: 1;
+}
+.workCoverImage {
+    background: url('../public/assets/sample.png');
+    position: absolute;
+    inset: -10vh 0 -10vh 0; // slight overscan to avoid edges showing on fast scroll
+    background-size: contain;
+    background-position: center;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+.workInfoSection {
+   width: 87.25%;
+   height: fit-content;
+   align-self: center;
+   margin-left: auto;
+   margin-right: auto;
+ 
+   display: flex;
+   border-bottom: 1px solid #999;
+   justify-content: space-between;
+}
+.workInfoContainer {
+    width: 47%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:2.25rem;
+    padding-top:4.5rem;
+    padding-bottom: 4.5rem;
+}
+.workInfoTextWrapper {
+    gap:.75rem;
+    flex-direction: column;
+    display: flex;
+}
+.highlightText {
+    transition: .15s all linear;
+    color:#aaa;
+}
+.highlightText:hover {
+    color:#fff;
+}
+.expandContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: fit-content;
+    width: 100%;
+    overflow: hidden;
+    transition: all .15s linear;
+}
+
+
+@media  (max-width: 960px) {
+    .workHeaderText {
+        font-size: clamp(
+        4rem, 9vw, 5.75rem
+        );
+        letter-spacing: -2px;
+    }
+    .workHeaderSubtext {
+        color: #aaa;
+        font-weight: 500;
+        font-size: var(--text-regular);
+        letter-spacing: var(--subheader-spacing);
+        font-family: DM Sans;
+        padding-left: 2px;
+        z-index: 1;
+    }
+}
+
+@media  (max-width: 368px) {
+    .catalogHeaderText {
+        font-size: 3.75rem;
+    }
+}
