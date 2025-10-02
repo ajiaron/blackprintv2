@@ -161,14 +161,14 @@ export default function Home() {
         </div>
         <div className={catalogStyles.catalogPageContent}>
             <ul className={catalogStyles.catalogPageContentRow}>
-                <CatalogItem title={"Product Work 1"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3}/>
-                <CatalogItem title={"Product Work 2"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3}/>
-                <CatalogItem title={"Product Work 3"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3}/>
+                <CatalogItem title={"Truka"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3} onPage={true}/>
+                <CatalogItem title={"TradesMark"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3} onPage={true}/>
+                <CatalogItem title={"6lack Clover"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3} onPage={true}/>
             </ul>
             <ul className={catalogStyles.catalogPageContentRow}>
-                <CatalogItem title={"Product Work 4"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3}/>
-                <CatalogItem title={"Product Work 5"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3}/>
-                <CatalogItem title={"Product Work 6"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3}/>
+                <CatalogItem title={"Brightview Exterior"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3} onPage={true}/>
+                <CatalogItem title={"Peaking Duck"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3} onPage={true}/>
+                <CatalogItem title={"Creatorverse"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3} onPage={true}/>
             </ul>
         </div>
          <section className={styles.footerSection} id={"footer"}>

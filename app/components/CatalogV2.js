@@ -24,12 +24,12 @@ export default function Catalog({width}) {
     <div className={styles.catalogContentContainer}>
         <div className={catalogStyles.catalogFigureContainer}>
             <ul className={catalogStyles.catalogFigureRow}>
-                <CatalogItem title={"Product Work 1"} category={"WEBSITE / FUNNEL PAGE"} description={""} perRow={2}/>
-                <CatalogItem title={"Product Work 2"} category={"MARKETING / STRATEGY"} description={""} perRow={2}/>
+                <CatalogItem title={"Truka"} category={"WEBSITE / FUNNEL PAGE"} description={""} perRow={2} onPage={false}/>
+                <CatalogItem title={"TradesMark"} category={"MARKETING / STRATEGY"} description={""} perRow={2} onPage={false}/>
             </ul>
             <ul className={catalogStyles.catalogFigureRow}>
-                <CatalogItem title={"Product Work 3"} category={"WEBSITE / E-COMMERCE PLATFORM"} description={""} perRow={2}/>
-                <CatalogItem title={"Product Work 4"} category={"PRODUCT DESIGN / PACKEGING"} description={""} perRow={2}/>
+                <CatalogItem title={"6lack Clover"} category={"WEBSITE / E-COMMERCE PLATFORM"} description={""} perRow={2} onPage={false}/>
+                <CatalogItem title={"Brightview Exterior"} category={"PRODUCT DESIGN / PACKEGING"} description={""} perRow={2} onPage={false}/>
             </ul>
         </div>
         <Link className={catalogStyles.catalogFigureFooter} href={"/work"}>

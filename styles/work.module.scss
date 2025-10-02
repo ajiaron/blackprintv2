@@ -62,6 +62,18 @@
     line-height: 1.1;
     z-index: 1;
 }
+.workMetricText {
+    font-size: clamp(
+        4rem, 9vw, 5rem
+    );
+    color: #fff;
+    font-weight: 700;
+    //font-size: 5.75rem;
+    letter-spacing: -2.5px;
+    font-family: DM Sans;
+    line-height: 1.1;
+    z-index: 1;
+}
 .workHeaderSubtext {
     color: #aaa;
     font-weight: 500;
@@ -72,13 +84,49 @@
     z-index: 1;
 }
 .workCoverImage {
-    background: url('../public/assets/sample.png');
+    //background: url('../public/assets/sample.png');
     position: absolute;
     inset: -10vh 0 -10vh 0; // slight overscan to avoid edges showing on fast scroll
-    background-size: contain;
+  //  background-size: contain;
     background-position: center;
     will-change: transform;
+    filter: brightness(.9) saturate(.9);
     transform: translate3d(0, 0, 0);
+}
+.trukaCover {
+    background: url('../public/assets/trukacover.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bvexteriorCover {
+    background: url('../public/assets/bvecover.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.blackcloverCover {
+    background: url('../public/assets/blackclovercover.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.tradesmarkCover {
+    background: url('../public/assets/tradesmarkcover2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.pdgCover {
+    background: url('../public/assets/pdgcover.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.creatorverseCover {
+    background: url('../public/assets/creatorversecover.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .workInfoSection {
    width: 87.25%;
@@ -86,10 +134,13 @@
    align-self: center;
    margin-left: auto;
    margin-right: auto;
- 
    display: flex;
    border-bottom: 1px solid #999;
    justify-content: space-between;
+}
+.workMetricsSection {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 .workInfoContainer {
     width: 47%;
@@ -122,12 +173,68 @@
     overflow: hidden;
     transition: all .15s linear;
 }
-
+.workMetricsHeader {
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.workMetricsWrapper {
+    margin-top: 4.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: fit-content;
+    gap:3rem;
+}
+.workMetricsItem {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.workInfoGallery {
+    height: 18.56rem;
+    width: 100%;
+    background-color: #41693a33;
+}
+@media  (max-width: 620px) {
+    .workTagHeader {
+        flex-direction: column;
+        gap:1.25rem;
+    }
+    .workTagButton {
+        align-self: flex-start;
+    }
+}
+@media  (max-width: 768px) {
+    .workInfoContainer {
+        width: 100%;
+        padding-top: 2.25rem;
+        padding-bottom: 2.25rem;
+        &:first-of-type {
+            padding-bottom: 0
+        }
+    }
+    .workInfoSection {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        flex-direction: column;
+        border-bottom: none;
+    }
+}
 
 @media  (max-width: 960px) {
     .workHeaderText {
         font-size: clamp(
         4rem, 9vw, 5.75rem
+        );
+        letter-spacing: -2px;
+    }
+    .workMetricText {
+        font-size: clamp(
+        4rem, 9vw, 5rem
         );
         letter-spacing: -2px;
     }
@@ -139,6 +246,9 @@
         font-family: DM Sans;
         padding-left: 2px;
         z-index: 1;
+    }
+    .workMetricsWrapper {
+        flex-direction: column;
     }
 }
 

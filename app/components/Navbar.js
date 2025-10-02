@@ -14,8 +14,12 @@ export default function Navbar({width, contentRef, scrollToId}) {
   //const contentRef = useRef(null);
 
   function handleScroll(id) {
-    setOpen(false)
-    scrollToId(id)
+    if (id === "catalog") {
+      window.location.href = '/work'
+    } else {
+      setOpen(false)
+      scrollToId(id)
+    }
   }
   const handleOpen = (event) => {
     event.stopPropagation(); // Prevent the event from bubbling up to handleClickOutside

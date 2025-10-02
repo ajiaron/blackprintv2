@@ -68,6 +68,8 @@
 }
 .catalogFigureWrapper {
     width: 100%;
+    height: 420px;
+    
     aspect-ratio: 850 / 1050;
     border-radius: 4px;
     display: flex;
@@ -154,7 +156,7 @@
 .catalogPageContent {
     min-width: 76.25%;
     width: 87%;
-    margin-top: 2.625rem;
+    margin-top: 3.625rem;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -283,7 +285,7 @@
     }
     .catalogPageContent {
        // width: 100%;
-        margin-top: 2.625rem;
+        margin-top: 3.625rem;
         display: flex;
         flex-direction: row;
         gap:4.78%;

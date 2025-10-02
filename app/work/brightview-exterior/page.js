@@ -122,16 +122,18 @@ export default function Work() {
                 <NavbarV2 windowSize={windowSize} stick={true} bright={false}/>
             </div>
             <div className={workStyles.workPageHeaderWrapper} style={{position:"relative"}} data-speed="0.35" ref={headerRef}>
-                <div className={workStyles.workCoverImage} ref={bgRef}> {/* the parallax image */}
+                <div className={[workStyles.workCoverImage, workStyles.bvexteriorCover].join(' ')} ref={bgRef}> {/* the parallax image */}
 
                 </div>
                 <div className={workStyles.workPageHeaderContainer}>
                     <h1 className={workStyles.workHeaderText} style={{color:"#fff"}}>  
-                        Designs By Blackprint
+                        Brightview Exterior
                     </h1>
-                    <p className={workStyles.workHeaderSubtext} style={{color:"#d4d4d4"}}>
-                        From websites to graphics, we make sure your project stands out from the rest.
+                    {/*
+                     <p className={workStyles.workHeaderSubtext} style={{color:"#d4d4d4"}}>
+                        In collaboration with Blackprint.
                     </p>
+                    */}
                 </div>
             </div>
             <div className={workStyles.workTagHeader}>
@@ -185,6 +187,60 @@ export default function Work() {
                     </div>
                 </div>
             </section>
+            <section className={[workStyles.workInfoSection, workStyles.workMetricsSection].join(' ')} style={{flexDirection:"column"}}>
+                <div className={workStyles.workMetricsHeader}>
+                    <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600", fontSize:"20px"}}>
+                        METRICS
+                    </p>
+                </div>
+                <div className={workStyles.workMetricsWrapper}>
+                    <div className={workStyles.workMetricsItem}>
+                        <h1 className={workStyles.workMetricText}>
+                            45+
+                        </h1>
+                        <div className={workStyles.workInfoTextWrapper} style={{gap:".625rem"}}>
+                            <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                                Creating a Trusted Brand
+                            </p>
+                            <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                                The client needed an identity that would inspire confidence and bring people together.
+                            </p>
+                            <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
+                            title={false}/>
+                        </div>
+                    </div>
+                    <div className={workStyles.workMetricsItem}>
+                        <h1 className={workStyles.workMetricText}>
+                            45+
+                        </h1>
+                        <div className={workStyles.workInfoTextWrapper} style={{gap:".625rem"}}>
+                            <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                                Driving Consistent Participation
+                            </p>
+                            <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                                They sought support in shaping events that encouraged repeat attendance.
+                            </p>
+                            <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
+                            title={false}/>
+                        </div>
+                    </div>
+                    <div className={workStyles.workMetricsItem}>
+                        <h1 className={workStyles.workMetricText}>
+                            45+
+                        </h1>
+                        <div className={workStyles.workInfoTextWrapper} style={{gap:".625rem"}}>
+                            <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                                Building a Growth Engine
+                            </p>
+                            <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                                The community required systems that could manage new members smoothly as the brand expanded.
+                            </p>
+                            <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
+                            title={false}/>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className={workStyles.workInfoSection}>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
@@ -230,7 +286,7 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            CLIENT REQUEST
+                            APPROACH
                         </p>
                     </div>
                 </div>
@@ -267,7 +323,7 @@ export default function Work() {
                     </div>
                 </div>
             </section>
-             <section className={workStyles.workInfoSection}>
+             <section className={workStyles.workInfoSection} style={{ borderBottom: "none"}}>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
@@ -308,6 +364,22 @@ export default function Work() {
                     </div>
                 </div>
             </section>
+          {/*
+            <section className={workStyles.workInfoSection} style={{ borderBottom: "none"}}>
+                <div className={workStyles.workInfoContainer}>
+                    <div className={workStyles.workInfoTextWrapper}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
+                            GALLERY
+                        </p>
+                    </div>
+                </div>
+                <div className={workStyles.workInfoContainer}>
+                    <div className={workStyles.workInfoGallery}>
+
+                    </div>
+                </div>
+            </section>
+            */}
         </div>
     )
 }

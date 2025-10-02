@@ -77,7 +77,7 @@ export default function NavbarV2({windowSize, stick, bright}) {
                     </p>
                 </Link>
                 <div className={catalogStyles.navbarContentLinks}>
-                    <Link href={"/#catalog"}>
+                    <Link href={"/work"}>
                         <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#909090"}}>
                             Recent Work
                         </p>
