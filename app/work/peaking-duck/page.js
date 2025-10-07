@@ -8,6 +8,7 @@ import NavbarV2 from "@/app/components/NavbarV2";
 import catalogStyles from "../../../styles/catalog.module.scss"
 import workStyles from "../../../styles/work.module.scss"
 import useParallax from "@/app/hooks/useParallax";
+import Footer from "@/app/components/Footer";
 
 const ContextItem = ({subtext, title}) => {
   const [isActive, setIsActive] = useState(false)
@@ -115,36 +116,46 @@ export default function Work() {
 
     const headerRef = useRef(null)              // wrapper section
     const bgRef = useRef(null)                  // background layer
-    useParallax(headerRef, bgRef, 0.7)         
+    useParallax(headerRef, bgRef, 0.75)         
     return (
         <div className={styles.main} ref={contentRef}>
-            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"4.5rem", position:"absolute"}}>
-                <NavbarV2 windowSize={windowSize} stick={true} bright={false}/>
+            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"5rem", position:"absolute"}}>
+                <NavbarV2 windowSize={windowSize} stick={true} bright={false} />
             </div>
-            <div className={workStyles.workPageHeaderWrapper} style={{position:"relative"}} data-speed="0.35" ref={headerRef}>
-                <div className={[workStyles.workCoverImage, workStyles.pdgCover].join(' ')} ref={bgRef}> {/* the parallax image */}
-
-                </div>
+            <div
+                className={workStyles.workPageHeaderWrapper}
+                style={{position:"relative"}}
+                data-speed="0.35"
+                ref={headerRef}
+                >
                 <div className={workStyles.workPageHeaderContainer}>
-                    <h1 className={workStyles.workHeaderText} style={{color:"#fff"}}>  
-                        Peaking Duck Group
-                    </h1>
-                    {/*
-                     <p className={workStyles.workHeaderSubtext} style={{color:"#d4d4d4"}}>
-                        In collaboration with Blackprint.
-                    </p>
-                    */}
+                    <h1 className={workStyles.workHeaderText}>Peaking Duck Group</h1>
+                </div>
+                <div className={workStyles.parallaxLayer} ref={bgRef}>
+                    <picture>
+                    <source
+                        media="(min-width: 769px)"
+                        srcSet="/assets/pdgcover.png 1x, /assets/pdgcover.png 2x"
+                    />
+                    <img
+                        className={workStyles.parallaxImg}
+                        src="/assets/pdgcover.png"
+                        alt="pdg cover"
+                        loading="eager"
+                        fetchpriority="high"
+                    />
+                    </picture>
                 </div>
             </div>
             <div className={workStyles.workTagHeader}>
                 <span className={workStyles.workTagButton}>
-                    E-COMMERCE
+                    EVENT BRANDING
                 </span>
                 <span className={workStyles.workTagButton}>
-                    DIGITAL MEDIA
+                    GRAPHIC DESIGN
                 </span>
                 <span className={workStyles.workTagButton}>
-                    AD CAMPAIGN
+                    MEDIA ASSETS
                 </span>
             </div>
             <section className={workStyles.workInfoSection}>
@@ -154,15 +165,15 @@ export default function Work() {
                             OUR ROLE
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            Community platform design partner, Brand system architect, Marketing and growth advisor
+                            Nightlife brand curator. Flyer designer. Media and event strategist.
                         </p>
                     </div>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            METRICS
+                            DELIVERABLES
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            E-Commerce Website, Funnel Page, Social Media Campaigning
+                            Flyers, Media Assets, Identity Expansion
                         </p>
                     </div>
                     <div className={workStyles.workInfoTextWrapper}>
@@ -170,7 +181,7 @@ export default function Work() {
                             DATE
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            August 2025
+                            January 2024
                         </p>
                     </div>
                 </div>
@@ -180,9 +191,9 @@ export default function Work() {
                             OVERVIEW
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            Blackprint partnered with Truka to transform an idea into a thriving community for young entrepreneurs and founders. A design system was developed that reflected their values, digital flows were established to support membership growth, and event strategies were guided to attract consistent attendance. The brand today operates as a trusted community hub that continues to expand.
+                           Blackprint helped Peaking Duck stand out in the nightlife industry with an underground inspired design system. Flyers, media assets, and event branding were refined to perfection, creating an identity that expanded into multiple cities.
                         </p>
-                        <ContextItem subtext={"The scope covered identity creation, digital integration, and client advisory. Every step was designed with longevity in mind, ensuring the platform would feel both authentic and adaptable as it scaled."}
+                        <ContextItem subtext={"The brand became more than a promotion company. Peaking Duck developed into a cultural identity that turned nights out into full experiences."}
                         title={true}/>
                     </div>
                 </div>
@@ -252,33 +263,27 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Breaking Through in Nightlife
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            The client wanted a design that stood out from generic club promotions.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Crafting a Cultural Identity
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            They sought a system that would give their brand staying power across different cities.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Perfecting Promotional Materials
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           Flyers and visuals needed to capture the mood of each event while keeping consistency.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
                     </div>
                 </div>
             </section>
@@ -286,40 +291,42 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            APPROACH
+                            OUR APPROACH
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Playful Word Identity
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            The brand was built on a creative play with its name, Peaking Duck, blending humor with edge.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Underground Design System
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            A gritty, alternative visual system was created to differentiate from polished but predictable competitors.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Flyer Craftsmanship
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           Flyers were designed as core branding pieces, each one reflecting the mood of the event.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
+                    </div>
+                    <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                            Media Refinement
+                        </p>
+                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                           All media assets were edited and reviewed until they matched the identity precisely.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -327,40 +334,34 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            CLIENT REQUEST
+                            OUR IMPACT
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Expansion Into New Markets
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                           The brand grew into five cities across two states.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Large Scale Attendance
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Over 150,000 lifetime attendees have experienced Peaking Duck events.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Consistent Recognition
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           The design system continues to define ads and branding across platforms.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
                     </div>
                 </div>
             </section>
@@ -380,6 +381,7 @@ export default function Work() {
                 </div>
             </section>
             */}
+            <Footer windowSize={windowSize} />
         </div>
     )
 }

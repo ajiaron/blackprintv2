@@ -8,6 +8,7 @@ import NavbarV2 from "@/app/components/NavbarV2";
 import catalogStyles from "../../../styles/catalog.module.scss"
 import workStyles from "../../../styles/work.module.scss"
 import useParallax from "@/app/hooks/useParallax";
+import Footer from "@/app/components/Footer";
 
 const ContextItem = ({subtext, title}) => {
   const [isActive, setIsActive] = useState(false)
@@ -115,26 +116,35 @@ export default function Work() {
 
     const headerRef = useRef(null)              // wrapper section
     const bgRef = useRef(null)                  // background layer
-    useParallax(headerRef, bgRef, 0.7)         
+    useParallax(headerRef, bgRef, 0.75)         
     return (
         <div className={styles.main} ref={contentRef}>
-            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"4.5rem", position:"absolute"}}>
+            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"5rem", position:"absolute"}}>
                 <NavbarV2 windowSize={windowSize} stick={true} bright={false}/>
             </div>
-            <div className={workStyles.workPageHeaderWrapper} style={{position:"relative"}} data-speed="0.35" ref={headerRef}>
-                <div className={[workStyles.workCoverImage, workStyles.trukaCover].join(' ')}
-                ref={bgRef}> {/* the parallax image */}
-
-                </div>
+            <div
+                className={workStyles.workPageHeaderWrapper}
+                style={{position:"relative"}}
+                data-speed="0.35"
+                ref={headerRef}
+                >
                 <div className={workStyles.workPageHeaderContainer}>
-                    <h1 className={workStyles.workHeaderText} style={{color:"#fff"}}>  
-                        Truka
-                    </h1>
-                    {/*
-                     <p className={workStyles.workHeaderSubtext} style={{color:"#d4d4d4"}}>
-                        In collaboration with Blackprint.
-                    </p>
-                    */}
+                    <h1 className={workStyles.workHeaderText}>Truka</h1>
+                </div>
+                <div className={workStyles.parallaxLayer} ref={bgRef}>
+                    <picture>
+                    <source
+                        media="(min-width: 769px)"
+                        srcSet="/assets/trukacover-desktop.png 1x, /assets/trukacover-desktop.png 2x"
+                    />
+                    <img
+                        className={workStyles.parallaxImg}
+                        src="/assets/trukacover3.png"
+                        alt="Truka cover"
+                        loading="eager"
+                        fetchpriority="high"
+                    />
+                    </picture>
                 </div>
             </div>
             <div className={workStyles.workTagHeader}>
@@ -160,7 +170,7 @@ export default function Work() {
                     </div>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            METRICS
+                            DELIVERABLES
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
                             E-Commerce Website, Funnel Page, Social Media Campaigning
@@ -287,39 +297,46 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            APPROACH
+                            OUR APPROACH
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Competitive Research
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Research into members only clubs and event spaces provided clarity on what inspired loyalty. Insights from this study informed design and positioning choices.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
+
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Design System for Growth
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                             A visual identity was built to align with young founders and their values, designed to stretch from small online sessions to large in person events.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
+
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Advisory Support
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           Ongoing direction was given on how to market events, refine positioning, and drive engagement.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
+
+                    </div>
+                    <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                            Integrated Digital Journey
+                        </p>
+                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                            Gohighlevel was used to connect sign ups, event registration, and follow ups into one seamless flow.
+                        </p>
+                        <ContextItem subtext={"This created confidence that every new lead was nurtured without gaps or manual delays."}
                         title={false}/>
                     </div>
                 </div>
@@ -328,40 +345,37 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            CLIENT REQUEST
+                            OUR IMPACT
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Foundation for Long Term Identity
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            The design system continues to define Truka’s look and feel.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
+
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Growing Community Participation
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Weekly meetups now attract more than 100 attendees and the community has expanded into in person events.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
+   
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Proven Engagement
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           The brand system has generated more than 100k interactions across the client’s page, providing credibility and excitement.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
+
                     </div>
                 </div>
             </section>
@@ -381,6 +395,7 @@ export default function Work() {
                 </div>
             </section>
             */}
+            <Footer windowSize={windowSize}/>
         </div>
             
     )

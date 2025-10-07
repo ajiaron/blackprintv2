@@ -10,11 +10,12 @@ import LogoAlt from '../../public/assets/logoalt.svg'
 import Logo from '../../public/assets/logo.svg'
 import Head from 'next/head';
 import NavbarV2 from "../components/NavbarV2";
+import Footer from "../components/Footer"
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 
-export default function Home() {
+export default function Page() {
     const [animation, setAnimation] = useState(false)
     const [open, setOpen] = useState(false)
     const [windowSize, setWindowSize] = useState({
@@ -161,59 +162,18 @@ export default function Home() {
         </div>
         <div className={catalogStyles.catalogPageContent}>
             <ul className={catalogStyles.catalogPageContentRow}>
-                <CatalogItem title={"Truka"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3} onPage={true}/>
-                <CatalogItem title={"TradesMark"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3} onPage={true}/>
-                <CatalogItem title={"6lack Clover"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3} onPage={true}/>
+                <CatalogItem title={"Truka"} category={"Product Title Header"} description={"WEBSITE / STRATEGY"} perRow={3} onPage={true} src={"/assets/trukacover.png"}/>
+                <CatalogItem title={"Brightview Exterior"} category={"Product Title Header"} description={"DESIGN REVAMP / LEAD FLOWS"} perRow={3} onPage={true} src={"/assets/bvepreview.png"}/>
+                <CatalogItem title={"Peaking Duck"} category={"Product Title Header"} description={"FLYERS / DIGITAL MEDIA"} perRow={3} onPage={true} src={"/assets/pdgpreview.png"}/>
+               
             </ul>
             <ul className={catalogStyles.catalogPageContentRow}>
-                <CatalogItem title={"Brightview Exterior"} category={"Product Title Header"} description={"WEBSITE / FUNNEL PAGE"} perRow={3} onPage={true}/>
-                <CatalogItem title={"Peaking Duck"} category={"Product Title Header"} description={"MARKETING / STRATEGY"} perRow={3} onPage={true}/>
-                <CatalogItem title={"Creatorverse"} category={"Product Title Header"} description={"WEBSITE / E-COMMERCE PLATFORM"} perRow={3} onPage={true}/>
+                <CatalogItem title={"TradesMark"} category={"Product Title Header"} description={"WEBSITE / FOUNDATIONS"} perRow={3} onPage={true} src={"/assets/tradesmarkpreview.png"}/>
+                <CatalogItem title={"6lack Clover"} category={"Product Title Header"} description={"PACKAGING / E-COMMERCE"} perRow={3} onPage={true} src={"/assets/blackcloverpreview.png"}/>
+                <CatalogItem title={"Creatorverse"} category={"Product Title Header"} description={"STRATEGY / CAMPAIGNING"} perRow={3} onPage={true} src={"/assets/creatorversepreview.png"}/>
             </ul>
         </div>
-         <section className={styles.footerSection} id={"footer"}>
-
-          <div className={styles.footerNavigationContainer}>
-            <span className={[styles.logoContainer, styles.footerLogoContainer].join(' ')}>
-              <LogoAlt className={[styles.logoImage, styles.footerLogo].join(' ')}/>
-
-              <span className={styles.footerLogoText}>
-                Blackprint
-              </span>
-              
-              {(windowSize.width < 1025 && windowSize.width>768)&&
-              <div style={{display:"flex"}} className={styles.footerStubContainer}>
-                <span style={{padding:"0", display:"flex", alignItems:"flex-end", justifyContent:"flex-end", color:'#959595', fontSize:"14px"}}>
-                 © 2024
-               </span>
-                <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} />
-                <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon}/>
-
-              </div>
-             }
-            </span>
-            {(windowSize.width > 1024)?
-            <>
-            <div className={styles.footerIconContainer}>
-            <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.instagram.com/blackprint.design/")}/>
-            <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.linkedin.com/company/blackprint-agency/")}/>
-            </div>
-          
-            </>:
-           
-            <div style={{display:"flex"}} className={styles.footerStubContainer}>
-              {(windowSize.width > 480)&&
-              <span style={{padding:"0", display:"flex", alignItems:"flex-end", justifyContent:"flex-end", color:'#959595', fontSize:"14px"}}>
-               © 2024
-             </span>
-              }
-              <FaInstagram color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.instagram.com/blackprint.design/")}/>
-              <FaLinkedin color={"#959595"} size={22} className={styles.footerIcon} onClick={()=>handleSocial("https://www.linkedin.com/company/blackprint-agency/")}/>
-
-            </div>
-            }
-          </div>
-      </section>
+        <Footer windowSize={windowSize}/>
     </div>
     )
 }

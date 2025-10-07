@@ -24,12 +24,12 @@ export default function Catalog({width}) {
     <div className={styles.catalogContentContainer}>
         <div className={catalogStyles.catalogFigureContainer}>
             <ul className={catalogStyles.catalogFigureRow}>
-                <CatalogItem title={"Truka"} category={"WEBSITE / FUNNEL PAGE"} description={""} perRow={2} onPage={false}/>
-                <CatalogItem title={"TradesMark"} category={"MARKETING / STRATEGY"} description={""} perRow={2} onPage={false}/>
+                <CatalogItem title={"Truka"} category={"WEBSITE / STRATEGY"} description={"Blackprint partnered with Truka to transform an idea into a thriving community for young entrepreneurs and founders. "} perRow={2} onPage={false} src={"/assets/trukacover.png"}/>
+                <CatalogItem title={"Peaking Duck"} category={"FLYERS / DIGITAL MEDIA"} description={"Flyers, media assets, and event branding were refined to perfection, creating an identity for expansion."} perRow={2} onPage={false} src={"/assets/pdgcover2.png"}/>
             </ul>
             <ul className={catalogStyles.catalogFigureRow}>
-                <CatalogItem title={"6lack Clover"} category={"WEBSITE / E-COMMERCE PLATFORM"} description={""} perRow={2} onPage={false}/>
-                <CatalogItem title={"Brightview Exterior"} category={"PRODUCT DESIGN / PACKEGING"} description={""} perRow={2} onPage={false}/>
+                <CatalogItem title={"6lack Clover"} category={"PACKAGING / E-COMMERCE"} description={"A grunge inspired design system, production ready packaging, and a flexible e-commerce solution prepared for launch."} perRow={2} onPage={false} src={"/assets/blackcloverpreview.png"}/>
+                <CatalogItem title={"Brightview Exterior"} category={"DESIGN REVAMP / LEAD FLOWS"} description={"We created a structure that improved conversions, reduced bounce rates, and set up content systems for growth."} perRow={2} onPage={false} src={"assets/bvecover.png"}/>
             </ul>
         </div>
         <Link className={catalogStyles.catalogFigureFooter} href={"/work"}>

@@ -8,6 +8,7 @@ import NavbarV2 from "@/app/components/NavbarV2";
 import catalogStyles from "../../../styles/catalog.module.scss"
 import workStyles from "../../../styles/work.module.scss"
 import useParallax from "@/app/hooks/useParallax";
+import Footer from "@/app/components/Footer";
 
 const ContextItem = ({subtext, title}) => {
   const [isActive, setIsActive] = useState(false)
@@ -115,36 +116,46 @@ export default function Work() {
 
     const headerRef = useRef(null)              // wrapper section
     const bgRef = useRef(null)                  // background layer
-    useParallax(headerRef, bgRef, 0.7)         
+    useParallax(headerRef, bgRef, 0.75)         
     return (
         <div className={styles.main} ref={contentRef}>
-            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"4.5rem", position:"absolute"}}>
-                <NavbarV2 windowSize={windowSize} stick={true} bright={true}/>
+            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"5rem", position:"absolute"}}>
+                <NavbarV2 windowSize={windowSize} stick={true} bright={true} />
             </div>
-            <div className={workStyles.workPageHeaderWrapper} style={{position:"relative"}} data-speed="0.35" ref={headerRef}>
-                <div className={[workStyles.workCoverImage, workStyles.tradesmarkCover].join(' ')} ref={bgRef}> {/* the parallax image */}
-
-                </div>
+            <div
+                className={workStyles.workPageHeaderWrapper}
+                style={{position:"relative"}}
+                data-speed="0.35"
+                ref={headerRef}
+                >
                 <div className={workStyles.workPageHeaderContainer}>
-                    <h1 className={workStyles.workHeaderText} style={{color:"#000"}}>  
-                        TradesMark Marketing
-                    </h1>
-                    {/*
-                     <p className={workStyles.workHeaderSubtext} style={{color:"#d4d4d4"}}>
-                        In collaboration with Blackprint.
-                    </p>
-                    */}
+                    <h1 className={workStyles.workHeaderText} style={{color:"#000"}}>TradesMark Marketing</h1>
+                </div>
+                <div className={workStyles.parallaxLayer} ref={bgRef}>
+                    <picture>
+                    <source
+                        media="(min-width: 769px)"
+                        srcSet="/assets/tradesmarkcover2.png 1x, /assets/tradesmarkcover2.png 2x"
+                    />
+                    <img
+                        className={workStyles.parallaxImg}
+                        src="/assets/tradesmarkcover2.png"
+                        alt="tradesmark cover"
+                        loading="eager"
+                        fetchpriority="high"
+                    />
+                    </picture>
                 </div>
             </div>
             <div className={workStyles.workTagHeader}>
-                <span className={workStyles.workTagButton}>
-                    E-COMMERCE
+                <span className={workStyles.workTagButton} style={{whiteSpace:"nowrap"}}>
+                    FUNNEL PAGE
+                </span>
+                <span className={workStyles.workTagButton} style={{whiteSpace:"nowrap"}}>
+                    ONBOARDING FLOW
                 </span>
                 <span className={workStyles.workTagButton}>
-                    DIGITAL MEDIA
-                </span>
-                <span className={workStyles.workTagButton}>
-                    AD CAMPAIGN
+                    LEAD GENERATION
                 </span>
             </div>
             <section className={workStyles.workInfoSection}>
@@ -154,12 +165,12 @@ export default function Work() {
                             OUR ROLE
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            Community platform design partner, Brand system architect, Marketing and growth advisor
+                            Business marketing system builder. Digital foundation architect. Campaign and client delivery partner.
                         </p>
                     </div>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            METRICS
+                            DELIVERABLES
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
                             E-Commerce Website, Funnel Page, Social Media Campaigning
@@ -170,7 +181,7 @@ export default function Work() {
                             DATE
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            August 2025
+                            July 2024
                         </p>
                     </div>
                 </div>
@@ -180,9 +191,9 @@ export default function Work() {
                             OVERVIEW
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            Blackprint partnered with Truka to transform an idea into a thriving community for young entrepreneurs and founders. A design system was developed that reflected their values, digital flows were established to support membership growth, and event strategies were guided to attract consistent attendance. The brand today operates as a trusted community hub that continues to expand.
+                           Blackprint worked with TradesMark to build a complete marketing engine for trade professionals. From onboarding flows to campaign execution, every element was designed to be practical, reliable, and capable of producing early results.
                         </p>
-                        <ContextItem subtext={"The scope covered identity creation, digital integration, and client advisory. Every step was designed with longevity in mind, ensuring the platform would feel both authentic and adaptable as it scaled."}
+                        <ContextItem subtext={"The challenge was creating a system that could serve both the TradesMark brand itself and its trade professional clients. Our approach combined technical setup, brand design, and process automation into one clear framework."}
                         title={true}/>
                     </div>
                 </div>
@@ -252,33 +263,29 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Engagiong Trade Professionals
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            The brand needed a way to connect with an audience that is often skeptical of marketing.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
+                        <ContextItem subtext={"Trade professionals value straightforward communication and clear outcomes. TradesMark needed a brand voice and system that felt trustworthy."}
                         title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                           Designing a Complete Operating System
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                           The client required more than a website. They wanted an integrated structure that handled communication, lead tracking, and client delivery.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Creating Tools for Clients
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                            TradesMark also needed websites and campaigns they could pass down to their own customers.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
                     </div>
                 </div>
             </section>
@@ -286,40 +293,42 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            APPROACH
+                           OUR APPROACH
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                           Onboarding System
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            A Notion based onboarding flow was built to make setup simple for new users.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            End to End Customer Journey
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Every step from awareness to conversion was mapped out and supported with digital tools to keep the process consistent.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Campaign and Website Development
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           Websites and Mailchimp campaigns were created with messaging tailored to the working style of trades professionals.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
+                    </div>
+                    <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                            AI Integration
+                        </p>
+                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                            Artificial intelligence tools were introduced to handle repetitive outreach and personalize communication at scale
+                        </p>
                     </div>
                 </div>
             </section>
@@ -327,44 +336,38 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            CLIENT REQUEST
+                            OUR IMPACT
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Early Client Acquisition
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Three new contracts were closed in the first month of launch.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Streamlined Lead Flow
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Prospects were guided from sign up to conversion with less friction and more clarity.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Marketing Backbone for Scale
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           TradesMark now operates with a system designed specifically for the needs of trade professionals.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
                     </div>
                 </div>
             </section>
-  {/*
+            {/*
             <section className={workStyles.workInfoSection} style={{ borderBottom: "none"}}>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
@@ -380,6 +383,7 @@ export default function Work() {
                 </div>
             </section>
             */}
+            <Footer windowSize={windowSize} />
         </div>
     )
 }

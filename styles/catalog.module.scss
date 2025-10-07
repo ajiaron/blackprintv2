@@ -69,7 +69,6 @@
 .catalogFigureWrapper {
     width: 100%;
     height: 420px;
-    
     aspect-ratio: 850 / 1050;
     border-radius: 4px;
     display: flex;
@@ -84,9 +83,16 @@
 .catalogFigure {
     width: 100%;
     height: 100%;
-    background-color: #ddd;
+    border-radius: 4px;
+}
+.catalogFigureImage {
+    display: block;
+    width: 100%;
+    height: 100%;
     border-radius: 4px;
     object-fit: cover;
+    object-position: 50% 50%;
+   
 }
 .catalogItemDescription {
     display: flex;
@@ -241,7 +247,7 @@
     transition: all .15s linear;
 }
 .navbarContentSmall:hover {
-    color:#fff !important;
+    color:#ababab !important;
 }
 
 

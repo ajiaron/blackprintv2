@@ -8,6 +8,7 @@ import NavbarV2 from "@/app/components/NavbarV2";
 import catalogStyles from "../../../styles/catalog.module.scss"
 import workStyles from "../../../styles/work.module.scss"
 import useParallax from "@/app/hooks/useParallax";
+import Footer from "@/app/components/Footer";
 
 const ContextItem = ({subtext, title}) => {
   const [isActive, setIsActive] = useState(false)
@@ -118,33 +119,44 @@ export default function Work() {
     useParallax(headerRef, bgRef, 0.7)         
     return (
         <div className={styles.main} ref={contentRef}>
-            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"4.5rem", position:"absolute"}}>
-                <NavbarV2 windowSize={windowSize} stick={true} bright={false}/>
+            <div style={{width:"100%",justifyContent:"center", display:"flex", height:"5rem", position:"absolute"}}>
+                <NavbarV2 windowSize={windowSize} stick={true} bright={false} />
             </div>
-            <div className={workStyles.workPageHeaderWrapper} style={{position:"relative"}} data-speed="0.35" ref={headerRef}>
-                <div className={[workStyles.workCoverImage, workStyles.blackcloverCover].join(' ')} ref={bgRef}> {/* the parallax image */}
-
-                </div>
+            <div
+                className={workStyles.workPageHeaderWrapper}
+                style={{position:"relative"}}
+                data-speed="0.35"
+                ref={headerRef}
+                >
                 <div className={workStyles.workPageHeaderContainer}>
-                    <h1 className={workStyles.workHeaderText} style={{color:"#fff"}}>  
-                        6lack Clover
-                    </h1>
-                    {/*
-                     <p className={workStyles.workHeaderSubtext} style={{color:"#d4d4d4"}}>
-                        In collaboration with Blackprint.
-                    </p>
-                    */}
+                    <h1 className={workStyles.workHeaderText}>6lack Clover</h1>
+                </div>
+                <div className={workStyles.parallaxLayer} ref={bgRef}>
+                    <picture>
+                    <source
+                        media="(min-width: 769px)"
+                        srcSet="/assets/blackcloverpreview2.png 1x, /assets/blackcloverpreview2.png 2x"
+                    />
+                    <img
+                        className={workStyles.parallaxImg}
+                        src="/assets/blackcloverpreview2.png"
+                        alt="pdg cover"
+                        loading="eager"
+                        fetchpriority="high"
+                        style={{objectFit:"cover"}}
+                    />
+                    </picture>
                 </div>
             </div>
             <div className={workStyles.workTagHeader}>
                 <span className={workStyles.workTagButton}>
+                    MARKETING STRATEGY
+                </span>
+                <span className={workStyles.workTagButton}>
+                    PRODUCT DESIGN
+                </span>
+                <span className={workStyles.workTagButton}>
                     E-COMMERCE
-                </span>
-                <span className={workStyles.workTagButton}>
-                    DIGITAL MEDIA
-                </span>
-                <span className={workStyles.workTagButton}>
-                    AD CAMPAIGN
                 </span>
             </div>
             <section className={workStyles.workInfoSection}>
@@ -154,15 +166,15 @@ export default function Work() {
                             OUR ROLE
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            Community platform design partner, Brand system architect, Marketing and growth advisor
+                            Disruptive brand architect. Packaging designer. E-commerce strategist. Marketing partner.
                         </p>
                     </div>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            METRICS
+                            DELIVERABLES
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            E-Commerce Website, Funnel Page, Social Media Campaigning
+                            E-Commerce Website, Product Packaging, Marketing Groundwork
                         </p>
                     </div>
                     <div className={workStyles.workInfoTextWrapper}>
@@ -170,7 +182,7 @@ export default function Work() {
                             DATE
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff"}}> 
-                            August 2025
+                            MARCH 2025
                         </p>
                     </div>
                 </div>
@@ -180,9 +192,9 @@ export default function Work() {
                             OVERVIEW
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            Blackprint partnered with Truka to transform an idea into a thriving community for young entrepreneurs and founders. A design system was developed that reflected their values, digital flows were established to support membership growth, and event strategies were guided to attract consistent attendance. The brand today operates as a trusted community hub that continues to expand.
+                            Blackprint partnered with 6lack Clover to create a consumer packaged goods brand that broke away from generic competitors. A grunge inspired design system, production ready packaging, and a flexible e-commerce solution were all developed to prepare the brand for launch.
                         </p>
-                        <ContextItem subtext={"The scope covered identity creation, digital integration, and client advisory. Every step was designed with longevity in mind, ensuring the platform would feel both authentic and adaptable as it scaled."}
+                        <ContextItem subtext={"The project combined design, quality control, and marketing preparation. By drawing inspiration from categories outside of CPG, 6lack Clover entered the market with a brand that felt entirely new."}
                         title={true}/>
                     </div>
                 </div>
@@ -252,33 +264,39 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Disrupting a Crowded Space
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            The client wanted an identity that would not resemble other CPG brands in their category.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
+        
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Developing a Complete Identity
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Logo, design kit, and packaging were needed to create a cohesive brand foundation.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
+        
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Expanding Beyond Shopify
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                           They required an e-commerce system that maintained creative freedom while offering strong backend stability.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
+      
+                    </div>
+                    <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                            Building Early Buzz
+                        </p>
+                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                           A marketing plan was necessary to generate traction before launch.
+                        </p>
+                 
                     </div>
                 </div>
             </section>
@@ -286,40 +304,59 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            APPROACH
+                           OUR APPROACH
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Cross Industry Inspirtation
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Research was conducted into more than 50 brands in areas like apparel and wellness to inform a disruptive direction.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Grunge Inspired System
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            An alternative, countercultural aesthetic was developed to break free from polished but predictable industry designs.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
+
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            3D Packeging Design
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                            Photorealistic packaging was rendered with Figma, Pacdora, and Blender to ensure production readiness.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
+                    </div>
+                    <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                            E-commerce Integration
+                        </p>
+                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                           Framer, Framer Commerce, and Shopify were combined to balance design flexibility with backend reliability.
+                        </p>
+                    </div>
+                    <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                            Product Quality Testing
+                        </p>
+                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                            Physical products were reviewed and tested to ensure packaging matched expectations.
+                        </p>
+                    </div>
+                    <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
+                            Marketing Groundwork
+                        </p>
+                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                            A list of UGC creators was curated and outreach strategies were defined to drive traction.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -327,40 +364,35 @@ export default function Work() {
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
-                            CLIENT REQUEST
+                            OUR IMPACT
                         </p>
                     </div>
                 </div>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Creating a Trusted Brand
+                            Complete Launch Package
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            The client debuted with branding, packaging, and e-commerce systems ready to go.
                         </p>
-                        <ContextItem subtext={"Entrepreneurs often drift between communities that lack staying power. Truka wanted a design that made members feel at home and motivated to invest their time."}
-                        title={false}/>
+
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Driving Consistent Participation
+                            Pre-order Traction
                         </p>
                          <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                            The client needed an identity that would inspire confidence and bring people together.
+                            Buzz from the disruptive brand identity created organic attention and word of mouth growth.
                         </p>
-                        <ContextItem subtext={"Without intentional themes and communication, events risked blending into the noise. Truka wanted strategies that made each gathering feel valuable."}
-                        title={false}/>
                     </div>
                      <div className={workStyles.workInfoTextWrapper} style={{gap:".375rem"}}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"400"}}> 
-                            Building a Growth Engine
+                            Foundation for Expansion
                         </p>
-                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
-                           The community required systems that could manage new members smoothly as the brand expanded.
+                        <p className={catalogStyles.catalogItemSubtext} style={{color:"#fff", fontWeight:"300"}}> 
+                            6lack Clover is now positioned with both the look and infrastructure to scale as a CPG brand.
                         </p>
-                        <ContextItem subtext={" Manual processes would not last, so integrations were critical from day one."}
-                        title={false}/>
                     </div>
                 </div>
             </section>
@@ -380,6 +412,7 @@ export default function Work() {
                 </div>
             </section>
             */}
+            <Footer windowSize={windowSize}/>
         </div>
     )
 }

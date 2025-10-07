@@ -4,7 +4,7 @@ import styles from "../../styles/page.module.scss";
 import catalogStyles from "../../styles/catalog.module.scss";
 import Link from "next/link";
 
-export default function CatalogItem({title, category, description, perRow, onPage}) {
+export default function CatalogItem({title, category, description, perRow, onPage, src}) {
     return (
         <li className={(perRow === 2)?catalogStyles.catalogItemContainer:catalogStyles.catalogItemContainerAlt}>
             {/*(!onPage)&&
@@ -17,7 +17,11 @@ export default function CatalogItem({title, category, description, perRow, onPag
             <div className={(perRow === 2)?catalogStyles.catalogFigureWrapper:catalogStyles.catalogFigureWrapperAlt}>
                 <Link style={{width:"100%", height:"100%",display:"flex"}} href={`/work/${title.toLowerCase().trim().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`}>
                     <span className={catalogStyles.catalogFigure}>
-
+                        <img className={catalogStyles.catalogFigureImage}
+                        style={{objectPosition:(title==="6lack Clover"&&(!onPage))?"50% 13.5%":""}}
+                         src={src}
+                         loading="eager" fetchpriority="high" alt="title">
+                        </img>
                     </span>
                 </Link>
             </div>
@@ -29,8 +33,7 @@ export default function CatalogItem({title, category, description, perRow, onPag
                 </div>
                 <div className={catalogStyles.catalogSubtextWrapper}>
                     <p className={catalogStyles.catalogItemSubtext}>
-                        {(perRow===2)?"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est justo, cursus nec efficitur fermentum, lacinia ut enim.. ":
-                        description}
+                        {description}
                     </p>
                 </div>
             </div>

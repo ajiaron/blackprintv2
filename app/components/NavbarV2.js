@@ -78,27 +78,27 @@ export default function NavbarV2({windowSize, stick, bright}) {
                 </Link>
                 <div className={catalogStyles.navbarContentLinks}>
                     <Link href={"/work"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#909090"}}>
+                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#fff"}}>
                             Recent Work
                         </p>
                     </Link>
                      <Link href={"/#pricing"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#909090"}}>
+                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#fff"}}>
                             Pricing
                         </p>
                     </Link>
                     <Link href={"/#process"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#909090"}}>
+                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#fff"}}>
                             Our Process
                         </p>
                     </Link>
                     <Link href={"/#faqs"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#909090"}}>
+                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#fff"}}>
                             FAQs
                         </p>
                     </Link>
                     <Link href={"mailto:info@blackprint.in"}>
-                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#909090"}}>
+                        <p className={catalogStyles.navbarContentSmall} style={{color:(bright)?"#000":"#fff"}}>
                             Contact
                         </p>
                     </Link>
