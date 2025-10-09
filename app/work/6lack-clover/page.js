@@ -129,7 +129,17 @@ export default function Work() {
                 ref={headerRef}
                 >
                 <div className={workStyles.workPageHeaderContainer}>
-                    <h1 className={workStyles.workHeaderText}>6lack Clover</h1>
+                    <motion.h1 className={workStyles.workHeaderText}
+                        initial={{opacity:0, y:32}}
+                        animate={{opacity:1, y:0}}
+                        transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 35,
+                        delay: .3
+                        }}>
+                        6lack Clover
+                    </motion.h1>   
                 </div>
                 <div className={workStyles.parallaxLayer} ref={bgRef}>
                     <picture>
@@ -148,7 +158,15 @@ export default function Work() {
                     </picture>
                 </div>
             </div>
-            <div className={workStyles.workTagHeader}>
+            <motion.div className={workStyles.workTagHeader}
+            initial={{opacity:0, y:16}}
+                        animate={{opacity:1, y:0}}
+                        transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 35,
+                        delay: .45
+                        }}>
                 <span className={workStyles.workTagButton}>
                     MARKETING STRATEGY
                 </span>
@@ -158,8 +176,16 @@ export default function Work() {
                 <span className={workStyles.workTagButton}>
                     E-COMMERCE
                 </span>
-            </div>
-            <section className={workStyles.workInfoSection}>
+            </motion.div>
+            <motion.section className={workStyles.workInfoSection}
+             initial={{opacity:0, y:16}}
+                        animate={{opacity:1, y:0}}
+                        transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 35,
+                        delay: .6
+                        }}>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
@@ -198,8 +224,16 @@ export default function Work() {
                         title={true}/>
                     </div>
                 </div>
-            </section>
-            <section className={[workStyles.workInfoSection, workStyles.workMetricsSection].join(' ')} style={{flexDirection:"column"}}>
+            </motion.section>
+            <motion.section className={[workStyles.workInfoSection, workStyles.workMetricsSection].join(' ')} style={{flexDirection:"column"}}
+             initial={{opacity:0, y:16}}
+                        animate={{opacity:1, y:0}}
+                        transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 35,
+                        delay: .6
+                        }}>
                 <div className={workStyles.workMetricsHeader}>
                     <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600", fontSize:"20px"}}>
                         METRICS
@@ -252,8 +286,16 @@ export default function Work() {
                         </div>
                     </div>
                 </div>
-            </section>
-            <section className={workStyles.workInfoSection}>
+            </motion.section>
+            <motion.section className={workStyles.workInfoSection}
+             initial={{opacity:0, y:16}}
+                        animate={{opacity:1, y:0}}
+                        transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 35,
+                        delay: .6
+                        }}>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
@@ -299,8 +341,16 @@ export default function Work() {
                  
                     </div>
                 </div>
-            </section>
-             <section className={workStyles.workInfoSection}>
+            </motion.section>
+             <motion.section className={workStyles.workInfoSection}
+              initial={{opacity:0, y:16}}
+                        animate={{opacity:1, y:0}}
+                        transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 35,
+                        delay: .6
+                        }}>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
@@ -359,8 +409,16 @@ export default function Work() {
                         </p>
                     </div>
                 </div>
-            </section>
-             <section className={workStyles.workInfoSection} style={{ borderBottom: "none"}}>
+            </motion.section>
+             <motion.section className={workStyles.workInfoSection} style={{ borderBottom: "none"}}
+              initial={{opacity:0, y:16}}
+                        animate={{opacity:1, y:0}}
+                        transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 35,
+                        delay: .6
+                        }}>
                 <div className={workStyles.workInfoContainer}>
                     <div className={workStyles.workInfoTextWrapper}>
                         <p className={catalogStyles.catalogItemSubtext} style={{color:"#aaa", fontWeight:"600"}}> 
@@ -395,7 +453,7 @@ export default function Work() {
                         </p>
                     </div>
                 </div>
-            </section>
+            </motion.section>
              {/*
             <section className={workStyles.workInfoSection} style={{ borderBottom: "none"}}>
                 <div className={workStyles.workInfoContainer}>

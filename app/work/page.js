@@ -152,26 +152,57 @@ export default function Page() {
             }
             <NavbarV2 windowSize={windowSize} stick={false} bright={false}/>
             <div className={catalogStyles.catalogPageHeaderContainer}>
-                <p className={catalogStyles.catalogHeaderText}>
+                <motion.h1 className={catalogStyles.catalogHeaderText}
+                    initial={{opacity:0, y:24}}
+                    animate={{opacity:1, y:0}}
+                    transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 35,
+                    delay:.1
+                    }}>
                     Designs By Blackprint
-                </p>
-                <p className={catalogStyles.catalogHeaderSubtext}>
+                </motion.h1>   
+                <motion.p className={catalogStyles.catalogHeaderSubtext}
+                    initial={{opacity:0, y:24}}
+                    animate={{opacity:1, y:0}}
+                    transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 35,
+                    delay: .2
+                    }}>
                     From websites to graphics, we make sure your project stands out from the rest.
-                </p>
+                </motion.p>   
             </div>
         </div>
         <div className={catalogStyles.catalogPageContent}>
-            <ul className={catalogStyles.catalogPageContentRow}>
+            <motion.ul className={catalogStyles.catalogPageContentRow}
+                initial={{opacity:0, y:16}}
+                animate={{opacity:1, y:0}}
+                    transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 35,
+                    delay: .4
+                }}>
                 <CatalogItem title={"Truka"} category={"Product Title Header"} description={"WEBSITE / STRATEGY"} perRow={3} onPage={true} src={"/assets/trukacover.png"}/>
                 <CatalogItem title={"Brightview Exterior"} category={"Product Title Header"} description={"DESIGN REVAMP / LEAD FLOWS"} perRow={3} onPage={true} src={"/assets/bvepreview.png"}/>
                 <CatalogItem title={"Peaking Duck"} category={"Product Title Header"} description={"FLYERS / DIGITAL MEDIA"} perRow={3} onPage={true} src={"/assets/pdgpreview.png"}/>
-               
-            </ul>
-            <ul className={catalogStyles.catalogPageContentRow}>
+            </motion.ul>
+            <motion.ul className={catalogStyles.catalogPageContentRow}
+                initial={{opacity:0, y:16}}
+                animate={{opacity:1, y:0}}
+                transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 35,
+                delay: .6
+            }}>
                 <CatalogItem title={"TradesMark"} category={"Product Title Header"} description={"WEBSITE / FOUNDATIONS"} perRow={3} onPage={true} src={"/assets/tradesmarkpreview.png"}/>
                 <CatalogItem title={"6lack Clover"} category={"Product Title Header"} description={"PACKAGING / E-COMMERCE"} perRow={3} onPage={true} src={"/assets/blackcloverpreview.png"}/>
                 <CatalogItem title={"Creatorverse"} category={"Product Title Header"} description={"STRATEGY / CAMPAIGNING"} perRow={3} onPage={true} src={"/assets/creatorversepreview.png"}/>
-            </ul>
+            </motion.ul>
         </div>
         <Footer windowSize={windowSize}/>
     </div>

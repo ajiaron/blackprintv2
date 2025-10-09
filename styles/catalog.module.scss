@@ -84,15 +84,25 @@
     width: 100%;
     height: 100%;
     border-radius: 4px;
+    overflow: hidden;
+
 }
+
 .catalogFigureImage {
     display: block;
     width: 100%;
     height: 100%;
     border-radius: 4px;
+    z-index: 0;
     object-fit: cover;
     object-position: 50% 50%;
-   
+    transition: all .3s ease-in-out;
+    filter: brightness(1);
+    transform: scale(1);
+}
+.catalogFigureImage:hover {
+    filter: brightness(.7);
+    transform: scale(1.06);
 }
 .catalogItemDescription {
     display: flex;
@@ -101,6 +111,14 @@
     gap:16px;
     margin-top: 26px;
     width: 100%;
+}
+.catalogItemLink {
+    color:#bbb;
+    font-weight: 500;
+    transition: all .15s linear;
+}
+.catalogItemLink:hover {
+    color:#fff;
 }
 .catalogItemCategories {
     width: 100%;
