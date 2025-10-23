@@ -252,6 +252,7 @@
 @media  (max-width: 620px) {
     .workTagHeader {
         flex-direction: column;
+        padding-top: 1.5rem;
         gap:1.25rem;
     }
     .workTagButton {
