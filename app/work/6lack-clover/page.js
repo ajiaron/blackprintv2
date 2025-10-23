@@ -225,6 +225,7 @@ export default function Work() {
                     </div>
                 </div>
             </motion.section>
+            {/*
             <motion.section className={[workStyles.workInfoSection, workStyles.workMetricsSection].join(' ')} style={{flexDirection:"column"}}
              initial={{opacity:0, y:16}}
                         animate={{opacity:1, y:0}}
@@ -286,7 +287,7 @@ export default function Work() {
                         </div>
                     </div>
                 </div>
-            </motion.section>
+            </motion.section>*/}
             <motion.section className={workStyles.workInfoSection}
              initial={{opacity:0, y:16}}
                         animate={{opacity:1, y:0}}
