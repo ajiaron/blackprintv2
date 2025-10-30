@@ -215,7 +215,7 @@ export default function Home() {
     window.location.href = link
   }
   function navigateBooking() {
-    window.location.href = `https://calendly.com/blackprint-unlimited/30min`
+    window.location.href = `https://calendly.com/blackprint-unlimited/blackprint-consultation`
   }
   function handleService(title, subtext) {
     setIsOpen(title)
@@ -974,20 +974,20 @@ export default function Home() {
                     <span style={{fontWeight:600}}>Apply here</span> for your own personalized referral code that you can share with your followers. 
                 </p>
                 {(windowSize.width<=1119)&&
-                <a className={styles.packageReferralButton} style={{transform:"translateX(-1px)",marginTop:".375rem",maxWidth:(windowSize.width>768)?"15.625rem":"auto", width:(windowSize.width>768?"":"100%")}} onClick={()=>navigateBooking()} href="mailto:info@blackprint.in">
+                <span className={styles.packageReferralButton} style={{transform:"translateX(-1px)",marginTop:".375rem",maxWidth:(windowSize.width>768)?"15.625rem":"auto", width:(windowSize.width>768?"":"100%")}} onClick={()=>navigateBooking()}>
                   <p className={styles.pricingButtonText}>
                     Apply Today
                   </p>
-                </a>
+                </span>
                 }  
               </div>
               <div className={styles.pricingReferralRight}>
               {(windowSize.width>1120)&&
-                <a className={styles.packageButton} style={{transform:"translateX(-1px)",marginTop:".375rem"}} onClick={()=>navigateBooking()} href="mailto:info@blackprint.in">
+                <span className={styles.packageButton} style={{transform:"translateX(-1px)",marginTop:".375rem"}} onClick={()=>navigateBooking()}>
                   <p className={styles.pricingButtonText}>
                     Apply Today
                   </p>
-                </a>
+                </span>
                 }  
               </div>
             </div>
